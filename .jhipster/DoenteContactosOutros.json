@@ -1,0 +1,52 @@
+{
+    "name": "DoenteContactosOutros",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "parentesco",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "coabita",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "telef",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ocupacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "obs",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "preferencial",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "doenteContactos",
+            "otherEntityRelationshipName": "doenteContactosOutros",
+            "relationshipName": "doenteContactos",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191226131810",
+    "entityTableName": "doente_contactos_outros",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

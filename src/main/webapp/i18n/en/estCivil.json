@@ -1,0 +1,9 @@
+{
+  "dwinApp": {
+    "EstCivil": {
+      "null": "",
+      "Solteiro": "Solteiro",
+      "Casado": "Casado"
+    }
+  }
+}

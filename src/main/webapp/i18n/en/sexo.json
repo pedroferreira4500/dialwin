@@ -1,0 +1,9 @@
+{
+  "dwinApp": {
+    "Sexo": {
+      "null": "",
+      "Masculino": "Masculino",
+      "Feminino": "Feminino"
+    }
+  }
+}
