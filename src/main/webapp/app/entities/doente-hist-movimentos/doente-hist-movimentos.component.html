@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.doenteHistMovimentos.home.title">Doente Hist Movimentos</span>
+        <span jhiTranslate="dialwinApp.doenteHistMovimentos.home.title">Doente Hist Movimentos</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-doente-hist-movimentos" [routerLink]="['/doente-hist-movimentos/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.doenteHistMovimentos.home.createLabel">
+            <span  jhiTranslate="dialwinApp.doenteHistMovimentos.home.createLabel">
             Create a new Doente Hist Movimentos
             </span>
         </button>
@@ -12,17 +12,17 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="doenteHistMovimentos?.length === 0">
-        <span jhiTranslate="dwinApp.doenteHistMovimentos.home.notFound">No doenteHistMovimentos found</span>
+        <span jhiTranslate="dialwinApp.doenteHistMovimentos.home.notFound">No doenteHistMovimentos found</span>
     </div>
     <div class="table-responsive" *ngIf="doenteHistMovimentos?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteHistMovimentos.data">Data</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteHistMovimentos.situacao">Situacao</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteHistMovimentos.obs">Obs</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteHistMovimentos.doente">Doente</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteHistMovimentos.data">Data</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteHistMovimentos.situacao">Situacao</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteHistMovimentos.obs">Obs</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteHistMovimentos.doente">Doente</span></th>
             <th scope="col"></th>
             </tr>
             </thead>

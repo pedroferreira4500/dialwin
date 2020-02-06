@@ -1,6 +1,6 @@
 package dw.dw.dw.repository;
 
-import dw.dw.dw.DwinApp;
+import dw.dw.dw.DialwinApp;
 import dw.dw.dw.config.Constants;
 import dw.dw.dw.config.audit.AuditEventConverter;
 import dw.dw.dw.domain.PersistentAuditEvent;
@@ -27,7 +27,7 @@ import static dw.dw.dw.repository.CustomAuditEventRepository.EVENT_DATA_COLUMN_M
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
-@SpringBootTest(classes = DwinApp.class)
+@SpringBootTest(classes = DialwinApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIT {
 

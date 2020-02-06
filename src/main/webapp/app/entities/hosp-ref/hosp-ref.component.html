@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.hospRef.home.title">Hosp Refs</span>
+        <span jhiTranslate="dialwinApp.hospRef.home.title">Hosp Refs</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-hosp-ref" [routerLink]="['/hosp-ref/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.hospRef.home.createLabel">
+            <span  jhiTranslate="dialwinApp.hospRef.home.createLabel">
             Create a new Hosp Ref
             </span>
         </button>
@@ -12,14 +12,14 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="hospRefs?.length === 0">
-        <span jhiTranslate="dwinApp.hospRef.home.notFound">No hospRefs found</span>
+        <span jhiTranslate="dialwinApp.hospRef.home.notFound">No hospRefs found</span>
     </div>
     <div class="table-responsive" *ngIf="hospRefs?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.hospRef.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.hospRef.nome">Nome</span></th>
             <th scope="col"></th>
             </tr>
             </thead>

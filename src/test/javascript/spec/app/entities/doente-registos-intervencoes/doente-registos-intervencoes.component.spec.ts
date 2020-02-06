@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { DoenteRegistosIntervencoesComponent } from 'app/entities/doente-registos-intervencoes/doente-registos-intervencoes.component';
 import { DoenteRegistosIntervencoesService } from 'app/entities/doente-registos-intervencoes/doente-registos-intervencoes.service';
 import { DoenteRegistosIntervencoes } from 'app/shared/model/doente-registos-intervencoes.model';
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [DoenteRegistosIntervencoesComponent],
         providers: []
       })

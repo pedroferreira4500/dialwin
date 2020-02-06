@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { HorarioDoenteDetailComponent } from 'app/entities/horario-doente/horario-doente-detail.component';
 import { HorarioDoente } from 'app/shared/model/horario-doente.model';
 
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [HorarioDoenteDetailComponent],
         providers: [{ provide: ActivatedRoute, useValue: route }]
       })

@@ -89,7 +89,6 @@ public class DoenteContactosResource {
     /**
      * {@code GET  /doente-contactos} : get all the doenteContactos.
      *
-
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of doenteContactos in body.
      */
     @GetMapping("/doente-contactos")

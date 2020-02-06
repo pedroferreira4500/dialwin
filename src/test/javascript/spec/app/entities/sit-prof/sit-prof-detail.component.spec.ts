@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { SitProfDetailComponent } from 'app/entities/sit-prof/sit-prof-detail.component';
 import { SitProf } from 'app/shared/model/sit-prof.model';
 
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [SitProfDetailComponent],
         providers: [{ provide: ActivatedRoute, useValue: route }]
       })

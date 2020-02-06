@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.userProfile.home.title">User Profiles</span>
+        <span jhiTranslate="dialwinApp.userProfile.home.title">User Profiles</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-user-profile" [routerLink]="['/user-profile/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.userProfile.home.createLabel">
+            <span  jhiTranslate="dialwinApp.userProfile.home.createLabel">
             Create a new User Profile
             </span>
         </button>
@@ -12,24 +12,24 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="userProfiles?.length === 0">
-        <span jhiTranslate="dwinApp.userProfile.home.notFound">No userProfiles found</span>
+        <span jhiTranslate="dialwinApp.userProfile.home.notFound">No userProfiles found</span>
     </div>
     <div class="table-responsive" *ngIf="userProfiles?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userProfile.nome">Nome</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userProfile.demograf">Demograf</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userProfile.social">Social</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userProfile.procClin">Proc Clin</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userProfile.dialEnf">Dial Enf</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userProfile.dialStat">Dial Stat</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userProfile.qualiStat">Quali Stat</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userProfile.labLink">Lab Link</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userProfile.gidLink">Gid Link</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userProfile.asterixFarma">Asterix Farma</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userProfile.asterixGabMed">Asterix Gab Med</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.demograf">Demograf</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.social">Social</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.procClin">Proc Clin</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.dialEnf">Dial Enf</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.dialStat">Dial Stat</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.qualiStat">Quali Stat</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.labLink">Lab Link</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.gidLink">Gid Link</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.asterixFarma">Asterix Farma</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.asterixGabMed">Asterix Gab Med</span></th>
             <th scope="col"></th>
             </tr>
             </thead>

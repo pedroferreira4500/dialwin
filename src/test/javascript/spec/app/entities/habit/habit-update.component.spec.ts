@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { HabitUpdateComponent } from 'app/entities/habit/habit-update.component';
 import { HabitService } from 'app/entities/habit/habit.service';
 import { Habit } from 'app/shared/model/habit.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [HabitUpdateComponent],
         providers: [FormBuilder]
       })

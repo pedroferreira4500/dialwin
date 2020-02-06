@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.pais.home.title">Pais</span>
+        <span jhiTranslate="dialwinApp.pais.home.title">Pais</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pais" [routerLink]="['/pais/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.pais.home.createLabel">
+            <span  jhiTranslate="dialwinApp.pais.home.createLabel">
             Create a new Pais
             </span>
         </button>
@@ -12,16 +12,16 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="pais?.length === 0">
-        <span jhiTranslate="dwinApp.pais.home.notFound">No pais found</span>
+        <span jhiTranslate="dialwinApp.pais.home.notFound">No pais found</span>
     </div>
     <div class="table-responsive" *ngIf="pais?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.pais.nome">Nome</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.pais.sigla">Sigla</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.pais.doenteIdentidade">Doente Identidade</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.pais.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.pais.sigla">Sigla</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.pais.doenteIdentidade">Doente Identidade</span></th>
             <th scope="col"></th>
             </tr>
             </thead>

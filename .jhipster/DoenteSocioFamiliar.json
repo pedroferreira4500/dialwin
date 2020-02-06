@@ -81,7 +81,7 @@
             "otherEntityField": "nome"
         }
     ],
-    "changelogDate": "20191226131813",
+    "changelogDate": "20200111000237",
     "entityTableName": "doente_socio_familiar",
     "dto": "no",
     "pagination": "no",

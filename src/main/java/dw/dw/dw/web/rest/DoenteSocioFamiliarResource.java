@@ -2,15 +2,18 @@ package dw.dw.dw.web.rest;
 
 import dw.dw.dw.domain.DoenteSocioFamiliar;
 import dw.dw.dw.repository.DoenteSocioFamiliarRepository;
+import dw.dw.dw.service.DoenteContactosService;
+import dw.dw.dw.service.DoenteSocioFamiliarService;
 import dw.dw.dw.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional; 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -26,6 +29,9 @@ import java.util.Optional;
 @RequestMapping("/api")
 @Transactional
 public class DoenteSocioFamiliarResource {
+
+    @Autowired
+    private DoenteSocioFamiliarService doenteSocioFamiliarService;
 
     private final Logger log = LoggerFactory.getLogger(DoenteSocioFamiliarResource.class);
 
@@ -92,12 +98,12 @@ public class DoenteSocioFamiliarResource {
         return doenteSocioFamiliarRepository.findAll();
     }
 
-    /**
-     * {@code GET  /doente-socio-familiars/:id} : get the "id" doenteSocioFamiliar.
-     *
-     * @param id the id of the doenteSocioFamiliar to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the doenteSocioFamiliar, or with status {@code 404 (Not Found)}.
-     */
+    @GetMapping("/doente-socio-familiar")
+    public DoenteSocioFamiliar getSocioFamiliar(@RequestParam(required = false, name = "doente") Long doente) {
+        DoenteSocioFamiliar doenteSocioFamiliar = doenteSocioFamiliarService.getbyDoente(doente);
+        return doenteSocioFamiliar;
+    }
+
     @GetMapping("/doente-socio-familiars/{id}")
     public ResponseEntity<DoenteSocioFamiliar> getDoenteSocioFamiliar(@PathVariable Long id) {
         log.debug("REST request to get DoenteSocioFamiliar : {}", id);

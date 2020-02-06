@@ -1,7 +1,10 @@
 package dw.dw.dw.repository;
+import dw.dw.dw.domain.DoenteContactos;
 import dw.dw.dw.domain.DoenteHistMovimentos;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 
 /**
@@ -11,4 +14,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DoenteHistMovimentosRepository extends JpaRepository<DoenteHistMovimentos, Long> {
 
+    List<DoenteHistMovimentos> findAllByDoenteId(Long doente);
 }

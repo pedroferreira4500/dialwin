@@ -30,7 +30,7 @@ export const subSisGrupoRoute: Routes = [
     component: SubSisGrupoComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.subSisGrupo.home.title'
+      pageTitle: 'dialwinApp.subSisGrupo.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const subSisGrupoRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.subSisGrupo.home.title'
+      pageTitle: 'dialwinApp.subSisGrupo.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const subSisGrupoRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.subSisGrupo.home.title'
+      pageTitle: 'dialwinApp.subSisGrupo.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const subSisGrupoRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.subSisGrupo.home.title'
+      pageTitle: 'dialwinApp.subSisGrupo.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

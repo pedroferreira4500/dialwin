@@ -3,7 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { HabitDeleteDialogComponent } from 'app/entities/habit/habit-delete-dialog.component';
 import { HabitService } from 'app/entities/habit/habit.service';
 
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [HabitDeleteDialogComponent]
       })
         .overrideTemplate(HabitDeleteDialogComponent, '')

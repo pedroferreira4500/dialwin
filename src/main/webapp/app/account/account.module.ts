@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { DwinSharedModule } from 'app/shared/shared.module';
+import { DialwinSharedModule } from 'app/shared/shared.module';
 
 import { SessionsComponent } from './sessions/sessions.component';
 import { PasswordStrengthBarComponent } from './password/password-strength-bar.component';
@@ -14,7 +14,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { accountState } from './account.route';
 
 @NgModule({
-  imports: [DwinSharedModule, RouterModule.forChild(accountState)],
+  imports: [DialwinSharedModule, RouterModule.forChild(accountState)],
   declarations: [
     ActivateComponent,
     RegisterComponent,
@@ -26,4 +26,4 @@ import { accountState } from './account.route';
     SettingsComponent
   ]
 })
-export class DwinAccountModule {}
+export class DialwinAccountModule {}

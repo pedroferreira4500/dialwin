@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { SubSistemasDetailComponent } from 'app/entities/sub-sistemas/sub-sistemas-detail.component';
 import { SubSistemas } from 'app/shared/model/sub-sistemas.model';
 
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [SubSistemasDetailComponent],
         providers: [{ provide: ActivatedRoute, useValue: route }]
       })

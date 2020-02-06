@@ -3,7 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { UserProfileDeleteDialogComponent } from 'app/entities/user-profile/user-profile-delete-dialog.component';
 import { UserProfileService } from 'app/entities/user-profile/user-profile.service';
 
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [UserProfileDeleteDialogComponent]
       })
         .overrideTemplate(UserProfileDeleteDialogComponent, '')

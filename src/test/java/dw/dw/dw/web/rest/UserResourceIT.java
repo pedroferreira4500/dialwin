@@ -1,6 +1,6 @@
 package dw.dw.dw.web.rest;
 
-import dw.dw.dw.DwinApp;
+import dw.dw.dw.DialwinApp;
 import dw.dw.dw.domain.Authority;
 import dw.dw.dw.domain.User;
 import dw.dw.dw.repository.UserRepository;
@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link UserResource} REST controller.
  */
-@SpringBootTest(classes = DwinApp.class)
+@SpringBootTest(classes = DialwinApp.class)
 public class UserResourceIT {
 
     private static final String DEFAULT_LOGIN = "johndoe";

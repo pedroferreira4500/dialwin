@@ -3,7 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { SubSistemasDeleteDialogComponent } from 'app/entities/sub-sistemas/sub-sistemas-delete-dialog.component';
 import { SubSistemasService } from 'app/entities/sub-sistemas/sub-sistemas.service';
 
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [SubSistemasDeleteDialogComponent]
       })
         .overrideTemplate(SubSistemasDeleteDialogComponent, '')

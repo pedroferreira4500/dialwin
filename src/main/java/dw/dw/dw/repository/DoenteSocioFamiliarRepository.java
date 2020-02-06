@@ -3,6 +3,8 @@ import dw.dw.dw.domain.DoenteSocioFamiliar;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 
 /**
  * Spring Data  repository for the DoenteSocioFamiliar entity.
@@ -10,5 +12,6 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface DoenteSocioFamiliarRepository extends JpaRepository<DoenteSocioFamiliar, Long> {
+    List<DoenteSocioFamiliar> findAllByDoenteId(Long doente);
 
 }

@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.aCES.home.title">ACES</span>
+        <span jhiTranslate="dialwinApp.aCES.home.title">ACES</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-aces" [routerLink]="['/aces/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.aCES.home.createLabel">
+            <span  jhiTranslate="dialwinApp.aCES.home.createLabel">
             Create a new ACES
             </span>
         </button>
@@ -12,14 +12,14 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="aCES?.length === 0">
-        <span jhiTranslate="dwinApp.aCES.home.notFound">No aCES found</span>
+        <span jhiTranslate="dialwinApp.aCES.home.notFound">No aCES found</span>
     </div>
     <div class="table-responsive" *ngIf="aCES?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.aCES.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.aCES.nome">Nome</span></th>
             <th scope="col"></th>
             </tr>
             </thead>

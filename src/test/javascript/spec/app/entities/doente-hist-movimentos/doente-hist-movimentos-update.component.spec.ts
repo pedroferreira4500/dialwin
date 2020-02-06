@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { DoenteHistMovimentosUpdateComponent } from 'app/entities/doente-hist-movimentos/doente-hist-movimentos-update.component';
 import { DoenteHistMovimentosService } from 'app/entities/doente-hist-movimentos/doente-hist-movimentos.service';
 import { DoenteHistMovimentos } from 'app/shared/model/doente-hist-movimentos.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [DoenteHistMovimentosUpdateComponent],
         providers: [FormBuilder]
       })

@@ -1,6 +1,6 @@
 package dw.dw.dw.web.rest;
 
-import dw.dw.dw.DwinApp;
+import dw.dw.dw.DialwinApp;
 import dw.dw.dw.domain.DoenteRegistosIntervencoes;
 import dw.dw.dw.repository.DoenteRegistosIntervencoesRepository;
 import dw.dw.dw.web.rest.errors.ExceptionTranslator;
@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link DoenteRegistosIntervencoesResource} REST controller.
  */
-@SpringBootTest(classes = DwinApp.class)
+@SpringBootTest(classes = DialwinApp.class)
 public class DoenteRegistosIntervencoesResourceIT {
 
     private static final String DEFAULT_DESCR = "AAAAAAAAAA";

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { GrauConfDetailComponent } from 'app/entities/grau-conf/grau-conf-detail.component';
 import { GrauConf } from 'app/shared/model/grau-conf.model';
 
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [GrauConfDetailComponent],
         providers: [{ provide: ActivatedRoute, useValue: route }]
       })

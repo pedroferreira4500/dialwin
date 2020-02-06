@@ -30,7 +30,7 @@ export const horarioDoenteRoute: Routes = [
     component: HorarioDoenteComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.horarioDoente.home.title'
+      pageTitle: 'dialwinApp.horarioDoente.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const horarioDoenteRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.horarioDoente.home.title'
+      pageTitle: 'dialwinApp.horarioDoente.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const horarioDoenteRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.horarioDoente.home.title'
+      pageTitle: 'dialwinApp.horarioDoente.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const horarioDoenteRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.horarioDoente.home.title'
+      pageTitle: 'dialwinApp.horarioDoente.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

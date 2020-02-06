@@ -30,7 +30,7 @@ export const doenteContactosOutrosRoute: Routes = [
     component: DoenteContactosOutrosComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteContactosOutros.home.title'
+      pageTitle: 'dialwinApp.doenteContactosOutros.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const doenteContactosOutrosRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteContactosOutros.home.title'
+      pageTitle: 'dialwinApp.doenteContactosOutros.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const doenteContactosOutrosRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteContactosOutros.home.title'
+      pageTitle: 'dialwinApp.doenteContactosOutros.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const doenteContactosOutrosRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteContactosOutros.home.title'
+      pageTitle: 'dialwinApp.doenteContactosOutros.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

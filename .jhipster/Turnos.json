@@ -14,7 +14,7 @@
             "relationshipName": "doente"
         }
     ],
-    "changelogDate": "20191226131820",
+    "changelogDate": "20200111000244",
     "entityTableName": "turnos",
     "dto": "no",
     "pagination": "no",

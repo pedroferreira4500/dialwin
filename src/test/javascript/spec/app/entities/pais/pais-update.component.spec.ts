@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { PaisUpdateComponent } from 'app/entities/pais/pais-update.component';
 import { PaisService } from 'app/entities/pais/pais.service';
 import { Pais } from 'app/shared/model/pais.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [PaisUpdateComponent],
         providers: [FormBuilder]
       })

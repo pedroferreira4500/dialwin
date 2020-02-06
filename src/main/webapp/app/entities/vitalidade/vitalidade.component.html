@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.vitalidade.home.title">Vitalidades</span>
+        <span jhiTranslate="dialwinApp.vitalidade.home.title">Vitalidades</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-vitalidade" [routerLink]="['/vitalidade/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.vitalidade.home.createLabel">
+            <span  jhiTranslate="dialwinApp.vitalidade.home.createLabel">
             Create a new Vitalidade
             </span>
         </button>
@@ -12,15 +12,15 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="vitalidades?.length === 0">
-        <span jhiTranslate="dwinApp.vitalidade.home.notFound">No vitalidades found</span>
+        <span jhiTranslate="dialwinApp.vitalidade.home.notFound">No vitalidades found</span>
     </div>
     <div class="table-responsive" *ngIf="vitalidades?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.vitalidade.nome">Nome</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.vitalidade.percentagem">Percentagem</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.vitalidade.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.vitalidade.percentagem">Percentagem</span></th>
             <th scope="col"></th>
             </tr>
             </thead>

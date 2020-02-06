@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { DoenteIdentidadeComponent } from 'app/entities/doente-identidade/doente-identidade.component';
 import { DoenteIdentidadeService } from 'app/entities/doente-identidade/doente-identidade.service';
 import { DoenteIdentidade } from 'app/shared/model/doente-identidade.model';
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [DoenteIdentidadeComponent],
         providers: []
       })

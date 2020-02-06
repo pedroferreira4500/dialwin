@@ -2,15 +2,17 @@ package dw.dw.dw.web.rest;
 
 import dw.dw.dw.domain.DoenteDiagnosticoSocial;
 import dw.dw.dw.repository.DoenteDiagnosticoSocialRepository;
+import dw.dw.dw.service.DoenteDiagnosticoSocialService;
 import dw.dw.dw.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional; 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -30,6 +32,9 @@ public class DoenteDiagnosticoSocialResource {
     private final Logger log = LoggerFactory.getLogger(DoenteDiagnosticoSocialResource.class);
 
     private static final String ENTITY_NAME = "doenteDiagnosticoSocial";
+
+    @Autowired
+    DoenteDiagnosticoSocialService doenteDiagnosticoSocialService;
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
@@ -90,6 +95,11 @@ public class DoenteDiagnosticoSocialResource {
     public List<DoenteDiagnosticoSocial> getAllDoenteDiagnosticoSocials() {
         log.debug("REST request to get all DoenteDiagnosticoSocials");
         return doenteDiagnosticoSocialRepository.findAll();
+    }
+
+    @GetMapping("/doente-diagnostico-social")
+    public DoenteDiagnosticoSocial getDoenteDiagnostic (@RequestParam(required = false, name = "doente") Long doente) {
+        return doenteDiagnosticoSocialService.findByDoente(doente);
     }
 
     /**

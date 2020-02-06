@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { DoenteDiagnosticoSocialUpdateComponent } from 'app/entities/doente-diagnostico-social/doente-diagnostico-social-update.component';
 import { DoenteDiagnosticoSocialService } from 'app/entities/doente-diagnostico-social/doente-diagnostico-social.service';
 import { DoenteDiagnosticoSocial } from 'app/shared/model/doente-diagnostico-social.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [DoenteDiagnosticoSocialUpdateComponent],
         providers: [FormBuilder]
       })

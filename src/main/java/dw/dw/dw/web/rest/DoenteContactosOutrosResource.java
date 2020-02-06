@@ -2,15 +2,17 @@ package dw.dw.dw.web.rest;
 
 import dw.dw.dw.domain.DoenteContactosOutros;
 import dw.dw.dw.repository.DoenteContactosOutrosRepository;
+import dw.dw.dw.service.DoenteContactosService;
 import dw.dw.dw.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional; 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -18,8 +20,6 @@ import java.net.URISyntaxException;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 /**
  * REST controller for managing {@link dw.dw.dw.domain.DoenteContactosOutros}.
@@ -32,6 +32,9 @@ public class DoenteContactosOutrosResource {
     private final Logger log = LoggerFactory.getLogger(DoenteContactosOutrosResource.class);
 
     private static final String ENTITY_NAME = "doenteContactosOutros";
+
+    @Autowired
+    private DoenteContactosService doenteContactosService;
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
@@ -86,22 +89,15 @@ public class DoenteContactosOutrosResource {
      * {@code GET  /doente-contactos-outros} : get all the doenteContactosOutros.
      *
 
-     * @param filter the filter of the request.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of doenteContactosOutros in body.
      */
     @GetMapping("/doente-contactos-outros")
-    public List<DoenteContactosOutros> getAllDoenteContactosOutros(@RequestParam(required = false) String filter) {
-        if ("doentecontactos-is-null".equals(filter)) {
-            log.debug("REST request to get all DoenteContactosOutross where doenteContactos is null");
-            return StreamSupport
-                .stream(doenteContactosOutrosRepository.findAll().spliterator(), false)
-                .filter(doenteContactosOutros -> doenteContactosOutros.getDoenteContactos() == null)
-                .collect(Collectors.toList());
+    public List<DoenteContactosOutros> getAllDoenteContactosOutros(@RequestParam(required = false, name = "doente") Long doente) {
+        if (doente == null) {
+            return doenteContactosOutrosRepository.findAll();
         }
-        log.debug("REST request to get all DoenteContactosOutros");
-        return doenteContactosOutrosRepository.findAll();
+        return doenteContactosService.getDoenteContactosOutros(doente);
     }
-
     /**
      * {@code GET  /doente-contactos-outros/:id} : get the "id" doenteContactosOutros.
      *

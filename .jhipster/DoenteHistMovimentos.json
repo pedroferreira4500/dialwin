@@ -16,15 +16,14 @@
     ],
     "relationships": [
         {
-            "relationshipType": "one-to-one",
+            "relationshipType": "many-to-one",
             "otherEntityName": "doente",
             "otherEntityRelationshipName": "doenteHistMovimentos",
             "relationshipName": "doente",
-            "otherEntityField": "id",
-            "ownerSide": true
+            "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20191226131816",
+    "changelogDate": "20200111000240",
     "entityTableName": "doente_hist_movimentos",
     "dto": "no",
     "pagination": "no",

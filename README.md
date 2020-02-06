@@ -1,4 +1,4 @@
-# dwin
+# dialwin
 
 This application was generated using JHipster 6.5.1, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.5.1](https://www.jhipster.tech/documentation-archive/v6.5.1).
 
@@ -91,7 +91,7 @@ will generate few files:
 
 ### Packaging as jar
 
-To build the final jar and optimize the dwin application for production, run:
+To build the final jar and optimize the dialwin application for production, run:
 
     ./mvnw -Pprod clean verify
 

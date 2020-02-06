@@ -95,8 +95,8 @@ public class DoenteIdentidadeResource {
 
     @GetMapping("/doente-identidade")
     public DoenteIdentidade getIdentidadeDoente(@RequestParam(required = false, name = "doente") Long doente, @RequestParam(required = false, name = "utente") Integer utente){
-            DoenteIdentidade doenteIdentidade = doenteIdentidadeService.findByDoente(doente,utente);
-            return doenteIdentidade;
+        DoenteIdentidade doenteIdentidade = doenteIdentidadeService.findByDoente(doente,utente);
+        return doenteIdentidade;
     }
 
 

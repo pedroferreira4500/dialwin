@@ -54,7 +54,7 @@
             "relationshipName": "userExtra"
         }
     ],
-    "changelogDate": "20191226131826",
+    "changelogDate": "20200111000250",
     "entityTableName": "user_profile",
     "dto": "no",
     "pagination": "no",

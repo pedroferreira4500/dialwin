@@ -2,15 +2,18 @@ package dw.dw.dw.web.rest;
 
 import dw.dw.dw.domain.DoenteHistMovimentos;
 import dw.dw.dw.repository.DoenteHistMovimentosRepository;
+import dw.dw.dw.service.DoenteContactosService;
+import dw.dw.dw.service.DoenteHistoricoMovimentosService;
 import dw.dw.dw.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional; 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -30,6 +33,9 @@ public class DoenteHistMovimentosResource {
     private final Logger log = LoggerFactory.getLogger(DoenteHistMovimentosResource.class);
 
     private static final String ENTITY_NAME = "doenteHistMovimentos";
+
+    @Autowired
+    private DoenteHistoricoMovimentosService doenteHistoricoMovimentosService;
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
@@ -87,9 +93,8 @@ public class DoenteHistMovimentosResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of doenteHistMovimentos in body.
      */
     @GetMapping("/doente-hist-movimentos")
-    public List<DoenteHistMovimentos> getAllDoenteHistMovimentos() {
-        log.debug("REST request to get all DoenteHistMovimentos");
-        return doenteHistMovimentosRepository.findAll();
+    public List<DoenteHistMovimentos> getAllDoenteHistMovimentos(@RequestParam(required = false, name = "doente") Long doente) {
+        return doenteHistoricoMovimentosService.getDoenteHistMov(doente);
     }
 
     /**

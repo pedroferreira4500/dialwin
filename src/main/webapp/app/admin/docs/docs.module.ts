@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DwinSharedModule } from 'app/shared/shared.module';
+import { DialwinSharedModule } from 'app/shared/shared.module';
 
 import { JhiDocsComponent } from './docs.component';
 
 import { docsRoute } from './docs.route';
 
 @NgModule({
-  imports: [DwinSharedModule, RouterModule.forChild([docsRoute])],
+  imports: [DialwinSharedModule, RouterModule.forChild([docsRoute])],
   declarations: [JhiDocsComponent]
 })
 export class DocsModule {}

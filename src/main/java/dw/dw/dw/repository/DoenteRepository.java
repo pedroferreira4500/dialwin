@@ -15,6 +15,6 @@ import java.util.List;
 @Repository
 public interface DoenteRepository extends JpaRepository<Doente, Long> {
     List<Doente> findAllBySituacao(Situacao situacao);
-    List<Doente> findAllBySituacaoAndTurnos(Situacao situacao, Long turno);
     List<Doente> findAllByTurnosId(Long t);
+
 }

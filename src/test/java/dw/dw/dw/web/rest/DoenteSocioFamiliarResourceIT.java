@@ -1,6 +1,6 @@
 package dw.dw.dw.web.rest;
 
-import dw.dw.dw.DwinApp;
+import dw.dw.dw.DialwinApp;
 import dw.dw.dw.domain.DoenteSocioFamiliar;
 import dw.dw.dw.repository.DoenteSocioFamiliarRepository;
 import dw.dw.dw.web.rest.errors.ExceptionTranslator;
@@ -32,7 +32,7 @@ import dw.dw.dw.domain.enumeration.EstCivil;
 /**
  * Integration tests for the {@link DoenteSocioFamiliarResource} REST controller.
  */
-@SpringBootTest(classes = DwinApp.class)
+@SpringBootTest(classes = DialwinApp.class)
 public class DoenteSocioFamiliarResourceIT {
 
     private static final Habilitacoes DEFAULT_HABILITACOES = Habilitacoes.Iletrado;

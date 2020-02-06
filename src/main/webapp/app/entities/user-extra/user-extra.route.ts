@@ -30,7 +30,7 @@ export const userExtraRoute: Routes = [
     component: UserExtraComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.userExtra.home.title'
+      pageTitle: 'dialwinApp.userExtra.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const userExtraRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.userExtra.home.title'
+      pageTitle: 'dialwinApp.userExtra.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const userExtraRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.userExtra.home.title'
+      pageTitle: 'dialwinApp.userExtra.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const userExtraRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.userExtra.home.title'
+      pageTitle: 'dialwinApp.userExtra.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

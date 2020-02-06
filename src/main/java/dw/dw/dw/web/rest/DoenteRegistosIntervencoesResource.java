@@ -2,15 +2,17 @@ package dw.dw.dw.web.rest;
 
 import dw.dw.dw.domain.DoenteRegistosIntervencoes;
 import dw.dw.dw.repository.DoenteRegistosIntervencoesRepository;
+import dw.dw.dw.service.DoenteRegistosIntervencoesService;
 import dw.dw.dw.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional; 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -28,6 +30,9 @@ import java.util.Optional;
 public class DoenteRegistosIntervencoesResource {
 
     private final Logger log = LoggerFactory.getLogger(DoenteRegistosIntervencoesResource.class);
+
+    @Autowired
+    private DoenteRegistosIntervencoesService doenteRegistosIntervencoesService;
 
     private static final String ENTITY_NAME = "doenteRegistosIntervencoes";
 
@@ -87,9 +92,11 @@ public class DoenteRegistosIntervencoesResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of doenteRegistosIntervencoes in body.
      */
     @GetMapping("/doente-registos-intervencoes")
-    public List<DoenteRegistosIntervencoes> getAllDoenteRegistosIntervencoes() {
-        log.debug("REST request to get all DoenteRegistosIntervencoes");
-        return doenteRegistosIntervencoesRepository.findAll();
+    public List<DoenteRegistosIntervencoes> getAllDoenteRegistosIntervencoes(@RequestParam(required = false, name = "doente") Long doente) {
+        if(doente==null){
+            return doenteRegistosIntervencoesRepository.findAll();
+        }
+        return doenteRegistosIntervencoesService.findByDoente(doente);
     }
 
     /**

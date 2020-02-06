@@ -107,7 +107,7 @@
             "relationshipName": "pais"
         }
     ],
-    "changelogDate": "20191226131807",
+    "changelogDate": "20200111000231",
     "entityTableName": "doente_identidade",
     "dto": "no",
     "pagination": "no",

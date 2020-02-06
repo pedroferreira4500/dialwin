@@ -32,7 +32,7 @@ export const doenteDiagnosticoSocialRoute: Routes = [
     component: DoenteDiagnosticoSocialComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteDiagnosticoSocial.home.title'
+      pageTitle: 'dialwinApp.doenteDiagnosticoSocial.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -44,7 +44,7 @@ export const doenteDiagnosticoSocialRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteDiagnosticoSocial.home.title'
+      pageTitle: 'dialwinApp.doenteDiagnosticoSocial.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -56,7 +56,7 @@ export const doenteDiagnosticoSocialRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteDiagnosticoSocial.home.title'
+      pageTitle: 'dialwinApp.doenteDiagnosticoSocial.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -68,7 +68,7 @@ export const doenteDiagnosticoSocialRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteDiagnosticoSocial.home.title'
+      pageTitle: 'dialwinApp.doenteDiagnosticoSocial.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

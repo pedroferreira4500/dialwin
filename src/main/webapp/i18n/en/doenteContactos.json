@@ -1,5 +1,5 @@
 {
-  "dwinApp": {
+  "dialwinApp": {
     "doenteContactos": {
       "home": {
         "title": "Doente Contactos",
@@ -18,8 +18,7 @@
       },
       "transportador": "Transportador",
       "telefTransp": "Telef Transp",
-      "doente": "Doente",
-      "doenteContactosOutros": "Doente Contactos Outros"
+      "doente": "Doente"
     }
   }
 }

@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.grauConf.home.title">Grau Confs</span>
+        <span jhiTranslate="dialwinApp.grauConf.home.title">Grau Confs</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-grau-conf" [routerLink]="['/grau-conf/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.grauConf.home.createLabel">
+            <span  jhiTranslate="dialwinApp.grauConf.home.createLabel">
             Create a new Grau Conf
             </span>
         </button>
@@ -12,14 +12,14 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="grauConfs?.length === 0">
-        <span jhiTranslate="dwinApp.grauConf.home.notFound">No grauConfs found</span>
+        <span jhiTranslate="dialwinApp.grauConf.home.notFound">No grauConfs found</span>
     </div>
     <div class="table-responsive" *ngIf="grauConfs?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.grauConf.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.grauConf.nome">Nome</span></th>
             <th scope="col"></th>
             </tr>
             </thead>

@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-sub-sis-grupo-heading" jhiTranslate="dwinApp.subSisGrupo.home.createOrEditLabel">Create or edit a Sub Sis Grupo</h2>
+            <h2 id="jhi-sub-sis-grupo-heading" jhiTranslate="dialwinApp.subSisGrupo.home.createOrEditLabel">Create or edit a Sub Sis Grupo</h2>
             <div>
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!editForm.get('id').value">
@@ -10,12 +10,12 @@
                         readonly />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dwinApp.subSisGrupo.gidDesigna" for="field_gidDesigna">Gid Designa</label>
+                    <label class="form-control-label" jhiTranslate="dialwinApp.subSisGrupo.gidDesigna" for="field_gidDesigna">Gid Designa</label>
                     <input type="text" class="form-control" name="gidDesigna" id="field_gidDesigna"
                            formControlName="gidDesigna"/>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dwinApp.subSisGrupo.gidGrupo" for="field_gidGrupo">Gid Grupo</label>
+                    <label class="form-control-label" jhiTranslate="dialwinApp.subSisGrupo.gidGrupo" for="field_gidGrupo">Gid Grupo</label>
                     <input type="text" class="form-control" name="gidGrupo" id="field_gidGrupo"
                            formControlName="gidGrupo"/>
                 </div>

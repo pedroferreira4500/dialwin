@@ -30,7 +30,7 @@ export const centroSaudeRoute: Routes = [
     component: CentroSaudeComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.centroSaude.home.title'
+      pageTitle: 'dialwinApp.centroSaude.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const centroSaudeRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.centroSaude.home.title'
+      pageTitle: 'dialwinApp.centroSaude.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const centroSaudeRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.centroSaude.home.title'
+      pageTitle: 'dialwinApp.centroSaude.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const centroSaudeRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.centroSaude.home.title'
+      pageTitle: 'dialwinApp.centroSaude.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

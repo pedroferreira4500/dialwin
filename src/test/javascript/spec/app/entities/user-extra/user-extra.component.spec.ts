@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { UserExtraComponent } from 'app/entities/user-extra/user-extra.component';
 import { UserExtraService } from 'app/entities/user-extra/user-extra.service';
 import { UserExtra } from 'app/shared/model/user-extra.model';
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [UserExtraComponent],
         providers: []
       })

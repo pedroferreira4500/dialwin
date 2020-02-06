@@ -1,5 +1,5 @@
 {
-  "dwinApp": {
+  "dialwinApp": {
     "doente": {
       "home": {
         "title": "Doentes",
@@ -17,13 +17,14 @@
         "title": "Doente"
       },
       "situacao": "Situacao",
-      "doenteIdentidade": "Doente Identidade",
-      "doenteContactos": "Doente Contactos",
-      "doenteSocioFamiliar": "Doente Socio Familiar",
       "horarioDoente": "Horario Doente",
       "doenteDiagnosticoSocial": "Doente Diagnostico Social",
       "doenteRegistosIntervencoes": "Doente Registos Intervencoes",
       "doenteHistMovimentos": "Doente Hist Movimentos",
+      "doenteContactosOutros": "Doente Contactos Outros",
+      "doenteIdentidade": "Doente Identidade",
+      "doenteContactos": "Doente Contactos",
+      "doenteSocioFamiliar": "Doente Socio Familiar",
       "turnos": "Turnos"
     }
   }

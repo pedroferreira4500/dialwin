@@ -30,7 +30,7 @@ export const doenteSocioFamiliarRoute: Routes = [
     component: DoenteSocioFamiliarComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteSocioFamiliar.home.title'
+      pageTitle: 'dialwinApp.doenteSocioFamiliar.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const doenteSocioFamiliarRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteSocioFamiliar.home.title'
+      pageTitle: 'dialwinApp.doenteSocioFamiliar.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const doenteSocioFamiliarRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteSocioFamiliar.home.title'
+      pageTitle: 'dialwinApp.doenteSocioFamiliar.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const doenteSocioFamiliarRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteSocioFamiliar.home.title'
+      pageTitle: 'dialwinApp.doenteSocioFamiliar.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

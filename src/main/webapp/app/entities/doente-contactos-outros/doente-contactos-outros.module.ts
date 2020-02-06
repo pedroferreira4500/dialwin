@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { DwinSharedModule } from 'app/shared/shared.module';
+import { DialwinSharedModule } from 'app/shared/shared.module';
 import { DoenteContactosOutrosComponent } from './doente-contactos-outros.component';
 import { DoenteContactosOutrosDetailComponent } from './doente-contactos-outros-detail.component';
 import { DoenteContactosOutrosUpdateComponent } from './doente-contactos-outros-update.component';
@@ -9,7 +9,7 @@ import { DoenteContactosOutrosDeleteDialogComponent } from './doente-contactos-o
 import { doenteContactosOutrosRoute } from './doente-contactos-outros.route';
 
 @NgModule({
-  imports: [DwinSharedModule, RouterModule.forChild(doenteContactosOutrosRoute)],
+  imports: [DialwinSharedModule, RouterModule.forChild(doenteContactosOutrosRoute)],
   declarations: [
     DoenteContactosOutrosComponent,
     DoenteContactosOutrosDetailComponent,
@@ -18,4 +18,4 @@ import { doenteContactosOutrosRoute } from './doente-contactos-outros.route';
   ],
   entryComponents: [DoenteContactosOutrosDeleteDialogComponent]
 })
-export class DwinDoenteContactosOutrosModule {}
+export class DialwinDoenteContactosOutrosModule {}

@@ -3,7 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { SubSisGrupoDeleteDialogComponent } from 'app/entities/sub-sis-grupo/sub-sis-grupo-delete-dialog.component';
 import { SubSisGrupoService } from 'app/entities/sub-sis-grupo/sub-sis-grupo.service';
 
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [SubSisGrupoDeleteDialogComponent]
       })
         .overrideTemplate(SubSisGrupoDeleteDialogComponent, '')

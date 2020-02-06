@@ -37,8 +37,8 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:file:./target/h2db/db/dwin;DB_CLOSE_DELAY=-1
-    username: dwin
+    url: jdbc:h2:file:./target/h2db/db/dialwin;DB_CLOSE_DELAY=-1
+    username: dialwin
     password:
     hikari:
       poolName: Hikari
@@ -94,7 +94,7 @@ jhipster:
   security:
     remember-me:
       # security key (this key should be unique for your application, and kept secret)
-      key: 53c36b6561c7e7dec1aa942a28e304f2995bdf885f49513eea6837a5c87e1cfffbbbde298d7057536f60e686d3f376f50b6c
+      key: ad0fe2ab612d4e6810e35905e9c246e75beabd03bf364d54631b7e2de032f548d0ded62059546b095ec9b27bf527201e3168
   mail: # specific JHipster mail property, for standard properties see MailProperties
     base-url: http://127.0.0.1:8080
   metrics:

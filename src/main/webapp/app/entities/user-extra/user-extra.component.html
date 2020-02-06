@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.userExtra.home.title">User Extras</span>
+        <span jhiTranslate="dialwinApp.userExtra.home.title">User Extras</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-user-extra" [routerLink]="['/user-extra/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.userExtra.home.createLabel">
+            <span  jhiTranslate="dialwinApp.userExtra.home.createLabel">
             Create a new User Extra
             </span>
         </button>
@@ -12,23 +12,23 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="userExtras?.length === 0">
-        <span jhiTranslate="dwinApp.userExtra.home.notFound">No userExtras found</span>
+        <span jhiTranslate="dialwinApp.userExtra.home.notFound">No userExtras found</span>
     </div>
     <div class="table-responsive" *ngIf="userExtras?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userExtra.activo">Activo</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userExtra.nome">Nome</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userExtra.morada">Morada</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userExtra.codP">Cod P</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userExtra.telef">Telef</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userExtra.permissChange">Permiss Change</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userExtra.nif">Nif</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userExtra.user">User</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userExtra.userPermissions">User Permissions</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.userExtra.userProfile">User Profile</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.activo">Activo</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.morada">Morada</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.codP">Cod P</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.telef">Telef</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.permissChange">Permiss Change</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.nif">Nif</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.user">User</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.userPermissions">User Permissions</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.userProfile">User Profile</span></th>
             <th scope="col"></th>
             </tr>
             </thead>

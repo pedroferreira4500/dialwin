@@ -39,21 +39,9 @@ export class DoenteDiagnosticoSocialUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ doenteDiagnosticoSocial }) => {
       this.updateForm(doenteDiagnosticoSocial);
     });
-    this.doenteService.query({ filter: 'doentediagnosticosocial-is-null' }).subscribe(
-      (res: HttpResponse<IDoente[]>) => {
-        if (!this.editForm.get('doente').value || !this.editForm.get('doente').value.id) {
-          this.doentes = res.body;
-        } else {
-          this.doenteService
-            .find(this.editForm.get('doente').value.id)
-            .subscribe(
-              (subRes: HttpResponse<IDoente>) => (this.doentes = [subRes.body].concat(res.body)),
-              (subRes: HttpErrorResponse) => this.onError(subRes.message)
-            );
-        }
-      },
-      (res: HttpErrorResponse) => this.onError(res.message)
-    );
+    this.doenteService
+      .query()
+      .subscribe((res: HttpResponse<IDoente[]>) => (this.doentes = res.body), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(doenteDiagnosticoSocial: IDoenteDiagnosticoSocial) {

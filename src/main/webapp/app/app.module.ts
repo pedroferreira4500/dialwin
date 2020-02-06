@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import './vendor';
-import { DwinSharedModule } from 'app/shared/shared.module';
-import { DwinCoreModule } from 'app/core/core.module';
-import { DwinAppRoutingModule } from './app-routing.module';
-import { DwinHomeModule } from './home/home.module';
-import { DwinEntityModule } from './entities/entity.module';
+import { DialwinSharedModule } from 'app/shared/shared.module';
+import { DialwinCoreModule } from 'app/core/core.module';
+import { DialwinAppRoutingModule } from './app-routing.module';
+import { DialwinHomeModule } from './home/home.module';
+import { DialwinEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -18,14 +18,14 @@ import { ErrorComponent } from './layouts/error/error.component';
 @NgModule({
   imports: [
     BrowserModule,
-    DwinSharedModule,
-    DwinCoreModule,
-    DwinHomeModule,
+    DialwinSharedModule,
+    DialwinCoreModule,
+    DialwinHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
-    DwinEntityModule,
-    DwinAppRoutingModule
+    DialwinEntityModule,
+    DialwinAppRoutingModule
   ],
   declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   bootstrap: [JhiMainComponent]
 })
-export class DwinAppModule {}
+export class DialwinAppModule {}

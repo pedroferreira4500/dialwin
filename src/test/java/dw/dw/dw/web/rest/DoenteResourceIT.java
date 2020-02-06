@@ -1,6 +1,6 @@
 package dw.dw.dw.web.rest;
 
-import dw.dw.dw.DwinApp;
+import dw.dw.dw.DialwinApp;
 import dw.dw.dw.domain.Doente;
 import dw.dw.dw.repository.DoenteRepository;
 import dw.dw.dw.web.rest.errors.ExceptionTranslator;
@@ -31,7 +31,7 @@ import dw.dw.dw.domain.enumeration.Situacao;
 /**
  * Integration tests for the {@link DoenteResource} REST controller.
  */
-@SpringBootTest(classes = DwinApp.class)
+@SpringBootTest(classes = DialwinApp.class)
 public class DoenteResourceIT {
 
     private static final Situacao DEFAULT_SITUACAO = Situacao.StatusPRHD;

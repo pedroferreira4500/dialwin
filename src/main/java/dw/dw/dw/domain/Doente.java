@@ -7,6 +7,8 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import dw.dw.dw.domain.enumeration.Situacao;
 
@@ -28,6 +30,26 @@ public class Doente implements Serializable {
     @Column(name = "situacao")
     private Situacao situacao;
 
+    @OneToMany(mappedBy = "doente")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<HorarioDoente> horarioDoentes = new HashSet<>();
+
+    @OneToMany(mappedBy = "doente")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<DoenteDiagnosticoSocial> doenteDiagnosticoSocials = new HashSet<>();
+
+    @OneToMany(mappedBy = "doente")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<DoenteRegistosIntervencoes> doenteRegistosIntervencoes = new HashSet<>();
+
+    @OneToMany(mappedBy = "doente")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<DoenteHistMovimentos> doenteHistMovimentos = new HashSet<>();
+
+    @OneToMany(mappedBy = "doente")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<DoenteContactosOutros> doenteContactosOutros = new HashSet<>();
+
     @OneToOne(mappedBy = "doente")
     @JsonIgnore
     private DoenteIdentidade doenteIdentidade;
@@ -39,22 +61,6 @@ public class Doente implements Serializable {
     @OneToOne(mappedBy = "doente")
     @JsonIgnore
     private DoenteSocioFamiliar doenteSocioFamiliar;
-
-    @OneToOne(mappedBy = "doente")
-    @JsonIgnore
-    private HorarioDoente horarioDoente;
-
-    @OneToOne(mappedBy = "doente")
-    @JsonIgnore
-    private DoenteDiagnosticoSocial doenteDiagnosticoSocial;
-
-    @OneToOne(mappedBy = "doente")
-    @JsonIgnore
-    private DoenteRegistosIntervencoes doenteRegistosIntervencoes;
-
-    @OneToOne(mappedBy = "doente")
-    @JsonIgnore
-    private DoenteHistMovimentos doenteHistMovimentos;
 
     @ManyToOne
     @JsonIgnoreProperties("doentes")
@@ -80,6 +86,131 @@ public class Doente implements Serializable {
 
     public void setSituacao(Situacao situacao) {
         this.situacao = situacao;
+    }
+
+    public Set<HorarioDoente> getHorarioDoentes() {
+        return horarioDoentes;
+    }
+
+    public Doente horarioDoentes(Set<HorarioDoente> horarioDoentes) {
+        this.horarioDoentes = horarioDoentes;
+        return this;
+    }
+
+    public Doente addHorarioDoente(HorarioDoente horarioDoente) {
+        this.horarioDoentes.add(horarioDoente);
+        horarioDoente.setDoente(this);
+        return this;
+    }
+
+    public Doente removeHorarioDoente(HorarioDoente horarioDoente) {
+        this.horarioDoentes.remove(horarioDoente);
+        horarioDoente.setDoente(null);
+        return this;
+    }
+
+    public void setHorarioDoentes(Set<HorarioDoente> horarioDoentes) {
+        this.horarioDoentes = horarioDoentes;
+    }
+
+    public Set<DoenteDiagnosticoSocial> getDoenteDiagnosticoSocials() {
+        return doenteDiagnosticoSocials;
+    }
+
+    public Doente doenteDiagnosticoSocials(Set<DoenteDiagnosticoSocial> doenteDiagnosticoSocials) {
+        this.doenteDiagnosticoSocials = doenteDiagnosticoSocials;
+        return this;
+    }
+
+    public Doente addDoenteDiagnosticoSocial(DoenteDiagnosticoSocial doenteDiagnosticoSocial) {
+        this.doenteDiagnosticoSocials.add(doenteDiagnosticoSocial);
+        doenteDiagnosticoSocial.setDoente(this);
+        return this;
+    }
+
+    public Doente removeDoenteDiagnosticoSocial(DoenteDiagnosticoSocial doenteDiagnosticoSocial) {
+        this.doenteDiagnosticoSocials.remove(doenteDiagnosticoSocial);
+        doenteDiagnosticoSocial.setDoente(null);
+        return this;
+    }
+
+    public void setDoenteDiagnosticoSocials(Set<DoenteDiagnosticoSocial> doenteDiagnosticoSocials) {
+        this.doenteDiagnosticoSocials = doenteDiagnosticoSocials;
+    }
+
+    public Set<DoenteRegistosIntervencoes> getDoenteRegistosIntervencoes() {
+        return doenteRegistosIntervencoes;
+    }
+
+    public Doente doenteRegistosIntervencoes(Set<DoenteRegistosIntervencoes> doenteRegistosIntervencoes) {
+        this.doenteRegistosIntervencoes = doenteRegistosIntervencoes;
+        return this;
+    }
+
+    public Doente addDoenteRegistosIntervencoes(DoenteRegistosIntervencoes doenteRegistosIntervencoes) {
+        this.doenteRegistosIntervencoes.add(doenteRegistosIntervencoes);
+        doenteRegistosIntervencoes.setDoente(this);
+        return this;
+    }
+
+    public Doente removeDoenteRegistosIntervencoes(DoenteRegistosIntervencoes doenteRegistosIntervencoes) {
+        this.doenteRegistosIntervencoes.remove(doenteRegistosIntervencoes);
+        doenteRegistosIntervencoes.setDoente(null);
+        return this;
+    }
+
+    public void setDoenteRegistosIntervencoes(Set<DoenteRegistosIntervencoes> doenteRegistosIntervencoes) {
+        this.doenteRegistosIntervencoes = doenteRegistosIntervencoes;
+    }
+
+    public Set<DoenteHistMovimentos> getDoenteHistMovimentos() {
+        return doenteHistMovimentos;
+    }
+
+    public Doente doenteHistMovimentos(Set<DoenteHistMovimentos> doenteHistMovimentos) {
+        this.doenteHistMovimentos = doenteHistMovimentos;
+        return this;
+    }
+
+    public Doente addDoenteHistMovimentos(DoenteHistMovimentos doenteHistMovimentos) {
+        this.doenteHistMovimentos.add(doenteHistMovimentos);
+        doenteHistMovimentos.setDoente(this);
+        return this;
+    }
+
+    public Doente removeDoenteHistMovimentos(DoenteHistMovimentos doenteHistMovimentos) {
+        this.doenteHistMovimentos.remove(doenteHistMovimentos);
+        doenteHistMovimentos.setDoente(null);
+        return this;
+    }
+
+    public void setDoenteHistMovimentos(Set<DoenteHistMovimentos> doenteHistMovimentos) {
+        this.doenteHistMovimentos = doenteHistMovimentos;
+    }
+
+    public Set<DoenteContactosOutros> getDoenteContactosOutros() {
+        return doenteContactosOutros;
+    }
+
+    public Doente doenteContactosOutros(Set<DoenteContactosOutros> doenteContactosOutros) {
+        this.doenteContactosOutros = doenteContactosOutros;
+        return this;
+    }
+
+    public Doente addDoenteContactosOutros(DoenteContactosOutros doenteContactosOutros) {
+        this.doenteContactosOutros.add(doenteContactosOutros);
+        doenteContactosOutros.setDoente(this);
+        return this;
+    }
+
+    public Doente removeDoenteContactosOutros(DoenteContactosOutros doenteContactosOutros) {
+        this.doenteContactosOutros.remove(doenteContactosOutros);
+        doenteContactosOutros.setDoente(null);
+        return this;
+    }
+
+    public void setDoenteContactosOutros(Set<DoenteContactosOutros> doenteContactosOutros) {
+        this.doenteContactosOutros = doenteContactosOutros;
     }
 
     public DoenteIdentidade getDoenteIdentidade() {
@@ -119,58 +250,6 @@ public class Doente implements Serializable {
 
     public void setDoenteSocioFamiliar(DoenteSocioFamiliar doenteSocioFamiliar) {
         this.doenteSocioFamiliar = doenteSocioFamiliar;
-    }
-
-    public HorarioDoente getHorarioDoente() {
-        return horarioDoente;
-    }
-
-    public Doente horarioDoente(HorarioDoente horarioDoente) {
-        this.horarioDoente = horarioDoente;
-        return this;
-    }
-
-    public void setHorarioDoente(HorarioDoente horarioDoente) {
-        this.horarioDoente = horarioDoente;
-    }
-
-    public DoenteDiagnosticoSocial getDoenteDiagnosticoSocial() {
-        return doenteDiagnosticoSocial;
-    }
-
-    public Doente doenteDiagnosticoSocial(DoenteDiagnosticoSocial doenteDiagnosticoSocial) {
-        this.doenteDiagnosticoSocial = doenteDiagnosticoSocial;
-        return this;
-    }
-
-    public void setDoenteDiagnosticoSocial(DoenteDiagnosticoSocial doenteDiagnosticoSocial) {
-        this.doenteDiagnosticoSocial = doenteDiagnosticoSocial;
-    }
-
-    public DoenteRegistosIntervencoes getDoenteRegistosIntervencoes() {
-        return doenteRegistosIntervencoes;
-    }
-
-    public Doente doenteRegistosIntervencoes(DoenteRegistosIntervencoes doenteRegistosIntervencoes) {
-        this.doenteRegistosIntervencoes = doenteRegistosIntervencoes;
-        return this;
-    }
-
-    public void setDoenteRegistosIntervencoes(DoenteRegistosIntervencoes doenteRegistosIntervencoes) {
-        this.doenteRegistosIntervencoes = doenteRegistosIntervencoes;
-    }
-
-    public DoenteHistMovimentos getDoenteHistMovimentos() {
-        return doenteHistMovimentos;
-    }
-
-    public Doente doenteHistMovimentos(DoenteHistMovimentos doenteHistMovimentos) {
-        this.doenteHistMovimentos = doenteHistMovimentos;
-        return this;
-    }
-
-    public void setDoenteHistMovimentos(DoenteHistMovimentos doenteHistMovimentos) {
-        this.doenteHistMovimentos = doenteHistMovimentos;
     }
 
     public Turnos getTurnos() {

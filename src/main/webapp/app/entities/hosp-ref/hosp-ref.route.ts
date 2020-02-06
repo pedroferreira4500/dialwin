@@ -30,7 +30,7 @@ export const hospRefRoute: Routes = [
     component: HospRefComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.hospRef.home.title'
+      pageTitle: 'dialwinApp.hospRef.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const hospRefRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.hospRef.home.title'
+      pageTitle: 'dialwinApp.hospRef.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const hospRefRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.hospRef.home.title'
+      pageTitle: 'dialwinApp.hospRef.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const hospRefRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.hospRef.home.title'
+      pageTitle: 'dialwinApp.hospRef.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

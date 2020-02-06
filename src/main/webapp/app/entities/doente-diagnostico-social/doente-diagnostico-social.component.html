@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.doenteDiagnosticoSocial.home.title">Doente Diagnostico Socials</span>
+        <span jhiTranslate="dialwinApp.doenteDiagnosticoSocial.home.title">Doente Diagnostico Socials</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-doente-diagnostico-social" [routerLink]="['/doente-diagnostico-social/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.doenteDiagnosticoSocial.home.createLabel">
+            <span  jhiTranslate="dialwinApp.doenteDiagnosticoSocial.home.createLabel">
             Create a new Doente Diagnostico Social
             </span>
         </button>
@@ -12,15 +12,15 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="doenteDiagnosticoSocials?.length === 0">
-        <span jhiTranslate="dwinApp.doenteDiagnosticoSocial.home.notFound">No doenteDiagnosticoSocials found</span>
+        <span jhiTranslate="dialwinApp.doenteDiagnosticoSocial.home.notFound">No doenteDiagnosticoSocials found</span>
     </div>
     <div class="table-responsive" *ngIf="doenteDiagnosticoSocials?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteDiagnosticoSocial.descr">Descr</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteDiagnosticoSocial.doente">Doente</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteDiagnosticoSocial.descr">Descr</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteDiagnosticoSocial.doente">Doente</span></th>
             <th scope="col"></th>
             </tr>
             </thead>

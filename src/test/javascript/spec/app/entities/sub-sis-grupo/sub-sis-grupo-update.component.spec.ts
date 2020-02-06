@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { SubSisGrupoUpdateComponent } from 'app/entities/sub-sis-grupo/sub-sis-grupo-update.component';
 import { SubSisGrupoService } from 'app/entities/sub-sis-grupo/sub-sis-grupo.service';
 import { SubSisGrupo } from 'app/shared/model/sub-sis-grupo.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [SubSisGrupoUpdateComponent],
         providers: [FormBuilder]
       })

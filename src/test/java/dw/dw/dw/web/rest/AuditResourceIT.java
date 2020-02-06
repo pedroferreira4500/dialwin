@@ -1,6 +1,6 @@
 package dw.dw.dw.web.rest;
 
-import dw.dw.dw.DwinApp;
+import dw.dw.dw.DialwinApp;
 import io.github.jhipster.config.JHipsterProperties;
 import dw.dw.dw.config.audit.AuditEventConverter;
 import dw.dw.dw.domain.PersistentAuditEvent;
@@ -31,7 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link AuditResource} REST controller.
  */
-@SpringBootTest(classes = DwinApp.class)
+@SpringBootTest(classes = DialwinApp.class)
 @Transactional
 public class AuditResourceIT {
 

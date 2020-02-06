@@ -39,21 +39,9 @@ export class DoenteRegistosIntervencoesUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ doenteRegistosIntervencoes }) => {
       this.updateForm(doenteRegistosIntervencoes);
     });
-    this.doenteService.query({ filter: 'doenteregistosintervencoes-is-null' }).subscribe(
-      (res: HttpResponse<IDoente[]>) => {
-        if (!this.editForm.get('doente').value || !this.editForm.get('doente').value.id) {
-          this.doentes = res.body;
-        } else {
-          this.doenteService
-            .find(this.editForm.get('doente').value.id)
-            .subscribe(
-              (subRes: HttpResponse<IDoente>) => (this.doentes = [subRes.body].concat(res.body)),
-              (subRes: HttpErrorResponse) => this.onError(subRes.message)
-            );
-        }
-      },
-      (res: HttpErrorResponse) => this.onError(res.message)
-    );
+    this.doenteService
+      .query()
+      .subscribe((res: HttpResponse<IDoente[]>) => (this.doentes = res.body), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(doenteRegistosIntervencoes: IDoenteRegistosIntervencoes) {

@@ -19,7 +19,7 @@
             "otherEntityField": "gidDesigna"
         }
     ],
-    "changelogDate": "20191226131818",
+    "changelogDate": "20200111000242",
     "entityTableName": "sub_sistemas",
     "dto": "no",
     "pagination": "no",

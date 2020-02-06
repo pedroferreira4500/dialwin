@@ -30,7 +30,7 @@ export const aCESRoute: Routes = [
     component: ACESComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.aCES.home.title'
+      pageTitle: 'dialwinApp.aCES.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const aCESRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.aCES.home.title'
+      pageTitle: 'dialwinApp.aCES.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const aCESRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.aCES.home.title'
+      pageTitle: 'dialwinApp.aCES.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const aCESRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.aCES.home.title'
+      pageTitle: 'dialwinApp.aCES.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

@@ -30,7 +30,7 @@ export const doenteHistMovimentosRoute: Routes = [
     component: DoenteHistMovimentosComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteHistMovimentos.home.title'
+      pageTitle: 'dialwinApp.doenteHistMovimentos.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const doenteHistMovimentosRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteHistMovimentos.home.title'
+      pageTitle: 'dialwinApp.doenteHistMovimentos.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const doenteHistMovimentosRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteHistMovimentos.home.title'
+      pageTitle: 'dialwinApp.doenteHistMovimentos.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const doenteHistMovimentosRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.doenteHistMovimentos.home.title'
+      pageTitle: 'dialwinApp.doenteHistMovimentos.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

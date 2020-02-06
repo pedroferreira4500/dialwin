@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { DwinSharedModule } from 'app/shared/shared.module';
+import { DialwinSharedModule } from 'app/shared/shared.module';
 import { UserPermissionsComponent } from './user-permissions.component';
 import { UserPermissionsDetailComponent } from './user-permissions-detail.component';
 import { UserPermissionsUpdateComponent } from './user-permissions-update.component';
@@ -9,7 +9,7 @@ import { UserPermissionsDeleteDialogComponent } from './user-permissions-delete-
 import { userPermissionsRoute } from './user-permissions.route';
 
 @NgModule({
-  imports: [DwinSharedModule, RouterModule.forChild(userPermissionsRoute)],
+  imports: [DialwinSharedModule, RouterModule.forChild(userPermissionsRoute)],
   declarations: [
     UserPermissionsComponent,
     UserPermissionsDetailComponent,
@@ -18,4 +18,4 @@ import { userPermissionsRoute } from './user-permissions.route';
   ],
   entryComponents: [UserPermissionsDeleteDialogComponent]
 })
-export class DwinUserPermissionsModule {}
+export class DialwinUserPermissionsModule {}

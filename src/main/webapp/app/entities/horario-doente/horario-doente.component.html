@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.horarioDoente.home.title">Horario Doentes</span>
+        <span jhiTranslate="dialwinApp.horarioDoente.home.title">Horario Doentes</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-horario-doente" [routerLink]="['/horario-doente/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.horarioDoente.home.createLabel">
+            <span  jhiTranslate="dialwinApp.horarioDoente.home.createLabel">
             Create a new Horario Doente
             </span>
         </button>
@@ -12,19 +12,19 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="horarioDoentes?.length === 0">
-        <span jhiTranslate="dwinApp.horarioDoente.home.notFound">No horarioDoentes found</span>
+        <span jhiTranslate="dialwinApp.horarioDoente.home.notFound">No horarioDoentes found</span>
     </div>
     <div class="table-responsive" *ngIf="horarioDoentes?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.horarioDoente.dia">Dia</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.horarioDoente.turno">Turno</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.horarioDoente.sala">Sala</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.horarioDoente.posto">Posto</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.horarioDoente.duracao">Duracao</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.horarioDoente.doente">Doente</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.horarioDoente.dia">Dia</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.horarioDoente.turno">Turno</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.horarioDoente.sala">Sala</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.horarioDoente.posto">Posto</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.horarioDoente.duracao">Duracao</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.horarioDoente.doente">Doente</span></th>
             <th scope="col"></th>
             </tr>
             </thead>

@@ -1,5 +1,5 @@
 {
-  "dwinApp": {
+  "dialwinApp": {
     "doenteContactosOutros": {
       "home": {
         "title": "Doente Contactos Outros",
@@ -23,7 +23,7 @@
       "ocupacao": "Ocupacao",
       "obs": "Obs",
       "preferencial": "Preferencial",
-      "doenteContactos": "Doente Contactos"
+      "doente": "Doente"
     }
   }
 }

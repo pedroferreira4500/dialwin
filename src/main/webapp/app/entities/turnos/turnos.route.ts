@@ -30,7 +30,7 @@ export const turnosRoute: Routes = [
     component: TurnosComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.turnos.home.title'
+      pageTitle: 'dialwinApp.turnos.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const turnosRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.turnos.home.title'
+      pageTitle: 'dialwinApp.turnos.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const turnosRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.turnos.home.title'
+      pageTitle: 'dialwinApp.turnos.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const turnosRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.turnos.home.title'
+      pageTitle: 'dialwinApp.turnos.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 import { JhiAlertService } from 'ng-jhipster';
 import { IDoenteContactosOutros, DoenteContactosOutros } from 'app/shared/model/doente-contactos-outros.model';
 import { DoenteContactosOutrosService } from './doente-contactos-outros.service';
-import { IDoenteContactos } from 'app/shared/model/doente-contactos.model';
-import { DoenteContactosService } from 'app/entities/doente-contactos/doente-contactos.service';
+import { IDoente } from 'app/shared/model/doente.model';
+import { DoenteService } from 'app/entities/doente/doente.service';
 
 @Component({
   selector: 'jhi-doente-contactos-outros-update',
@@ -18,7 +18,7 @@ import { DoenteContactosService } from 'app/entities/doente-contactos/doente-con
 export class DoenteContactosOutrosUpdateComponent implements OnInit {
   isSaving: boolean;
 
-  doentecontactos: IDoenteContactos[];
+  doentes: IDoente[];
 
   editForm = this.fb.group({
     id: [],
@@ -28,13 +28,14 @@ export class DoenteContactosOutrosUpdateComponent implements OnInit {
     telef: [],
     ocupacao: [],
     obs: [],
-    preferencial: []
+    preferencial: [],
+    doente: []
   });
 
   constructor(
     protected jhiAlertService: JhiAlertService,
     protected doenteContactosOutrosService: DoenteContactosOutrosService,
-    protected doenteContactosService: DoenteContactosService,
+    protected doenteService: DoenteService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -44,12 +45,9 @@ export class DoenteContactosOutrosUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ doenteContactosOutros }) => {
       this.updateForm(doenteContactosOutros);
     });
-    this.doenteContactosService
+    this.doenteService
       .query()
-      .subscribe(
-        (res: HttpResponse<IDoenteContactos[]>) => (this.doentecontactos = res.body),
-        (res: HttpErrorResponse) => this.onError(res.message)
-      );
+      .subscribe((res: HttpResponse<IDoente[]>) => (this.doentes = res.body), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(doenteContactosOutros: IDoenteContactosOutros) {
@@ -61,7 +59,8 @@ export class DoenteContactosOutrosUpdateComponent implements OnInit {
       telef: doenteContactosOutros.telef,
       ocupacao: doenteContactosOutros.ocupacao,
       obs: doenteContactosOutros.obs,
-      preferencial: doenteContactosOutros.preferencial
+      preferencial: doenteContactosOutros.preferencial,
+      doente: doenteContactosOutros.doente
     });
   }
 
@@ -89,7 +88,8 @@ export class DoenteContactosOutrosUpdateComponent implements OnInit {
       telef: this.editForm.get(['telef']).value,
       ocupacao: this.editForm.get(['ocupacao']).value,
       obs: this.editForm.get(['obs']).value,
-      preferencial: this.editForm.get(['preferencial']).value
+      preferencial: this.editForm.get(['preferencial']).value,
+      doente: this.editForm.get(['doente']).value
     };
   }
 
@@ -109,7 +109,7 @@ export class DoenteContactosOutrosUpdateComponent implements OnInit {
     this.jhiAlertService.error(errorMessage, null, null);
   }
 
-  trackDoenteContactosById(index: number, item: IDoenteContactos) {
+  trackDoenteById(index: number, item: IDoente) {
     return item.id;
   }
 }

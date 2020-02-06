@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { DwinSharedModule } from 'app/shared/shared.module';
+import { DialwinSharedModule } from 'app/shared/shared.module';
 import { DoenteDiagnosticoSocialComponent } from './doente-diagnostico-social.component';
 import { DoenteDiagnosticoSocialDetailComponent } from './doente-diagnostico-social-detail.component';
 import { DoenteDiagnosticoSocialUpdateComponent } from './doente-diagnostico-social-update.component';
@@ -9,7 +9,7 @@ import { DoenteDiagnosticoSocialDeleteDialogComponent } from './doente-diagnosti
 import { doenteDiagnosticoSocialRoute } from './doente-diagnostico-social.route';
 
 @NgModule({
-  imports: [DwinSharedModule, RouterModule.forChild(doenteDiagnosticoSocialRoute)],
+  imports: [DialwinSharedModule, RouterModule.forChild(doenteDiagnosticoSocialRoute)],
   declarations: [
     DoenteDiagnosticoSocialComponent,
     DoenteDiagnosticoSocialDetailComponent,
@@ -18,4 +18,4 @@ import { doenteDiagnosticoSocialRoute } from './doente-diagnostico-social.route'
   ],
   entryComponents: [DoenteDiagnosticoSocialDeleteDialogComponent]
 })
-export class DwinDoenteDiagnosticoSocialModule {}
+export class DialwinDoenteDiagnosticoSocialModule {}

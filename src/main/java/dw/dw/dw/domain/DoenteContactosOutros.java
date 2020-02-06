@@ -1,5 +1,5 @@
 package dw.dw.dw.domain;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -42,9 +42,9 @@ public class DoenteContactosOutros implements Serializable {
     @Column(name = "preferencial")
     private Boolean preferencial;
 
-    @OneToOne(mappedBy = "doenteContactosOutros")
-    @JsonIgnore
-    private DoenteContactos doenteContactos;
+    @ManyToOne
+    @JsonIgnoreProperties("doenteContactosOutros")
+    private Doente doente;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -146,17 +146,17 @@ public class DoenteContactosOutros implements Serializable {
         this.preferencial = preferencial;
     }
 
-    public DoenteContactos getDoenteContactos() {
-        return doenteContactos;
+    public Doente getDoente() {
+        return doente;
     }
 
-    public DoenteContactosOutros doenteContactos(DoenteContactos doenteContactos) {
-        this.doenteContactos = doenteContactos;
+    public DoenteContactosOutros doente(Doente doente) {
+        this.doente = doente;
         return this;
     }
 
-    public void setDoenteContactos(DoenteContactos doenteContactos) {
-        this.doenteContactos = doenteContactos;
+    public void setDoente(Doente doente) {
+        this.doente = doente;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

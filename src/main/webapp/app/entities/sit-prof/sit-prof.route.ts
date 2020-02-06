@@ -30,7 +30,7 @@ export const sitProfRoute: Routes = [
     component: SitProfComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.sitProf.home.title'
+      pageTitle: 'dialwinApp.sitProf.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const sitProfRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.sitProf.home.title'
+      pageTitle: 'dialwinApp.sitProf.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const sitProfRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.sitProf.home.title'
+      pageTitle: 'dialwinApp.sitProf.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const sitProfRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.sitProf.home.title'
+      pageTitle: 'dialwinApp.sitProf.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

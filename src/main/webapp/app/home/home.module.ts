@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { DwinSharedModule } from 'app/shared/shared.module';
+import { DialwinSharedModule } from 'app/shared/shared.module';
 import { HOME_ROUTE } from './home.route';
 import { HomeComponent } from './home.component';
 
 @NgModule({
-  imports: [DwinSharedModule, RouterModule.forChild([HOME_ROUTE])],
+  imports: [DialwinSharedModule, RouterModule.forChild([HOME_ROUTE])],
   declarations: [HomeComponent]
 })
-export class DwinHomeModule {}
+export class DialwinHomeModule {}

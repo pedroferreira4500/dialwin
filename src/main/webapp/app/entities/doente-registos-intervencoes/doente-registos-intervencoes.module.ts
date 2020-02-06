@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { DwinSharedModule } from 'app/shared/shared.module';
+import { DialwinSharedModule } from 'app/shared/shared.module';
 import { DoenteRegistosIntervencoesComponent } from './doente-registos-intervencoes.component';
 import { DoenteRegistosIntervencoesDetailComponent } from './doente-registos-intervencoes-detail.component';
 import { DoenteRegistosIntervencoesUpdateComponent } from './doente-registos-intervencoes-update.component';
@@ -9,7 +9,7 @@ import { DoenteRegistosIntervencoesDeleteDialogComponent } from './doente-regist
 import { doenteRegistosIntervencoesRoute } from './doente-registos-intervencoes.route';
 
 @NgModule({
-  imports: [DwinSharedModule, RouterModule.forChild(doenteRegistosIntervencoesRoute)],
+  imports: [DialwinSharedModule, RouterModule.forChild(doenteRegistosIntervencoesRoute)],
   declarations: [
     DoenteRegistosIntervencoesComponent,
     DoenteRegistosIntervencoesDetailComponent,
@@ -18,4 +18,4 @@ import { doenteRegistosIntervencoesRoute } from './doente-registos-intervencoes.
   ],
   entryComponents: [DoenteRegistosIntervencoesDeleteDialogComponent]
 })
-export class DwinDoenteRegistosIntervencoesModule {}
+export class DialwinDoenteRegistosIntervencoesModule {}

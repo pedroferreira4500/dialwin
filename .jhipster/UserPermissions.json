@@ -51,7 +51,7 @@
             "ownerSide": false
         }
     ],
-    "changelogDate": "20191226131827",
+    "changelogDate": "20200111000251",
     "entityTableName": "user_permissions",
     "dto": "no",
     "pagination": "no",

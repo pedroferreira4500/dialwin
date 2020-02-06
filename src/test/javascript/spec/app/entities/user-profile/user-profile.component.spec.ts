@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { UserProfileComponent } from 'app/entities/user-profile/user-profile.component';
 import { UserProfileService } from 'app/entities/user-profile/user-profile.service';
 import { UserProfile } from 'app/shared/model/user-profile.model';
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [UserProfileComponent],
         providers: []
       })

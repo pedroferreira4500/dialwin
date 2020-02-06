@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.subSistemas.home.title">Sub Sistemas</span>
+        <span jhiTranslate="dialwinApp.subSistemas.home.title">Sub Sistemas</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-sub-sistemas" [routerLink]="['/sub-sistemas/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.subSistemas.home.createLabel">
+            <span  jhiTranslate="dialwinApp.subSistemas.home.createLabel">
             Create a new Sub Sistemas
             </span>
         </button>
@@ -12,16 +12,16 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="subSistemas?.length === 0">
-        <span jhiTranslate="dwinApp.subSistemas.home.notFound">No subSistemas found</span>
+        <span jhiTranslate="dialwinApp.subSistemas.home.notFound">No subSistemas found</span>
     </div>
     <div class="table-responsive" *ngIf="subSistemas?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.subSistemas.gidNome">Gid Nome</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.subSistemas.gidCode">Gid Code</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.subSistemas.subSisGrupo">Sub Sis Grupo</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.subSistemas.gidNome">Gid Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.subSistemas.gidCode">Gid Code</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.subSistemas.subSisGrupo">Sub Sis Grupo</span></th>
             <th scope="col"></th>
             </tr>
             </thead>

@@ -1,2 +1,0 @@
-DoenteContactosOutros - apagar relação com DoenteContactos
-		      - criar relação com Doente

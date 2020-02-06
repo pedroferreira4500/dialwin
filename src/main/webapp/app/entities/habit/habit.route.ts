@@ -30,7 +30,7 @@ export const habitRoute: Routes = [
     component: HabitComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.habit.home.title'
+      pageTitle: 'dialwinApp.habit.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const habitRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.habit.home.title'
+      pageTitle: 'dialwinApp.habit.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const habitRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.habit.home.title'
+      pageTitle: 'dialwinApp.habit.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const habitRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.habit.home.title'
+      pageTitle: 'dialwinApp.habit.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

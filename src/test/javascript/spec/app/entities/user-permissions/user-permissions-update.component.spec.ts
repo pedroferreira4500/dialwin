@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { UserPermissionsUpdateComponent } from 'app/entities/user-permissions/user-permissions-update.component';
 import { UserPermissionsService } from 'app/entities/user-permissions/user-permissions.service';
 import { UserPermissions } from 'app/shared/model/user-permissions.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [UserPermissionsUpdateComponent],
         providers: [FormBuilder]
       })

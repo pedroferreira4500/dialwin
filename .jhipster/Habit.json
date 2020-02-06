@@ -14,7 +14,7 @@
             "relationshipName": "doenteSocioFamiliar"
         }
     ],
-    "changelogDate": "20191226131823",
+    "changelogDate": "20200111000247",
     "entityTableName": "habit",
     "dto": "no",
     "pagination": "no",

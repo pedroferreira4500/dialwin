@@ -9,6 +9,36 @@
     ],
     "relationships": [
         {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "horarioDoente",
+            "otherEntityRelationshipName": "doente",
+            "relationshipName": "horarioDoente"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "doenteDiagnosticoSocial",
+            "otherEntityRelationshipName": "doente",
+            "relationshipName": "doenteDiagnosticoSocial"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "doenteRegistosIntervencoes",
+            "otherEntityRelationshipName": "doente",
+            "relationshipName": "doenteRegistosIntervencoes"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "doenteHistMovimentos",
+            "otherEntityRelationshipName": "doente",
+            "relationshipName": "doenteHistMovimentos"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "doenteContactosOutros",
+            "otherEntityRelationshipName": "doente",
+            "relationshipName": "doenteContactosOutros"
+        },
+        {
             "relationshipType": "one-to-one",
             "otherEntityName": "doenteIdentidade",
             "otherEntityRelationshipName": "doente",
@@ -30,34 +60,6 @@
             "ownerSide": false
         },
         {
-            "relationshipType": "one-to-one",
-            "otherEntityName": "horarioDoente",
-            "otherEntityRelationshipName": "doente",
-            "relationshipName": "horarioDoente",
-            "ownerSide": false
-        },
-        {
-            "relationshipType": "one-to-one",
-            "otherEntityName": "doenteDiagnosticoSocial",
-            "otherEntityRelationshipName": "doente",
-            "relationshipName": "doenteDiagnosticoSocial",
-            "ownerSide": false
-        },
-        {
-            "relationshipType": "one-to-one",
-            "otherEntityName": "doenteRegistosIntervencoes",
-            "otherEntityRelationshipName": "doente",
-            "relationshipName": "doenteRegistosIntervencoes",
-            "ownerSide": false
-        },
-        {
-            "relationshipType": "one-to-one",
-            "otherEntityName": "doenteHistMovimentos",
-            "otherEntityRelationshipName": "doente",
-            "relationshipName": "doenteHistMovimentos",
-            "ownerSide": false
-        },
-        {
             "relationshipType": "many-to-one",
             "otherEntityName": "turnos",
             "otherEntityRelationshipName": "doente",
@@ -65,7 +67,7 @@
             "otherEntityField": "nome"
         }
     ],
-    "changelogDate": "20191226131806",
+    "changelogDate": "20200111000230",
     "entityTableName": "doente",
     "dto": "no",
     "pagination": "no",

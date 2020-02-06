@@ -14,7 +14,7 @@
             "relationshipName": "doenteSocioFamiliar"
         }
     ],
-    "changelogDate": "20191226131811",
+    "changelogDate": "20200111000235",
     "entityTableName": "sit_prof",
     "dto": "no",
     "pagination": "no",

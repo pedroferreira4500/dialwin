@@ -30,7 +30,7 @@ export const grauConfRoute: Routes = [
     component: GrauConfComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.grauConf.home.title'
+      pageTitle: 'dialwinApp.grauConf.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const grauConfRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.grauConf.home.title'
+      pageTitle: 'dialwinApp.grauConf.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const grauConfRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.grauConf.home.title'
+      pageTitle: 'dialwinApp.grauConf.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const grauConfRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.grauConf.home.title'
+      pageTitle: 'dialwinApp.grauConf.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

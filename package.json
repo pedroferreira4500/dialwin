@@ -1,7 +1,7 @@
 {
-  "name": "dwin",
+  "name": "dialwin",
   "version": "0.0.1-SNAPSHOT",
-  "description": "Description for dwin",
+  "description": "Description for dialwin",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

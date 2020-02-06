@@ -14,7 +14,7 @@
             "relationshipName": "doenteSocioFamiliar"
         }
     ],
-    "changelogDate": "20191226131824",
+    "changelogDate": "20200111000248",
     "entityTableName": "grau_conf",
     "dto": "no",
     "pagination": "no",

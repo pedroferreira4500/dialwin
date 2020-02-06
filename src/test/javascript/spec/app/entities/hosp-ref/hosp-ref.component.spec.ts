@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { HospRefComponent } from 'app/entities/hosp-ref/hosp-ref.component';
 import { HospRefService } from 'app/entities/hosp-ref/hosp-ref.service';
 import { HospRef } from 'app/shared/model/hosp-ref.model';
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [HospRefComponent],
         providers: []
       })

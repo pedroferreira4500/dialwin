@@ -8,15 +8,14 @@
     ],
     "relationships": [
         {
-            "relationshipType": "one-to-one",
+            "relationshipType": "many-to-one",
             "otherEntityName": "doente",
             "otherEntityRelationshipName": "doenteRegistosIntervencoes",
             "relationshipName": "doente",
-            "otherEntityField": "id",
-            "ownerSide": true
+            "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20191226131815",
+    "changelogDate": "20200111000239",
     "entityTableName": "doente_registos_intervencoes",
     "dto": "no",
     "pagination": "no",

@@ -15,10 +15,10 @@
 
 spring:
   application:
-    name: dwin
+    name: dialwin
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:dwin;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:dialwin;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     name:
     username:
     password:
@@ -55,13 +55,13 @@ spring:
       enabled: false
   task:
     execution:
-      thread-name-prefix: dwin-task-
+      thread-name-prefix: dialwin-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: dwin-scheduling-
+      thread-name-prefix: dialwin-scheduling-
       pool:
         size: 1
   thymeleaf:
@@ -79,7 +79,7 @@ server:
 
 jhipster:
   clientApp:
-    name: 'dwinApp'
+    name: 'dialwinApp'
   logging:
     # To test json console appender
     use-json-format: true # By default, logs are in Json format
@@ -94,7 +94,7 @@ jhipster:
   security:
     remember-me:
       # security key (this key should be unique for your application, and kept secret)
-      key: 53c36b6561c7e7dec1aa942a28e304f2995bdf885f49513eea6837a5c87e1cfffbbbde298d7057536f60e686d3f376f50b6c
+      key: ad0fe2ab612d4e6810e35905e9c246e75beabd03bf364d54631b7e2de032f548d0ded62059546b095ec9b27bf527201e3168
   metrics:
     logs: # Reports metrics in the logs
       enabled: true

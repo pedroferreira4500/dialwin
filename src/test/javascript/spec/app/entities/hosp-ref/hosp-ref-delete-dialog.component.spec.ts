@@ -3,7 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { HospRefDeleteDialogComponent } from 'app/entities/hosp-ref/hosp-ref-delete-dialog.component';
 import { HospRefService } from 'app/entities/hosp-ref/hosp-ref.service';
 
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [HospRefDeleteDialogComponent]
       })
         .overrideTemplate(HospRefDeleteDialogComponent, '')

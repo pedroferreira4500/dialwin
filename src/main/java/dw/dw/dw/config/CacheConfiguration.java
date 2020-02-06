@@ -48,6 +48,11 @@ public class CacheConfiguration {
             createCache(cm, dw.dw.dw.domain.ACES.class.getName());
             createCache(cm, dw.dw.dw.domain.ACES.class.getName() + ".doenteIdentidades");
             createCache(cm, dw.dw.dw.domain.Doente.class.getName());
+            createCache(cm, dw.dw.dw.domain.Doente.class.getName() + ".horarioDoentes");
+            createCache(cm, dw.dw.dw.domain.Doente.class.getName() + ".doenteDiagnosticoSocials");
+            createCache(cm, dw.dw.dw.domain.Doente.class.getName() + ".doenteRegistosIntervencoes");
+            createCache(cm, dw.dw.dw.domain.Doente.class.getName() + ".doenteHistMovimentos");
+            createCache(cm, dw.dw.dw.domain.Doente.class.getName() + ".doenteContactosOutros");
             createCache(cm, dw.dw.dw.domain.DoenteIdentidade.class.getName());
             createCache(cm, dw.dw.dw.domain.DoenteIdentidade.class.getName() + ".pais");
             createCache(cm, dw.dw.dw.domain.Pais.class.getName());

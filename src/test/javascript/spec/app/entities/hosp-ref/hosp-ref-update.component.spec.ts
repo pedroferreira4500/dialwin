@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { HospRefUpdateComponent } from 'app/entities/hosp-ref/hosp-ref-update.component';
 import { HospRefService } from 'app/entities/hosp-ref/hosp-ref.service';
 import { HospRef } from 'app/shared/model/hosp-ref.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [HospRefUpdateComponent],
         providers: [FormBuilder]
       })

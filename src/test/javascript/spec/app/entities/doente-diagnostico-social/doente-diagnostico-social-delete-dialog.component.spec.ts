@@ -3,7 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { DoenteDiagnosticoSocialDeleteDialogComponent } from 'app/entities/doente-diagnostico-social/doente-diagnostico-social-delete-dialog.component';
 import { DoenteDiagnosticoSocialService } from 'app/entities/doente-diagnostico-social/doente-diagnostico-social.service';
 
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [DoenteDiagnosticoSocialDeleteDialogComponent]
       })
         .overrideTemplate(DoenteDiagnosticoSocialDeleteDialogComponent, '')

@@ -17,7 +17,7 @@
             "otherEntityRelationshipName": "pais"
         }
     ],
-    "changelogDate": "20191226131808",
+    "changelogDate": "20200111000232",
     "entityTableName": "pais",
     "dto": "no",
     "pagination": "no",

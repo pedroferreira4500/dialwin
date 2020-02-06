@@ -1,28 +1,22 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="doenteContactos">
-            <h2><span jhiTranslate="dwinApp.doenteContactos.detail.title">Doente Contactos</span> {{doenteContactos.id}}</h2>
+            <h2><span jhiTranslate="dialwinApp.doenteContactos.detail.title">Doente Contactos</span> {{doenteContactos.id}}</h2>
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="dwinApp.doenteContactos.transportador">Transportador</span></dt>
+                <dt><span jhiTranslate="dialwinApp.doenteContactos.transportador">Transportador</span></dt>
                 <dd>
                     <span>{{doenteContactos.transportador}}</span>
                 </dd>
-                <dt><span jhiTranslate="dwinApp.doenteContactos.telefTransp">Telef Transp</span></dt>
+                <dt><span jhiTranslate="dialwinApp.doenteContactos.telefTransp">Telef Transp</span></dt>
                 <dd>
                     <span>{{doenteContactos.telefTransp}}</span>
                 </dd>
-                <dt><span jhiTranslate="dwinApp.doenteContactos.doente">Doente</span></dt>
+                <dt><span jhiTranslate="dialwinApp.doenteContactos.doente">Doente</span></dt>
                 <dd>
                     <div *ngIf="doenteContactos.doente">
                         <a [routerLink]="['/doente', doenteContactos.doente?.id, 'view']">{{doenteContactos.doente?.id}}</a>
-                    </div>
-                </dd>
-                <dt><span jhiTranslate="dwinApp.doenteContactos.doenteContactosOutros">Doente Contactos Outros</span></dt>
-                <dd>
-                    <div *ngIf="doenteContactos.doenteContactosOutros">
-                        <a [routerLink]="['/doente-contactos-outros', doenteContactos.doenteContactosOutros?.id, 'view']">{{doenteContactos.doenteContactosOutros?.id}}</a>
                     </div>
                 </dd>
             </dl>

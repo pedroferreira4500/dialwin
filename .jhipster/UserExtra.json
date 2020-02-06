@@ -55,7 +55,7 @@
             "otherEntityField": "nome"
         }
     ],
-    "changelogDate": "20191226131825",
+    "changelogDate": "20200111000249",
     "entityTableName": "user_extra",
     "dto": "no",
     "pagination": "no",

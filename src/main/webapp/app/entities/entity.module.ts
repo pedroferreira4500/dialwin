@@ -6,104 +6,105 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild([
       {
         path: 'vitalidade',
-        loadChildren: () => import('./vitalidade/vitalidade.module').then(m => m.DwinVitalidadeModule)
+        loadChildren: () => import('./vitalidade/vitalidade.module').then(m => m.DialwinVitalidadeModule)
       },
       {
         path: 'aces',
-        loadChildren: () => import('./aces/aces.module').then(m => m.DwinACESModule)
+        loadChildren: () => import('./aces/aces.module').then(m => m.DialwinACESModule)
       },
       {
         path: 'doente',
-        loadChildren: () => import('./doente/doente.module').then(m => m.DwinDoenteModule)
+        loadChildren: () => import('./doente/doente.module').then(m => m.DialwinDoenteModule)
       },
       {
         path: 'doente-identidade',
-        loadChildren: () => import('./doente-identidade/doente-identidade.module').then(m => m.DwinDoenteIdentidadeModule)
+        loadChildren: () => import('./doente-identidade/doente-identidade.module').then(m => m.DialwinDoenteIdentidadeModule)
       },
       {
         path: 'pais',
-        loadChildren: () => import('./pais/pais.module').then(m => m.DwinPaisModule)
+        loadChildren: () => import('./pais/pais.module').then(m => m.DialwinPaisModule)
       },
       {
         path: 'doente-contactos',
-        loadChildren: () => import('./doente-contactos/doente-contactos.module').then(m => m.DwinDoenteContactosModule)
+        loadChildren: () => import('./doente-contactos/doente-contactos.module').then(m => m.DialwinDoenteContactosModule)
       },
       {
         path: 'doente-contactos-outros',
-        loadChildren: () => import('./doente-contactos-outros/doente-contactos-outros.module').then(m => m.DwinDoenteContactosOutrosModule)
+        loadChildren: () =>
+          import('./doente-contactos-outros/doente-contactos-outros.module').then(m => m.DialwinDoenteContactosOutrosModule)
       },
       {
         path: 'sit-prof',
-        loadChildren: () => import('./sit-prof/sit-prof.module').then(m => m.DwinSitProfModule)
+        loadChildren: () => import('./sit-prof/sit-prof.module').then(m => m.DialwinSitProfModule)
       },
       {
         path: 'profissao',
-        loadChildren: () => import('./profissao/profissao.module').then(m => m.DwinProfissaoModule)
+        loadChildren: () => import('./profissao/profissao.module').then(m => m.DialwinProfissaoModule)
       },
       {
         path: 'doente-socio-familiar',
-        loadChildren: () => import('./doente-socio-familiar/doente-socio-familiar.module').then(m => m.DwinDoenteSocioFamiliarModule)
+        loadChildren: () => import('./doente-socio-familiar/doente-socio-familiar.module').then(m => m.DialwinDoenteSocioFamiliarModule)
       },
       {
         path: 'doente-diagnostico-social',
         loadChildren: () =>
-          import('./doente-diagnostico-social/doente-diagnostico-social.module').then(m => m.DwinDoenteDiagnosticoSocialModule)
+          import('./doente-diagnostico-social/doente-diagnostico-social.module').then(m => m.DialwinDoenteDiagnosticoSocialModule)
       },
       {
         path: 'doente-registos-intervencoes',
         loadChildren: () =>
-          import('./doente-registos-intervencoes/doente-registos-intervencoes.module').then(m => m.DwinDoenteRegistosIntervencoesModule)
+          import('./doente-registos-intervencoes/doente-registos-intervencoes.module').then(m => m.DialwinDoenteRegistosIntervencoesModule)
       },
       {
         path: 'doente-hist-movimentos',
-        loadChildren: () => import('./doente-hist-movimentos/doente-hist-movimentos.module').then(m => m.DwinDoenteHistMovimentosModule)
+        loadChildren: () => import('./doente-hist-movimentos/doente-hist-movimentos.module').then(m => m.DialwinDoenteHistMovimentosModule)
       },
       {
         path: 'horario-doente',
-        loadChildren: () => import('./horario-doente/horario-doente.module').then(m => m.DwinHorarioDoenteModule)
+        loadChildren: () => import('./horario-doente/horario-doente.module').then(m => m.DialwinHorarioDoenteModule)
       },
       {
         path: 'sub-sistemas',
-        loadChildren: () => import('./sub-sistemas/sub-sistemas.module').then(m => m.DwinSubSistemasModule)
+        loadChildren: () => import('./sub-sistemas/sub-sistemas.module').then(m => m.DialwinSubSistemasModule)
       },
       {
         path: 'sub-sis-grupo',
-        loadChildren: () => import('./sub-sis-grupo/sub-sis-grupo.module').then(m => m.DwinSubSisGrupoModule)
+        loadChildren: () => import('./sub-sis-grupo/sub-sis-grupo.module').then(m => m.DialwinSubSisGrupoModule)
       },
       {
         path: 'turnos',
-        loadChildren: () => import('./turnos/turnos.module').then(m => m.DwinTurnosModule)
+        loadChildren: () => import('./turnos/turnos.module').then(m => m.DialwinTurnosModule)
       },
       {
         path: 'centro-saude',
-        loadChildren: () => import('./centro-saude/centro-saude.module').then(m => m.DwinCentroSaudeModule)
+        loadChildren: () => import('./centro-saude/centro-saude.module').then(m => m.DialwinCentroSaudeModule)
       },
       {
         path: 'hosp-ref',
-        loadChildren: () => import('./hosp-ref/hosp-ref.module').then(m => m.DwinHospRefModule)
+        loadChildren: () => import('./hosp-ref/hosp-ref.module').then(m => m.DialwinHospRefModule)
       },
       {
         path: 'habit',
-        loadChildren: () => import('./habit/habit.module').then(m => m.DwinHabitModule)
+        loadChildren: () => import('./habit/habit.module').then(m => m.DialwinHabitModule)
       },
       {
         path: 'grau-conf',
-        loadChildren: () => import('./grau-conf/grau-conf.module').then(m => m.DwinGrauConfModule)
+        loadChildren: () => import('./grau-conf/grau-conf.module').then(m => m.DialwinGrauConfModule)
       },
       {
         path: 'user-extra',
-        loadChildren: () => import('./user-extra/user-extra.module').then(m => m.DwinUserExtraModule)
+        loadChildren: () => import('./user-extra/user-extra.module').then(m => m.DialwinUserExtraModule)
       },
       {
         path: 'user-profile',
-        loadChildren: () => import('./user-profile/user-profile.module').then(m => m.DwinUserProfileModule)
+        loadChildren: () => import('./user-profile/user-profile.module').then(m => m.DialwinUserProfileModule)
       },
       {
         path: 'user-permissions',
-        loadChildren: () => import('./user-permissions/user-permissions.module').then(m => m.DwinUserPermissionsModule)
+        loadChildren: () => import('./user-permissions/user-permissions.module').then(m => m.DialwinUserPermissionsModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])
   ]
 })
-export class DwinEntityModule {}
+export class DialwinEntityModule {}

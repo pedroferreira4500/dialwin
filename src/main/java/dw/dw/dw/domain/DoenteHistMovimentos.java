@@ -1,4 +1,5 @@
 package dw.dw.dw.domain;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -30,8 +31,8 @@ public class DoenteHistMovimentos implements Serializable {
     @Column(name = "obs")
     private String obs;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
+    @JsonIgnoreProperties("doenteHistMovimentos")
     private Doente doente;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

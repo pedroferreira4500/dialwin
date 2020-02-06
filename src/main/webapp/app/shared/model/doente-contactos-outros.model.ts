@@ -1,4 +1,4 @@
-import { IDoenteContactos } from 'app/shared/model/doente-contactos.model';
+import { IDoente } from 'app/shared/model/doente.model';
 
 export interface IDoenteContactosOutros {
   id?: number;
@@ -9,7 +9,7 @@ export interface IDoenteContactosOutros {
   ocupacao?: string;
   obs?: string;
   preferencial?: boolean;
-  doenteContactos?: IDoenteContactos;
+  doente?: IDoente;
 }
 
 export class DoenteContactosOutros implements IDoenteContactosOutros {
@@ -22,7 +22,7 @@ export class DoenteContactosOutros implements IDoenteContactosOutros {
     public ocupacao?: string,
     public obs?: string,
     public preferencial?: boolean,
-    public doenteContactos?: IDoenteContactos
+    public doente?: IDoente
   ) {
     this.coabita = this.coabita || false;
     this.preferencial = this.preferencial || false;

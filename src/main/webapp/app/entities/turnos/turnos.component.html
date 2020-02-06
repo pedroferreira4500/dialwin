@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.turnos.home.title">Turnos</span>
+        <span jhiTranslate="dialwinApp.turnos.home.title">Turnos</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-turnos" [routerLink]="['/turnos/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.turnos.home.createLabel">
+            <span  jhiTranslate="dialwinApp.turnos.home.createLabel">
             Create a new Turnos
             </span>
         </button>
@@ -12,14 +12,14 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="turnos?.length === 0">
-        <span jhiTranslate="dwinApp.turnos.home.notFound">No turnos found</span>
+        <span jhiTranslate="dialwinApp.turnos.home.notFound">No turnos found</span>
     </div>
     <div class="table-responsive" *ngIf="turnos?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.turnos.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.turnos.nome">Nome</span></th>
             <th scope="col"></th>
             </tr>
             </thead>

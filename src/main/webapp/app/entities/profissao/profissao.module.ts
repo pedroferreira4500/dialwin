@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { DwinSharedModule } from 'app/shared/shared.module';
+import { DialwinSharedModule } from 'app/shared/shared.module';
 import { ProfissaoComponent } from './profissao.component';
 import { ProfissaoDetailComponent } from './profissao-detail.component';
 import { ProfissaoUpdateComponent } from './profissao-update.component';
@@ -9,8 +9,8 @@ import { ProfissaoDeleteDialogComponent } from './profissao-delete-dialog.compon
 import { profissaoRoute } from './profissao.route';
 
 @NgModule({
-  imports: [DwinSharedModule, RouterModule.forChild(profissaoRoute)],
+  imports: [DialwinSharedModule, RouterModule.forChild(profissaoRoute)],
   declarations: [ProfissaoComponent, ProfissaoDetailComponent, ProfissaoUpdateComponent, ProfissaoDeleteDialogComponent],
   entryComponents: [ProfissaoDeleteDialogComponent]
 })
-export class DwinProfissaoModule {}
+export class DialwinProfissaoModule {}

@@ -2,7 +2,7 @@ package dw.dw.dw.service;
 
 import dw.dw.dw.domain.PersistentAuditEvent;
 import dw.dw.dw.repository.PersistenceAuditEventRepository;
-import dw.dw.dw.DwinApp;
+import dw.dw.dw.DialwinApp;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for {@link AuditEventService}.
  */
-@SpringBootTest(classes = DwinApp.class)
+@SpringBootTest(classes = DialwinApp.class)
 @Transactional
 public class AuditEventServiceIT {
     @Autowired

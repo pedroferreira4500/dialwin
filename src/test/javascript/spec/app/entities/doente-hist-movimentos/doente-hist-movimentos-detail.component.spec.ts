@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { DoenteHistMovimentosDetailComponent } from 'app/entities/doente-hist-movimentos/doente-hist-movimentos-detail.component';
 import { DoenteHistMovimentos } from 'app/shared/model/doente-hist-movimentos.model';
 
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [DoenteHistMovimentosDetailComponent],
         providers: [{ provide: ActivatedRoute, useValue: route }]
       })

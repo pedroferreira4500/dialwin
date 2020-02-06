@@ -30,7 +30,7 @@ export const subSistemasRoute: Routes = [
     component: SubSistemasComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.subSistemas.home.title'
+      pageTitle: 'dialwinApp.subSistemas.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const subSistemasRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.subSistemas.home.title'
+      pageTitle: 'dialwinApp.subSistemas.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const subSistemasRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.subSistemas.home.title'
+      pageTitle: 'dialwinApp.subSistemas.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const subSistemasRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.subSistemas.home.title'
+      pageTitle: 'dialwinApp.subSistemas.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

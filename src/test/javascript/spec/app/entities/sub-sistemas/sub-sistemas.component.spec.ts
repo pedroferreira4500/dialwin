@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { SubSistemasComponent } from 'app/entities/sub-sistemas/sub-sistemas.component';
 import { SubSistemasService } from 'app/entities/sub-sistemas/sub-sistemas.service';
 import { SubSistemas } from 'app/shared/model/sub-sistemas.model';
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [SubSistemasComponent],
         providers: []
       })

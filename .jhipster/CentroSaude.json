@@ -14,7 +14,7 @@
             "relationshipName": "doenteIdentidade"
         }
     ],
-    "changelogDate": "20191226131821",
+    "changelogDate": "20200111000245",
     "entityTableName": "centro_saude",
     "dto": "no",
     "pagination": "no",

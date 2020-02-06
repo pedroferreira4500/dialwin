@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { SitProfUpdateComponent } from 'app/entities/sit-prof/sit-prof-update.component';
 import { SitProfService } from 'app/entities/sit-prof/sit-prof.service';
 import { SitProf } from 'app/shared/model/sit-prof.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [SitProfUpdateComponent],
         providers: [FormBuilder]
       })

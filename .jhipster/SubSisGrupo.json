@@ -11,7 +11,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20191226131819",
+    "changelogDate": "20200111000243",
     "entityTableName": "sub_sis_grupo",
     "dto": "no",
     "pagination": "no",

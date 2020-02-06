@@ -1,15 +1,15 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="doenteDiagnosticoSocial">
-            <h2><span jhiTranslate="dwinApp.doenteDiagnosticoSocial.detail.title">Doente Diagnostico Social</span> {{doenteDiagnosticoSocial.id}}</h2>
+            <h2><span jhiTranslate="dialwinApp.doenteDiagnosticoSocial.detail.title">Doente Diagnostico Social</span> {{doenteDiagnosticoSocial.id}}</h2>
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="dwinApp.doenteDiagnosticoSocial.descr">Descr</span></dt>
+                <dt><span jhiTranslate="dialwinApp.doenteDiagnosticoSocial.descr">Descr</span></dt>
                 <dd>
                     <span>{{doenteDiagnosticoSocial.descr}}</span>
                 </dd>
-                <dt><span jhiTranslate="dwinApp.doenteDiagnosticoSocial.doente">Doente</span></dt>
+                <dt><span jhiTranslate="dialwinApp.doenteDiagnosticoSocial.doente">Doente</span></dt>
                 <dd>
                     <div *ngIf="doenteDiagnosticoSocial.doente">
                         <a [routerLink]="['/doente', doenteDiagnosticoSocial.doente?.id, 'view']">{{doenteDiagnosticoSocial.doente?.id}}</a>

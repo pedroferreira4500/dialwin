@@ -1,6 +1,6 @@
 package dw.dw.dw.service;
 
-import dw.dw.dw.DwinApp;
+import dw.dw.dw.DialwinApp;
 import dw.dw.dw.config.Constants;
 import dw.dw.dw.domain.PersistentToken;
 import dw.dw.dw.domain.User;
@@ -34,7 +34,7 @@ import static org.mockito.Mockito.when;
 /**
  * Integration tests for {@link UserService}.
  */
-@SpringBootTest(classes = DwinApp.class)
+@SpringBootTest(classes = DialwinApp.class)
 @Transactional
 public class UserServiceIT {
 

@@ -3,7 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { TurnosDeleteDialogComponent } from 'app/entities/turnos/turnos-delete-dialog.component';
 import { TurnosService } from 'app/entities/turnos/turnos.service';
 
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [TurnosDeleteDialogComponent]
       })
         .overrideTemplate(TurnosDeleteDialogComponent, '')

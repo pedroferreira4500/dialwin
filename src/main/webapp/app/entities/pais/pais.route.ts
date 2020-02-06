@@ -30,7 +30,7 @@ export const paisRoute: Routes = [
     component: PaisComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.pais.home.title'
+      pageTitle: 'dialwinApp.pais.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const paisRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.pais.home.title'
+      pageTitle: 'dialwinApp.pais.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const paisRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.pais.home.title'
+      pageTitle: 'dialwinApp.pais.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const paisRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.pais.home.title'
+      pageTitle: 'dialwinApp.pais.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.doenteContactosOutros.home.title">Doente Contactos Outros</span>
+        <span jhiTranslate="dialwinApp.doenteContactosOutros.home.title">Doente Contactos Outros</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-doente-contactos-outros" [routerLink]="['/doente-contactos-outros/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.doenteContactosOutros.home.createLabel">
+            <span  jhiTranslate="dialwinApp.doenteContactosOutros.home.createLabel">
             Create a new Doente Contactos Outros
             </span>
         </button>
@@ -12,20 +12,21 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="doenteContactosOutros?.length === 0">
-        <span jhiTranslate="dwinApp.doenteContactosOutros.home.notFound">No doenteContactosOutros found</span>
+        <span jhiTranslate="dialwinApp.doenteContactosOutros.home.notFound">No doenteContactosOutros found</span>
     </div>
     <div class="table-responsive" *ngIf="doenteContactosOutros?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteContactosOutros.nome">Nome</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteContactosOutros.parentesco">Parentesco</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteContactosOutros.coabita">Coabita</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteContactosOutros.telef">Telef</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteContactosOutros.ocupacao">Ocupacao</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteContactosOutros.obs">Obs</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteContactosOutros.preferencial">Preferencial</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.parentesco">Parentesco</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.coabita">Coabita</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.telef">Telef</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.ocupacao">Ocupacao</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.obs">Obs</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.preferencial">Preferencial</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.doente">Doente</span></th>
             <th scope="col"></th>
             </tr>
             </thead>
@@ -39,6 +40,11 @@
                 <td>{{doenteContactosOutros.ocupacao}}</td>
                 <td>{{doenteContactosOutros.obs}}</td>
                 <td>{{doenteContactosOutros.preferencial}}</td>
+                <td>
+                    <div *ngIf="doenteContactosOutros.doente">
+                        <a [routerLink]="['/doente', doenteContactosOutros.doente?.id, 'view' ]" >{{doenteContactosOutros.doente?.id}}</a>
+                    </div>
+                </td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

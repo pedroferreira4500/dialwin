@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { DwinSharedModule } from 'app/shared/shared.module';
+import { DialwinSharedModule } from 'app/shared/shared.module';
 import { DoenteSocioFamiliarComponent } from './doente-socio-familiar.component';
 import { DoenteSocioFamiliarDetailComponent } from './doente-socio-familiar-detail.component';
 import { DoenteSocioFamiliarUpdateComponent } from './doente-socio-familiar-update.component';
@@ -9,7 +9,7 @@ import { DoenteSocioFamiliarDeleteDialogComponent } from './doente-socio-familia
 import { doenteSocioFamiliarRoute } from './doente-socio-familiar.route';
 
 @NgModule({
-  imports: [DwinSharedModule, RouterModule.forChild(doenteSocioFamiliarRoute)],
+  imports: [DialwinSharedModule, RouterModule.forChild(doenteSocioFamiliarRoute)],
   declarations: [
     DoenteSocioFamiliarComponent,
     DoenteSocioFamiliarDetailComponent,
@@ -18,4 +18,4 @@ import { doenteSocioFamiliarRoute } from './doente-socio-familiar.route';
   ],
   entryComponents: [DoenteSocioFamiliarDeleteDialogComponent]
 })
-export class DwinDoenteSocioFamiliarModule {}
+export class DialwinDoenteSocioFamiliarModule {}

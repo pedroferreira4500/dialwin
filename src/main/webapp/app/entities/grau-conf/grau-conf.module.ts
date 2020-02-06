@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { DwinSharedModule } from 'app/shared/shared.module';
+import { DialwinSharedModule } from 'app/shared/shared.module';
 import { GrauConfComponent } from './grau-conf.component';
 import { GrauConfDetailComponent } from './grau-conf-detail.component';
 import { GrauConfUpdateComponent } from './grau-conf-update.component';
@@ -9,8 +9,8 @@ import { GrauConfDeleteDialogComponent } from './grau-conf-delete-dialog.compone
 import { grauConfRoute } from './grau-conf.route';
 
 @NgModule({
-  imports: [DwinSharedModule, RouterModule.forChild(grauConfRoute)],
+  imports: [DialwinSharedModule, RouterModule.forChild(grauConfRoute)],
   declarations: [GrauConfComponent, GrauConfDetailComponent, GrauConfUpdateComponent, GrauConfDeleteDialogComponent],
   entryComponents: [GrauConfDeleteDialogComponent]
 })
-export class DwinGrauConfModule {}
+export class DialwinGrauConfModule {}

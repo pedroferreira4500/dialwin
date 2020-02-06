@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { DwinSharedModule } from 'app/shared/shared.module';
+import { DialwinSharedModule } from 'app/shared/shared.module';
 import { DoenteHistMovimentosComponent } from './doente-hist-movimentos.component';
 import { DoenteHistMovimentosDetailComponent } from './doente-hist-movimentos-detail.component';
 import { DoenteHistMovimentosUpdateComponent } from './doente-hist-movimentos-update.component';
@@ -9,7 +9,7 @@ import { DoenteHistMovimentosDeleteDialogComponent } from './doente-hist-movimen
 import { doenteHistMovimentosRoute } from './doente-hist-movimentos.route';
 
 @NgModule({
-  imports: [DwinSharedModule, RouterModule.forChild(doenteHistMovimentosRoute)],
+  imports: [DialwinSharedModule, RouterModule.forChild(doenteHistMovimentosRoute)],
   declarations: [
     DoenteHistMovimentosComponent,
     DoenteHistMovimentosDetailComponent,
@@ -18,4 +18,4 @@ import { doenteHistMovimentosRoute } from './doente-hist-movimentos.route';
   ],
   entryComponents: [DoenteHistMovimentosDeleteDialogComponent]
 })
-export class DwinDoenteHistMovimentosModule {}
+export class DialwinDoenteHistMovimentosModule {}

@@ -30,7 +30,7 @@ export const profissaoRoute: Routes = [
     component: ProfissaoComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.profissao.home.title'
+      pageTitle: 'dialwinApp.profissao.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const profissaoRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.profissao.home.title'
+      pageTitle: 'dialwinApp.profissao.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const profissaoRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.profissao.home.title'
+      pageTitle: 'dialwinApp.profissao.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const profissaoRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.profissao.home.title'
+      pageTitle: 'dialwinApp.profissao.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

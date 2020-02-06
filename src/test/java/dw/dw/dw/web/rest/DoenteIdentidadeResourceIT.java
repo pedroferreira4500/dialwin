@@ -1,6 +1,6 @@
 package dw.dw.dw.web.rest;
 
-import dw.dw.dw.DwinApp;
+import dw.dw.dw.DialwinApp;
 import dw.dw.dw.domain.DoenteIdentidade;
 import dw.dw.dw.repository.DoenteIdentidadeRepository;
 import dw.dw.dw.web.rest.errors.ExceptionTranslator;
@@ -33,7 +33,7 @@ import dw.dw.dw.domain.enumeration.Sexo;
 /**
  * Integration tests for the {@link DoenteIdentidadeResource} REST controller.
  */
-@SpringBootTest(classes = DwinApp.class)
+@SpringBootTest(classes = DialwinApp.class)
 public class DoenteIdentidadeResourceIT {
 
     private static final String DEFAULT_NOME = "AAAAAAAAAA";

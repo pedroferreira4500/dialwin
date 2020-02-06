@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.habit.home.title">Habits</span>
+        <span jhiTranslate="dialwinApp.habit.home.title">Habits</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-habit" [routerLink]="['/habit/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.habit.home.createLabel">
+            <span  jhiTranslate="dialwinApp.habit.home.createLabel">
             Create a new Habit
             </span>
         </button>
@@ -12,14 +12,14 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="habits?.length === 0">
-        <span jhiTranslate="dwinApp.habit.home.notFound">No habits found</span>
+        <span jhiTranslate="dialwinApp.habit.home.notFound">No habits found</span>
     </div>
     <div class="table-responsive" *ngIf="habits?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.habit.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.habit.nome">Nome</span></th>
             <th scope="col"></th>
             </tr>
             </thead>

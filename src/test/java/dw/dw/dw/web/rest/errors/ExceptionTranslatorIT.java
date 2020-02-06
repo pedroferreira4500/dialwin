@@ -1,6 +1,6 @@
 package dw.dw.dw.web.rest.errors;
 
-import dw.dw.dw.DwinApp;
+import dw.dw.dw.DialwinApp;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests {@link ExceptionTranslator} controller advice.
  */
-@SpringBootTest(classes = DwinApp.class)
+@SpringBootTest(classes = DialwinApp.class)
 public class ExceptionTranslatorIT {
 
     @Autowired

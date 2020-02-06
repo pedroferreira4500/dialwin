@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-horario-doente-heading" jhiTranslate="dwinApp.horarioDoente.home.createOrEditLabel">Create or edit a Horario Doente</h2>
+            <h2 id="jhi-horario-doente-heading" jhiTranslate="dialwinApp.horarioDoente.home.createOrEditLabel">Create or edit a Horario Doente</h2>
             <div>
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!editForm.get('id').value">
@@ -10,33 +10,33 @@
                         readonly />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dwinApp.horarioDoente.dia" for="field_dia">Dia</label>
+                    <label class="form-control-label" jhiTranslate="dialwinApp.horarioDoente.dia" for="field_dia">Dia</label>
                     <input type="text" class="form-control" name="dia" id="field_dia"
                            formControlName="dia"/>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dwinApp.horarioDoente.turno" for="field_turno">Turno</label>
+                    <label class="form-control-label" jhiTranslate="dialwinApp.horarioDoente.turno" for="field_turno">Turno</label>
                     <input type="text" class="form-control" name="turno" id="field_turno"
                            formControlName="turno"/>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dwinApp.horarioDoente.sala" for="field_sala">Sala</label>
+                    <label class="form-control-label" jhiTranslate="dialwinApp.horarioDoente.sala" for="field_sala">Sala</label>
                     <input type="number" class="form-control" name="sala" id="field_sala"
                            formControlName="sala"/>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dwinApp.horarioDoente.posto" for="field_posto">Posto</label>
+                    <label class="form-control-label" jhiTranslate="dialwinApp.horarioDoente.posto" for="field_posto">Posto</label>
                     <input type="text" class="form-control" name="posto" id="field_posto"
                            formControlName="posto"/>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dwinApp.horarioDoente.duracao" for="field_duracao">Duracao</label>
+                    <label class="form-control-label" jhiTranslate="dialwinApp.horarioDoente.duracao" for="field_duracao">Duracao</label>
                     <input type="number" class="form-control" name="duracao" id="field_duracao"
                            formControlName="duracao"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dwinApp.horarioDoente.doente" for="field_doente">Doente</label>
+                    <label class="form-control-label" jhiTranslate="dialwinApp.horarioDoente.doente" for="field_doente">Doente</label>
                     <select class="form-control" id="field_doente" name="doente" formControlName="doente">
                         <option [ngValue]="null"></option>
                         <option [ngValue]="doenteOption.id === editForm.get('doente').value?.id ? editForm.get('doente').value : doenteOption" *ngFor="let doenteOption of doentes; trackBy: trackDoenteById">{{doenteOption.id}}</option>

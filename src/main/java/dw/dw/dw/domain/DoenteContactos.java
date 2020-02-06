@@ -30,10 +30,6 @@ public class DoenteContactos implements Serializable {
     @JoinColumn(unique = true)
     private Doente doente;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private DoenteContactosOutros doenteContactosOutros;
-
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -80,19 +76,6 @@ public class DoenteContactos implements Serializable {
 
     public void setDoente(Doente doente) {
         this.doente = doente;
-    }
-
-    public DoenteContactosOutros getDoenteContactosOutros() {
-        return doenteContactosOutros;
-    }
-
-    public DoenteContactos doenteContactosOutros(DoenteContactosOutros doenteContactosOutros) {
-        this.doenteContactosOutros = doenteContactosOutros;
-        return this;
-    }
-
-    public void setDoenteContactosOutros(DoenteContactosOutros doenteContactosOutros) {
-        this.doenteContactosOutros = doenteContactosOutros;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

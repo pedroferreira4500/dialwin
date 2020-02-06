@@ -3,7 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { DwinTestModule } from '../../../test.module';
+import { DialwinTestModule } from '../../../test.module';
 import { GrauConfDeleteDialogComponent } from 'app/entities/grau-conf/grau-conf-delete-dialog.component';
 import { GrauConfService } from 'app/entities/grau-conf/grau-conf.service';
 
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [DwinTestModule],
+        imports: [DialwinTestModule],
         declarations: [GrauConfDeleteDialogComponent]
       })
         .overrideTemplate(GrauConfDeleteDialogComponent, '')

@@ -1,8 +1,6 @@
 package dw.dw.dw.web.rest;
 
 import dw.dw.dw.domain.Doente;
-import dw.dw.dw.domain.SubSistemas;
-import dw.dw.dw.domain.Turnos;
 import dw.dw.dw.domain.enumeration.Situacao;
 import dw.dw.dw.repository.DoenteRepository;
 import dw.dw.dw.service.DoenteService;
@@ -90,11 +88,11 @@ public class DoenteResource {
             .body(result);
     }
 
-
     @GetMapping("/doentes")
-    public List<Doente> getAllDoentes(@RequestParam(required = false)Situacao situacao,@RequestParam(required = false) String sub,@RequestParam(required = false) Long t) {
+    public List<Doente> getAllDoentes(@RequestParam(required = false, name="situacao") Situacao situacao, @RequestParam(required = false, name = "sub") Long sub, @RequestParam(required = false, name="t") Long t) {
         return doenteService.findBySitSubTur(situacao, sub, t);
     }
+
 
     /**
      * {@code GET  /doentes/:id} : get the "id" doente.

@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.doenteSocioFamiliar.home.title">Doente Socio Familiars</span>
+        <span jhiTranslate="dialwinApp.doenteSocioFamiliar.home.title">Doente Socio Familiars</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-doente-socio-familiar" [routerLink]="['/doente-socio-familiar/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.doenteSocioFamiliar.home.createLabel">
+            <span  jhiTranslate="dialwinApp.doenteSocioFamiliar.home.createLabel">
             Create a new Doente Socio Familiar
             </span>
         </button>
@@ -12,35 +12,35 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="doenteSocioFamiliars?.length === 0">
-        <span jhiTranslate="dwinApp.doenteSocioFamiliar.home.notFound">No doenteSocioFamiliars found</span>
+        <span jhiTranslate="dialwinApp.doenteSocioFamiliar.home.notFound">No doenteSocioFamiliars found</span>
     </div>
     <div class="table-responsive" *ngIf="doenteSocioFamiliars?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteSocioFamiliar.habilitacoes">Habilitacoes</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteSocioFamiliar.estCivil">Est Civil</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteSocioFamiliar.conjugeNome">Conjuge Nome</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteSocioFamiliar.conjugeProf">Conjuge Prof</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteSocioFamiliar.activTempLiv">Activ Temp Liv</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteSocioFamiliar.habitacaoObs">Habitacao Obs</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteSocioFamiliar.grauConfortoObs">Grau Conforto Obs</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteSocioFamiliar.respostaSocial">Resposta Social</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteSocioFamiliar.doente">Doente</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteSocioFamiliar.vitalidade">Vitalidade</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteSocioFamiliar.habit">Habit</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteSocioFamiliar.grauConf">Grau Conf</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteSocioFamiliar.profissao">Profissao</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.doenteSocioFamiliar.sitProf">Sit Prof</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteSocioFamiliar.habilitacoes">Habilitacoes</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteSocioFamiliar.estCivil">Est Civil</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteSocioFamiliar.conjugeNome">Conjuge Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteSocioFamiliar.conjugeProf">Conjuge Prof</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteSocioFamiliar.activTempLiv">Activ Temp Liv</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteSocioFamiliar.habitacaoObs">Habitacao Obs</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteSocioFamiliar.grauConfortoObs">Grau Conforto Obs</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteSocioFamiliar.respostaSocial">Resposta Social</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteSocioFamiliar.doente">Doente</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteSocioFamiliar.vitalidade">Vitalidade</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteSocioFamiliar.habit">Habit</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteSocioFamiliar.grauConf">Grau Conf</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteSocioFamiliar.profissao">Profissao</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteSocioFamiliar.sitProf">Sit Prof</span></th>
             <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let doenteSocioFamiliar of doenteSocioFamiliars ;trackBy: trackId">
                 <td><a [routerLink]="['/doente-socio-familiar', doenteSocioFamiliar.id, 'view' ]">{{doenteSocioFamiliar.id}}</a></td>
-                <td jhiTranslate="{{'dwinApp.Habilitacoes.' + doenteSocioFamiliar.habilitacoes}}">{{doenteSocioFamiliar.habilitacoes}}</td>
-                <td jhiTranslate="{{'dwinApp.EstCivil.' + doenteSocioFamiliar.estCivil}}">{{doenteSocioFamiliar.estCivil}}</td>
+                <td jhiTranslate="{{'dialwinApp.Habilitacoes.' + doenteSocioFamiliar.habilitacoes}}">{{doenteSocioFamiliar.habilitacoes}}</td>
+                <td jhiTranslate="{{'dialwinApp.EstCivil.' + doenteSocioFamiliar.estCivil}}">{{doenteSocioFamiliar.estCivil}}</td>
                 <td>{{doenteSocioFamiliar.conjugeNome}}</td>
                 <td>{{doenteSocioFamiliar.conjugeProf}}</td>
                 <td>{{doenteSocioFamiliar.activTempLiv}}</td>

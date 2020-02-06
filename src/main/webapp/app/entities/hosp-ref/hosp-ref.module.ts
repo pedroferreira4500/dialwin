@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { DwinSharedModule } from 'app/shared/shared.module';
+import { DialwinSharedModule } from 'app/shared/shared.module';
 import { HospRefComponent } from './hosp-ref.component';
 import { HospRefDetailComponent } from './hosp-ref-detail.component';
 import { HospRefUpdateComponent } from './hosp-ref-update.component';
@@ -9,8 +9,8 @@ import { HospRefDeleteDialogComponent } from './hosp-ref-delete-dialog.component
 import { hospRefRoute } from './hosp-ref.route';
 
 @NgModule({
-  imports: [DwinSharedModule, RouterModule.forChild(hospRefRoute)],
+  imports: [DialwinSharedModule, RouterModule.forChild(hospRefRoute)],
   declarations: [HospRefComponent, HospRefDetailComponent, HospRefUpdateComponent, HospRefDeleteDialogComponent],
   entryComponents: [HospRefDeleteDialogComponent]
 })
-export class DwinHospRefModule {}
+export class DialwinHospRefModule {}

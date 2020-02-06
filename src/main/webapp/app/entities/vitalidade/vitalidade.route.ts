@@ -30,7 +30,7 @@ export const vitalidadeRoute: Routes = [
     component: VitalidadeComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.vitalidade.home.title'
+      pageTitle: 'dialwinApp.vitalidade.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const vitalidadeRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.vitalidade.home.title'
+      pageTitle: 'dialwinApp.vitalidade.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const vitalidadeRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.vitalidade.home.title'
+      pageTitle: 'dialwinApp.vitalidade.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const vitalidadeRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.vitalidade.home.title'
+      pageTitle: 'dialwinApp.vitalidade.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

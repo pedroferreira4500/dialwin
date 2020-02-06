@@ -30,7 +30,7 @@ export const userPermissionsRoute: Routes = [
     component: UserPermissionsComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.userPermissions.home.title'
+      pageTitle: 'dialwinApp.userPermissions.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -42,7 +42,7 @@ export const userPermissionsRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.userPermissions.home.title'
+      pageTitle: 'dialwinApp.userPermissions.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -54,7 +54,7 @@ export const userPermissionsRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.userPermissions.home.title'
+      pageTitle: 'dialwinApp.userPermissions.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -66,7 +66,7 @@ export const userPermissionsRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'dwinApp.userPermissions.home.title'
+      pageTitle: 'dialwinApp.userPermissions.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

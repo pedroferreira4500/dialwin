@@ -12,7 +12,7 @@ import java.util.List;
 @SuppressWarnings("unused")
 @Repository
 public interface DoenteIdentidadeRepository extends JpaRepository<DoenteIdentidade, Long> {
-    List<DoenteIdentidade> findAllBySubsistemas(String subSistemas);
     List<DoenteIdentidade> findAllByDoenteId(Long id);
     List<DoenteIdentidade> findAllBynUtente(Integer utente);
+    List<DoenteIdentidade> findAllBySubsistemasId(Long sub);
 }

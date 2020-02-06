@@ -1,6 +1,6 @@
 package dw.dw.dw.web.rest;
 
-import dw.dw.dw.DwinApp;
+import dw.dw.dw.DialwinApp;
 import dw.dw.dw.domain.DoenteHistMovimentos;
 import dw.dw.dw.repository.DoenteHistMovimentosRepository;
 import dw.dw.dw.web.rest.errors.ExceptionTranslator;
@@ -32,7 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link DoenteHistMovimentosResource} REST controller.
  */
-@SpringBootTest(classes = DwinApp.class)
+@SpringBootTest(classes = DialwinApp.class)
 public class DoenteHistMovimentosResourceIT {
 
     private static final LocalDate DEFAULT_DATA = LocalDate.ofEpochDay(0L);

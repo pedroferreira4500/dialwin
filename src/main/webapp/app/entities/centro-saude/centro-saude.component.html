@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="dwinApp.centroSaude.home.title">Centro Saudes</span>
+        <span jhiTranslate="dialwinApp.centroSaude.home.title">Centro Saudes</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-centro-saude" [routerLink]="['/centro-saude/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="dwinApp.centroSaude.home.createLabel">
+            <span  jhiTranslate="dialwinApp.centroSaude.home.createLabel">
             Create a new Centro Saude
             </span>
         </button>
@@ -12,14 +12,14 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="centroSaudes?.length === 0">
-        <span jhiTranslate="dwinApp.centroSaude.home.notFound">No centroSaudes found</span>
+        <span jhiTranslate="dialwinApp.centroSaude.home.notFound">No centroSaudes found</span>
     </div>
     <div class="table-responsive" *ngIf="centroSaudes?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
             <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-            <th scope="col" ><span jhiTranslate="dwinApp.centroSaude.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.centroSaude.nome">Nome</span></th>
             <th scope="col"></th>
             </tr>
             </thead>
