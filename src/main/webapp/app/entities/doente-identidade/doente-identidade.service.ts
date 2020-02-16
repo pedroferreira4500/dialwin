@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 import { SERVER_API_URL } from 'app/app.constants';
 import { createRequestOption } from 'app/shared/util/request-util';
 import { IDoenteIdentidade } from 'app/shared/model/doente-identidade.model';
+import { DoenteIdentidade, IDoenteIdentidade } from '../../shared/model/doente-identidade.model';
 
 type EntityResponseType = HttpResponse<IDoenteIdentidade>;
 type EntityArrayResponseType = HttpResponse<IDoenteIdentidade[]>;
@@ -16,6 +17,7 @@ type EntityArrayResponseType = HttpResponse<IDoenteIdentidade[]>;
 @Injectable({ providedIn: 'root' })
 export class DoenteIdentidadeService {
   public resourceUrl = SERVER_API_URL + 'api/doente-identidades';
+  public resourceUrl2 = SERVER_API_URL + 'api/doente-identidade';
 
   constructor(protected http: HttpClient) {}
 
@@ -37,6 +39,16 @@ export class DoenteIdentidadeService {
     return this.http
       .get<IDoenteIdentidade>(`${this.resourceUrl}/${id}`, { observe: 'response' })
       .pipe(map((res: EntityResponseType) => this.convertDateFromServer(res)));
+  }
+
+  search(id: number): Observable<EntityResponseType> {
+    return this.http.get<IDoenteIdentidade>(this.resourceUrl2 + '/?doente=' + id, { observe: 'response' });
+}
+
+  findByDoente(id: number): Observable<EntityResponseType> {
+    return this.http
+    .get<IDoenteIdentidade>(this.resourceUrl2, {observe: 'response'})
+    .pipe(map((res: EntityResponseType) => this.convertDateFromServer(res)));
   }
 
   query(req?: any): Observable<EntityArrayResponseType> {

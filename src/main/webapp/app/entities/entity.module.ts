@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { pathToFileURL } from 'url';
 
 @NgModule({
   imports: [
@@ -102,6 +103,10 @@ import { RouterModule } from '@angular/router';
       {
         path: 'user-permissions',
         loadChildren: () => import('./user-permissions/user-permissions.module').then(m => m.DialwinUserPermissionsModule)
+      },
+      {
+      path: 'demografia',
+      loadChildren: () => import('./demografia/demografia.module').then(m => m.DialwinDemografiaModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])

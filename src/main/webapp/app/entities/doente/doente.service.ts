@@ -32,6 +32,10 @@ export class DoenteService {
     return this.http.get<IDoente[]>(this.resourceUrl, { params: options, observe: 'response' });
   }
 
+  search(situacao: any, sub: any, turno: any): Observable<EntityResponseType> {
+    return this.http.get<IDoente>(this.resourceUrl + '/?situacao=' + situacao + '&sub=' + sub + '&t=' + turno, { observe: 'response' });
+}
+
   delete(id: number): Observable<HttpResponse<any>> {
     return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
