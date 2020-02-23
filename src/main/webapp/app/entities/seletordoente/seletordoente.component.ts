@@ -54,7 +54,6 @@ export class SeletordoenteComponent implements OnInit {
 
   loadDo(sit: any, sub: any, turno: any) {
    this.turnos.forEach(t => {
-     console.log(t.nome);
      if(turno === t.nome){
        turno = t.id;
      }
@@ -65,6 +64,7 @@ export class SeletordoenteComponent implements OnInit {
       }
     });
     this.doenteService.search(sit, sub, turno).subscribe((res: HttpResponse<IDoente[] >) => {
+      console.log("Search")
       this.doentes = res.body;
       this.loadAllDoId();
     })

@@ -9,7 +9,6 @@ import { map } from 'rxjs/operators';
 import { SERVER_API_URL } from 'app/app.constants';
 import { createRequestOption } from 'app/shared/util/request-util';
 import { IDoenteIdentidade } from 'app/shared/model/doente-identidade.model';
-import { DoenteIdentidade, IDoenteIdentidade } from '../../shared/model/doente-identidade.model';
 
 type EntityResponseType = HttpResponse<IDoenteIdentidade>;
 type EntityArrayResponseType = HttpResponse<IDoenteIdentidade[]>;
