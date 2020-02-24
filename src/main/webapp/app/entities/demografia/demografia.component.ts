@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../data.service'
 
 @Component({
   selector: 'jhi-demografia',
@@ -7,16 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemografiaComponent implements OnInit {
 
-
-
-  constructor() { 
-    
-
+  doenteId: number;
+  selectDoente: boolean;
+  constructor(private data: DataService) { 
   }
 
-  ngOnInit() {
-    
+  changeSelect(select:boolean){
+    this.data.changeSelect(select)
+  }
 
+
+  ngOnInit() {
+    this.data.currentDoente.subscribe(doenteId => this.doenteId = doenteId)
+    this.data.currentSelect.subscribe(selectDoente => this.selectDoente = selectDoente)
   }
 
 }

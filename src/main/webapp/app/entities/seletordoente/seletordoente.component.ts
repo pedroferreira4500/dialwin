@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ISubSistemas } from '../../shared/model/sub-sistemas.model';
 import { SubSistemasService } from '../sub-sistemas/sub-sistemas.service';
 import { HttpResponse } from '@angular/common/http';
@@ -8,7 +8,7 @@ import { IDoente } from '../../shared/model/doente.model';
 import { DoenteService } from '../doente/doente.service';
 import { IDoenteIdentidade } from '../../shared/model/doente-identidade.model';
 import { DoenteIdentidadeService } from '../doente-identidade/doente-identidade.service';
-
+import { DataService } from '../../data.service'
 @Component({
   selector: 'jhi-seletordoente',
   templateUrl: './seletordoente.component.html',
@@ -23,10 +23,13 @@ export class SeletordoenteComponent implements OnInit {
   sit= "";
   sub ="";
   turno ="";
+  doenteId:number;
+  selectDoente:boolean;
 
 // PASSAR SUBSISTEMA e turno DE NOME PARA ID
 
   constructor(
+    private data: DataService,
     protected subSistemasService: SubSistemasService,
     protected turnosService: TurnosService,
     protected doenteService: DoenteService,
@@ -84,9 +87,24 @@ export class SeletordoenteComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.data.currentSelect.subscribe(selectDoente => this.selectDoente = selectDoente)
+    this.data.currentDoente.subscribe(doenteId => this.doenteId = doenteId)
     this.loadAllSub();
     this.loadAllTu();
     this.loadAllDo();
+  }
+
+  changeSelect(select:boolean){
+    this.data.changeSelect(select)
+  }
+
+  newDoente(){
+    this.data.changeDoente(3)
+  }
+
+  logar(did: IDoenteIdentidade){
+    this.data.changeDoente(did.doente.id)
+    this.selectDoente=false
   }
 
 }
