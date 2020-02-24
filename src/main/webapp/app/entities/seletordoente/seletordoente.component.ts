@@ -25,6 +25,7 @@ export class SeletordoenteComponent implements OnInit {
   turno ="";
   doenteId:number;
   selectDoente:boolean;
+  doenteNome: string;
 
 // PASSAR SUBSISTEMA e turno DE NOME PARA ID
 
@@ -87,6 +88,7 @@ export class SeletordoenteComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.data.currenteDoenteNome.subscribe(doenteNome => this.doenteNome = doenteNome)
     this.data.currentSelect.subscribe(selectDoente => this.selectDoente = selectDoente)
     this.data.currentDoente.subscribe(doenteId => this.doenteId = doenteId)
     this.loadAllSub();
@@ -95,7 +97,7 @@ export class SeletordoenteComponent implements OnInit {
   }
 
   changeSelect(select:boolean){
-    this.data.changeSelect(select)
+    this.data.changeSelect
   }
 
   newDoente(){
@@ -104,6 +106,7 @@ export class SeletordoenteComponent implements OnInit {
 
   logar(did: IDoenteIdentidade){
     this.data.changeDoente(did.doente.id)
+    this.data.changeDoenteNome(did.nome);
     this.selectDoente=false
   }
 

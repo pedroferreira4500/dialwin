@@ -10,6 +10,10 @@ export class DataService {
 
   private selectSource = new BehaviorSubject(true);
   currentSelect = this.selectSource.asObservable();
+
+  private doenteNomeSource = new BehaviorSubject("Selecionar Doente")
+  currenteDoenteNome = this.doenteNomeSource.asObservable();
+
  
   constructor() { }
 
@@ -20,4 +24,10 @@ export class DataService {
   changeDoente(doenteId: number) {
     this.doenteSource.next(doenteId)
   }
+
+  changeDoenteNome(doenteNome: string){
+    this.doenteNomeSource.next(doenteNome)
+  }
+
+
 }
