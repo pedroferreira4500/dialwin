@@ -1,0 +1,51 @@
+<div>
+    <div id="form">
+        <label class="form-control-label" for="field_nome">Nome</label>
+        <input [(ngModel)]="nome" type="text" class="form-control" name="nome" id="field_nome">
+        <label class="form-control-label" for="field_dataNascimento">Data de Nascimento</label>
+        <input id="field_dataNasc" type="text" class="form-control" name="dataNasc" ngbDatepicker  #dataNascDp="ngbDatepicker" formControlName="dataNasc"/>
+            <span class="input-group-append">
+                <button type="button" class="btn btn-secondary" (click)="dataNascDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+            </span>
+        <label class="form-control-label" for="field_altura">Altura</label>
+        <input type="text" class="form-control" name="altura" id="field_altura">
+        <label class="form-control-label" for="field_sexo">Sexo</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <label class="form-control-label" for="field_morada">Morada</label>
+        <input type="text" class="form-control" name="morada" id="field_morada">
+        <label class="form-control-label" for="field_telefone">Telefone</label>
+        <input type="text" class="form-control" name="telefone" id="field_telefone">
+        <label class="form-control-label" for="field_telemovel">Telemóvel</label>
+        <input type="text" class="form-control" name="telemovel" id="field_telemovel">
+        <label class="form-control-label" for="field_codigoPostal">Código Postal</label>
+        <input type="text" class="form-control" name="codigoPostal" id="field_codigoPostal">
+        <label class="form-control-label" for="field_freguesia">Freguesia</label>
+        <input type="text" class="form-control" name="fraguesia" id="field_freguesia">
+        <label class="form-control-label" for="field_nif">NIF</label>
+        <input type="text" class="form-control" name="nif" id="field_nif">
+        <label class="form-control-label" for="field_docId">Documento Identif</label>
+        <input type="text" class="form-control" name="docId" id="field_docId">
+        <label class="form-control-label" for="field_subSis">Subsistema de Saúde</label>
+        <input type="text" class="form-control" name="subSis" id="field_subSis">
+        <label class="form-control-label" for="field_numBen">Nº Beneficiário</label>
+        <input type="text" class="form-control" name="numBen" id="field_numBen">
+        <label class="form-control-label" for="field_centroSaude">Centro de Saúde</label>
+        <input type="text" class="form-control" name="centroSaude" id="field_centroSaude">
+        <label class="form-control-label" for="field_numUtente">Número de Utente</label>
+        <input type="text" class="form-control" name="numUtent" id="field_numUtente">
+        <label class="form-control-label" for="field_aces">ACES</label>
+        <input type="text" class="form-control" name="aces" id="field_aces">
+        <label class="form-control-label" for="field_numGid">Número de Processo GID</label>
+        <input type="text" class="form-control" name="numGid" id="field_numGid">
+        <label class="form-control-label" for="field_medicoFamilia">Médico de Familia</label>
+        <input type="text" class="form-control" name="medicoFamilia" id="field_medicoFamilia">
+        <label class="form-control-label" for="field_hospRef">Hospital Refª</label>
+        <input type="text" class="form-control" name="hospRef" id="field_hospRef">
+        <label class="form-control-label" for="field_numProcHosp">Número de Processo Hospitalar</label>
+        <input type="text" class="form-control" name="numProcHosp" id="field_numProcHosp">
+    </div>
+    
+</div>
