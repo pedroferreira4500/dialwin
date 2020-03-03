@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataService {
 
-  private doenteSource = new BehaviorSubject(1);
+  private doenteSource = new BehaviorSubject(0);
   currentDoente = this.doenteSource.asObservable();
 
   private selectSource = new BehaviorSubject(true);
