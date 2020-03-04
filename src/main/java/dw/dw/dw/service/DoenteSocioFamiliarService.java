@@ -19,9 +19,8 @@ public class DoenteSocioFamiliarService {
     private DoenteSocioFamiliarRepository doenteSocioFamiliarRepository;
 
     public DoenteSocioFamiliar getbyDoente(Long doente){
-        List<DoenteSocioFamiliar> doenteSocioFamiliars = doenteSocioFamiliarRepository.findAllByDoenteId(doente);
-        DoenteSocioFamiliar doenteSocioFamiliar = doenteSocioFamiliars.get(0);
-        return doenteSocioFamiliar;
+        DoenteSocioFamiliar doenteSocioFamiliars = doenteSocioFamiliarRepository.findAllByDoenteId(doente);
+        return doenteSocioFamiliars;
     }
 
 }

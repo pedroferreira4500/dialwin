@@ -12,6 +12,6 @@ import java.util.List;
 @SuppressWarnings("unused")
 @Repository
 public interface DoenteSocioFamiliarRepository extends JpaRepository<DoenteSocioFamiliar, Long> {
-    List<DoenteSocioFamiliar> findAllByDoenteId(Long doente);
+    DoenteSocioFamiliar findAllByDoenteId(Long doente);
 
 }

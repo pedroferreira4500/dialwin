@@ -8,10 +8,11 @@ import { SeletordoenteComponent } from '../seletordoente/seletordoente.component
 import { DemoidComponent} from '../demoid/demoid.component'
 import { ContactosComponent } from '../contactos/contactos.component'
 import { ContactosoutrosComponent } from '../contactosoutros/contactosoutros.component'
+import { SociofamiliarComponent } from '../sociofamiliar/sociofamiliar.component';
 
 
 @NgModule({
   imports: [DialwinSharedModule, RouterModule.forChild([DEMOGRAFIA_ROUTE])],
-  declarations: [DemografiaComponent, SeletordoenteComponent, DemoidComponent, ContactosComponent,ContactosoutrosComponent]
+  declarations: [DemografiaComponent, SeletordoenteComponent, DemoidComponent, ContactosComponent,ContactosoutrosComponent, SociofamiliarComponent]
 })
 export class DialwinDemografiaModule {}

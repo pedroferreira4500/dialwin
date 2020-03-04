@@ -18,6 +18,8 @@ export class ContactosoutrosComponent implements OnInit {
 
   doenteContactosOutros: IDoenteContactosOutros[];
   eventSubscriber: Subscription;
+  doenteId:number;
+  
   constructor(
     protected doenteContactosOutrosService: DoenteContactosOutrosService,
     protected eventManager: JhiEventManager,
@@ -26,7 +28,7 @@ export class ContactosoutrosComponent implements OnInit {
   ) { }
 
     
-  doenteId:number;
+
 
   loadAll() {
     this.data.currentDoente.subscribe((doenteId) => {
