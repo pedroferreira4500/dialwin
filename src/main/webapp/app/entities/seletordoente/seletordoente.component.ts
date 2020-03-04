@@ -68,7 +68,6 @@ export class SeletordoenteComponent implements OnInit {
       }
     });
     this.doenteService.search(sit, sub, turno).subscribe((res: HttpResponse<IDoente[] >) => {
-      console.log("Search")
       this.doentes = res.body;
       this.loadAllDoId();
     })
@@ -76,13 +75,9 @@ export class SeletordoenteComponent implements OnInit {
 
   loadAllDoId () {
     this.doenteIdentidades=[];
-    console.log(this.doentes);
     this.doentes.forEach(doente => {
       this.doenteIdentidadeService.search(doente.id).subscribe((resp: HttpResponse<IDoenteIdentidade>) => {
-        console.log("OVER HERE")
-        console.log(resp.body);
         this.doenteIdentidades.push(resp.body);
-        console.log(this.doenteIdentidades);
       });
     });
   }

@@ -27,6 +27,10 @@ export class DoenteContactosOutrosService {
     return this.http.get<IDoenteContactosOutros>(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
 
+  search(id: number): Observable<EntityArrayResponseType> {
+    return this.http.get<IDoenteContactosOutros[]>(this.resourceUrl + '/?doente=' + id, { observe: 'response' });
+}
+
   query(req?: any): Observable<EntityArrayResponseType> {
     const options = createRequestOption(req);
     return this.http.get<IDoenteContactosOutros[]>(this.resourceUrl, { params: options, observe: 'response' });

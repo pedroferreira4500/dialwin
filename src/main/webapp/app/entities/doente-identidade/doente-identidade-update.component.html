@@ -4,6 +4,11 @@
             <h2 id="jhi-doente-identidade-heading" jhiTranslate="dialwinApp.doenteIdentidade.home.createOrEditLabel">Create or edit a Doente Identidade</h2>
             <div>
                 <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.nome" for="field_nome">Nome</label>
                     <input type="text" class="form-control" name="nome" id="field_nome"
@@ -84,6 +89,21 @@
                     <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.numProcHosp" for="field_numProcHosp">Num Proc Hosp</label>
                     <input type="number" class="form-control" name="numProcHosp" id="field_numProcHosp"
                            formControlName="numProcHosp"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.doente" for="field_doente">Doente</label>
+                    <select class="form-control" id="field_doente" name="doente" formControlName="doente">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="doenteOption.id === editForm.get('doente').value?.id ? editForm.get('doente').value : doenteOption" *ngFor="let doenteOption of doentes; trackBy: trackDoenteById">{{doenteOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.subsistemas" for="field_subsistemas">Subsistemas</label>
+                    <select class="form-control" id="field_subsistemas" name="subsistemas" formControlName="subsistemas">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="subSistemasOption.id === editForm.get('subsistemas').value?.id ? editForm.get('subsistemas').value : subSistemasOption" *ngFor="let subSistemasOption of subsistemas; trackBy: trackSubSistemasById">{{subSistemasOption.gidNome}}</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.centroSaude" for="field_centroSaude">Centro Saude</label>
