@@ -107,6 +107,9 @@ import { pathToFileURL } from 'url';
       {
       path: 'demografia',
       loadChildren: () => import('./demografia/demografia.module').then(m => m.DialwinDemografiaModule)
+      },{
+      path: 'identidade',
+      loadChildren: () => import('../entities/demoid/demoid.component').then(m=> m.DemoidComponent)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])

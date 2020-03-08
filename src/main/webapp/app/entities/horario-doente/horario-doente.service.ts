@@ -32,6 +32,10 @@ export class HorarioDoenteService {
     return this.http.get<IHorarioDoente[]>(this.resourceUrl, { params: options, observe: 'response' });
   }
 
+  search(id: number): Observable<EntityArrayResponseType> {
+    return this.http.get<IHorarioDoente[]>(this.resourceUrl + '/?doente=' + id, { observe: 'response' });
+}
+
   delete(id: number): Observable<HttpResponse<any>> {
     return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }

@@ -12,6 +12,7 @@ type EntityArrayResponseType = HttpResponse<IDoenteDiagnosticoSocial[]>;
 @Injectable({ providedIn: 'root' })
 export class DoenteDiagnosticoSocialService {
   public resourceUrl = SERVER_API_URL + 'api/doente-diagnostico-socials';
+  public resourceUrl2 = SERVER_API_URL + 'api/doente-diagnostico-social';
 
   constructor(protected http: HttpClient) {}
 
@@ -31,6 +32,10 @@ export class DoenteDiagnosticoSocialService {
     const options = createRequestOption(req);
     return this.http.get<IDoenteDiagnosticoSocial[]>(this.resourceUrl, { params: options, observe: 'response' });
   }
+ 
+  search(id: number): Observable<EntityResponseType> {
+    return this.http.get<IDoenteDiagnosticoSocial>(this.resourceUrl2 + '/?doente=' + id, { observe: 'response' });
+}
 
   delete(id: number): Observable<HttpResponse<any>> {
     return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
