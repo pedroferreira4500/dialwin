@@ -11,10 +11,11 @@ import { ContactosoutrosComponent } from '../contactosoutros/contactosoutros.com
 import { SociofamiliarComponent } from '../sociofamiliar/sociofamiliar.component';
 import { ProcessosocialComponent } from '../processosocial/processosocial.component';
 import { HorarioComponent } from '../horario/horario.component';
+import { MovimentosComponent } from '../movimentos/movimentos.component';
 
 
 @NgModule({
   imports: [DialwinSharedModule, RouterModule.forChild([DEMOGRAFIA_ROUTE])],
-  declarations: [DemografiaComponent, SeletordoenteComponent, DemoidComponent, ContactosComponent,ContactosoutrosComponent, SociofamiliarComponent, ProcessosocialComponent, HorarioComponent]
+  declarations: [DemografiaComponent, SeletordoenteComponent, DemoidComponent, ContactosComponent,ContactosoutrosComponent, SociofamiliarComponent, ProcessosocialComponent, HorarioComponent, MovimentosComponent]
 })
 export class DialwinDemografiaModule {}

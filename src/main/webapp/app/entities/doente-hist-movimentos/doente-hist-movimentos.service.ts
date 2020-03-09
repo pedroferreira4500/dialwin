@@ -26,6 +26,10 @@ export class DoenteHistMovimentosService {
       .pipe(map((res: EntityResponseType) => this.convertDateFromServer(res)));
   }
 
+  search(id: number): Observable<EntityArrayResponseType> {
+    return this.http.get<IDoenteHistMovimentos[]>(this.resourceUrl + '/?doente=' + id, { observe: 'response' });
+}
+
   update(doenteHistMovimentos: IDoenteHistMovimentos): Observable<EntityResponseType> {
     const copy = this.convertDateFromClient(doenteHistMovimentos);
     return this.http

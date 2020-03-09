@@ -14,8 +14,15 @@ export class DataService {
   private doenteNomeSource = new BehaviorSubject("Selecionar Doente")
   currenteDoenteNome = this.doenteNomeSource.asObservable();
 
+  private identidadeSource = new BehaviorSubject(false);
+  currentIdentidade = this.identidadeSource.asObservable();
+
  
   constructor() { }
+
+  changeIdentidade(id:boolean){
+    this.identidadeSource.next(id);
+  }
 
   changeSelect(select: boolean){
     this.selectSource.next(select)

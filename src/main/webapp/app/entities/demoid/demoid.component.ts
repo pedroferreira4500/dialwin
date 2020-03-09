@@ -9,7 +9,7 @@ import { ISubSistemas } from 'app/shared/model/sub-sistemas.model';
 import { ICentroSaude } from 'app/shared/model/centro-saude.model';
 import { IACES } from 'app/shared/model/aces.model';
 import { IHospRef } from 'app/shared/model/hosp-ref.model';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder} from '@angular/forms';
 import { DoenteService } from '../doente/doente.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { JhiAlertService } from 'ng-jhipster';
@@ -25,6 +25,7 @@ import { HospRefService } from 'app/entities/hosp-ref/hosp-ref.service';
   styleUrls: ['./demoid.component.scss']
 })
 export class DemoidComponent implements OnInit {
+  identidade:boolean;
   isSaving: boolean;
   doentes: IDoente[];
   subsistemas: ISubSistemas[];
@@ -78,7 +79,8 @@ export class DemoidComponent implements OnInit {
     hospRef: []
   });
 
-  constructor(private data: DataService,
+  constructor(
+    private data: DataService,
     protected jhiAlertService: JhiAlertService,
     protected subSistemasService: SubSistemasService,
     protected centroSaudeService: CentroSaudeService,
@@ -91,8 +93,12 @@ export class DemoidComponent implements OnInit {
 
   ngOnInit() {
     this.isSaving=false;
+    this.data.currentIdentidade.subscribe(identidade => this.identidade = identidade);
     this.data.currentDoente.subscribe((doenteId) =>  {
       this.doenteId = doenteId;
+      if(this.doenteId !==0){
+        this.identidade = true;
+      }
       this.doenteIdentidadeService.find(doenteId).subscribe((resp) => {
         this.updateForm(resp.body);
       });

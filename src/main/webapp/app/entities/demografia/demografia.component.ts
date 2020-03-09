@@ -12,6 +12,7 @@ export class DemografiaComponent implements OnInit {
   doenteId: number;
   doenteNome: string;
   selectDoente: boolean;
+  identidade: boolean;
   constructor(private data: DataService,
     protected doIdSer: DoenteIdentidadeService) { 
   }
@@ -27,6 +28,8 @@ export class DemografiaComponent implements OnInit {
     this.data.currenteDoenteNome.subscribe(doenteNome => this.doenteNome = doenteNome)
     
     this.data.currentSelect.subscribe(selectDoente => this.selectDoente = selectDoente)
+    
+    this.data.currentIdentidade.subscribe(identidade => this.identidade = identidade);
   }
 
 }
