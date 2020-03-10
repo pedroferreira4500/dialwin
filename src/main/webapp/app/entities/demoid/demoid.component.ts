@@ -138,6 +138,7 @@ export class DemoidComponent implements OnInit {
       .subscribe((res: HttpResponse<IHospRef[]>) => (this.hosprefs = res.body), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
+  
 
 
   updateForm(doenteIdentidade: IDoenteIdentidade) {

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { IDoente } from 'app/shared/model/doente.model';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder} from '@angular/forms';
 import { DataService } from '../../data.service'
 import { DoenteContactosService } from '../doente-contactos/doente-contactos.service'
 import { IDoenteContactos, DoenteContactos } from '../../shared/model/doente-contactos.model'
@@ -8,15 +8,26 @@ import { DoenteService } from 'app/entities/doente/doente.service';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { JhiAlertService } from 'ng-jhipster';
 import { Observable } from 'rxjs';
+import { JhiEventManager } from 'ng-jhipster';
+import { IDoenteContactosOutros } from 'app/shared/model/doente-contactos-outros.model';
+import { Subscription } from 'rxjs';
+import { DoenteContactosOutrosService } from '../doente-contactos-outros/doente-contactos-outros.service'
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DoenteContactosOutrosDeleteDialogComponent } from '../doente-contactos-outros/doente-contactos-outros-delete-dialog.component';
+
+
 @Component({
   selector: 'jhi-contactos',
   templateUrl: './contactos.component.html',
   styleUrls: ['./contactos.component.scss']
 })
-export class ContactosComponent implements OnInit {
+export class ContactosComponent implements OnInit, OnDestroy {
   isSaving: boolean;
   doenteId:number;
   doentes: IDoente[];
+  contactos:boolean;
+  doenteContactosOutros: IDoenteContactosOutros[];
+  eventSubscriber: Subscription;
 
   editForm = this.fb.group({
     id: [],
@@ -26,15 +37,23 @@ export class ContactosComponent implements OnInit {
   });
 
   constructor(private fb: FormBuilder,
+    protected eventManager: JhiEventManager,
+    protected doenteContactosOutrosService: DoenteContactosOutrosService,
     protected doenteContactosService: DoenteContactosService,
     protected jhiAlertService: JhiAlertService,
     protected doenteService: DoenteService,
+    protected modalService: NgbModal,
     private data: DataService) { }
 
   ngOnInit() {
     this.isSaving = false;
+    this.data.currentContactos.subscribe((ct) => {
+      this.contactos= ct;
+    })
     this.data.currentDoente.subscribe((doenteId) => {
       this.doenteId=doenteId;
+      this.loadAll();
+      this.registerChangeInDoenteContactosOutros();
       this.doenteContactosService.search(this.doenteId).subscribe((resp) => {
         this.updateForm(resp.body[0]);
       });
@@ -55,6 +74,29 @@ export class ContactosComponent implements OnInit {
       );
     })
   }
+
+  loadAll() {
+      this.doenteContactosOutrosService.search(this.doenteId).subscribe((res: HttpResponse<IDoenteContactosOutros[]>) => {
+        this.doenteContactosOutros = res.body;
+    })
+}
+
+ngOnDestroy() {
+  this.eventManager.destroy(this.eventSubscriber);
+}
+
+trackId(index: number, item: IDoenteContactosOutros) {
+  return item.id;
+}
+
+registerChangeInDoenteContactosOutros() {
+  this.eventSubscriber = this.eventManager.subscribe('doenteContactosOutrosListModification', () => this.loadAll());
+}
+
+delete(doenteContactosOutros: IDoenteContactosOutros) {
+  const modalRef = this.modalService.open(DoenteContactosOutrosDeleteDialogComponent, { size: 'lg', backdrop: 'static' });
+  modalRef.componentInstance.doenteContactosOutros = doenteContactosOutros;
+}
 
   updateForm(doenteContactos: IDoenteContactos) {
     this.editForm.patchValue({

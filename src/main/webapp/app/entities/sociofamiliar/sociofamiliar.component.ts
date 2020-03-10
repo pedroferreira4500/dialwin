@@ -26,6 +26,7 @@ import { Observable } from 'rxjs';
 })
 export class SociofamiliarComponent implements OnInit {
 
+
   doenteId: number;
   isSaving: boolean;
 
@@ -40,6 +41,8 @@ export class SociofamiliarComponent implements OnInit {
   profissaos: IProfissao[];
 
   sitprofs: ISitProf[];
+
+  socioFamiliar:boolean;
 
   editForm = this.fb.group({
     id: [],
@@ -70,6 +73,9 @@ export class SociofamiliarComponent implements OnInit {
     private data: DataService) { }
 
   ngOnInit() {
+    this.data.currentSocioFamiliar.subscribe((sf) => {
+      this.socioFamiliar = sf;
+    })
     this.isSaving=false;
     this.data.currentDoente.subscribe((doenteId) => {
       this.doenteId=doenteId;

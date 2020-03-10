@@ -18,6 +18,7 @@ export class MovimentosComponent implements OnInit, OnDestroy {
   doenteId:number;
   doenteHistMovimentos: IDoenteHistMovimentos[];
   eventSubscriber: Subscription;
+  historico:boolean;
   constructor(
     private data: DataService,
     protected eventManager: JhiEventManager,
@@ -26,6 +27,9 @@ export class MovimentosComponent implements OnInit, OnDestroy {
     ) { }
 
   ngOnInit() {
+    this.data.currentHistorico.subscribe((hi) => {
+      this.historico=hi;
+    })
     this.data.currentDoente.subscribe((doenteId) =>  {
       this.doenteId = doenteId;
       this.loadAll();

@@ -17,8 +17,43 @@ export class DataService {
   private identidadeSource = new BehaviorSubject(false);
   currentIdentidade = this.identidadeSource.asObservable();
 
+  private contactosSource = new BehaviorSubject(false);
+  currentContactos = this.contactosSource.asObservable();
+
+  private socioFamiliarSource = new BehaviorSubject(false);
+  currentSocioFamiliar = this.socioFamiliarSource.asObservable();
+
+  private perfilSocialSource = new BehaviorSubject(false);
+  currentPerfilSocial = this.perfilSocialSource.asObservable();
+
+  private horarioSource = new BehaviorSubject(false);
+  currentHorario = this.horarioSource.asObservable();
+
+  private historicoSource = new BehaviorSubject(false);
+  currentHistorico = this.historicoSource.asObservable();
+
  
   constructor() { }
+
+  changeHistorico(hi:boolean){
+    this.historicoSource.next(hi);
+  }
+
+  changeHorario(h:boolean){
+    this.horarioSource.next(h);
+  }
+
+  changePerfilSocial(ps:boolean){
+    this.perfilSocialSource.next(ps);
+  }
+
+  changeSocioFamiliar(sf:boolean){
+    this.socioFamiliarSource.next(sf);
+  }
+
+  changeContactos(ct:boolean){
+    this.contactosSource.next(ct);
+  }
 
   changeIdentidade(id:boolean){
     this.identidadeSource.next(id);

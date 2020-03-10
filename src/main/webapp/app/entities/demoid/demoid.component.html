@@ -1,89 +1,118 @@
-<div *ngIf="identidade" class="row justify-content-center">
-    <div class="col-8">
+<div *ngIf="identidade">
+    <div class="col-8" style="margin: auto;">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <div>
-                <jhi-alert-error></jhi-alert-error>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.nome" for="field_nome">Nome</label>
-                    <input type="text" class="form-control" name="nome" id="field_nome"
-                           formControlName="nome"/>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.nome" for="field_nome">Nome</label>
+                            <input type="text" class="form-control" name="nome" id="field_nome"
+                                   formControlName="nome"/>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.altura" for="field_altura">Altura</label>
+                            <input type="number" class="form-control" name="altura" id="field_altura"
+                                   formControlName="altura"/>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.dataNasc" for="field_dataNasc">Data Nasc</label>
+                            <div class="input-group">
+                                <input id="field_dataNasc" type="text" class="form-control" name="dataNasc" ngbDatepicker  #dataNascDp="ngbDatepicker" formControlName="dataNasc"/>
+                                <span class="input-group-append">
+                                    <button type="button" class="btn btn-secondary" (click)="dataNascDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                                </span>
+                            </div>
+                        </div>
                 </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.dataNasc" for="field_dataNasc">Data Nasc</label>
-                    <div class="input-group">
-                        <input id="field_dataNasc" type="text" class="form-control" name="dataNasc" ngbDatepicker  #dataNascDp="ngbDatepicker" formControlName="dataNasc"/>
-                        <span class="input-group-append">
-                            <button type="button" class="btn btn-secondary" (click)="dataNascDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
-                        </span>
+                </div>
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="form-group">
+                                <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.morada" for="field_morada">Morada</label>
+                                <input type="text" class="form-control" name="morada" id="field_morada"
+                                       formControlName="morada"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.freguesia" for="field_freguesia">Freguesia</label>
+                                <input type="text" class="form-control" name="freguesia" id="field_freguesia"
+                                       formControlName="freguesia"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.medFam" for="field_medFam">Med Fam</label>
+                                <input type="text" class="form-control" name="medFam" id="field_medFam"
+                                       formControlName="medFam"/>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.codPost" for="field_codPost">Cod Post</label>
+                                <input type="text" class="form-control" name="codPost" id="field_codPost"
+                                       formControlName="codPost"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.nif" for="field_nif">Nif</label>
+                                <input type="number" class="form-control" name="nif" id="field_nif"
+                                       formControlName="nif"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.sexo" for="field_sexo">Sexo</label>
+                                <select class="form-control" name="sexo" formControlName="sexo" id="field_sexo">
+                                    <option value="Masculino">{{'dialwinApp.Sexo.Masculino' | translate}}</option>
+                                    <option value="Feminino">{{'dialwinApp.Sexo.Feminino' | translate}}</option>
+                                </select>
+                            </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.altura" for="field_altura">Altura</label>
-                    <input type="number" class="form-control" name="altura" id="field_altura"
-                           formControlName="altura"/>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.telef" for="field_telef">Telef</label>
+                            <input type="number" class="form-control" name="telef" id="field_telef"
+                                   formControlName="telef"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.nBenef" for="field_nBenef">N Benef</label>
+                            <input type="number" class="form-control" name="nBenef" id="field_nBenef"
+                                   formControlName="nBenef"/>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.telef2" for="field_telef2">Telef 2</label>
+                            <input type="number" class="form-control" name="telef2" id="field_telef2"
+                                   formControlName="telef2"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.nUtente" for="field_nUtente">N Utente</label>
+                            <input type="number" class="form-control" name="nUtente" id="field_nUtente"
+                                   formControlName="nUtente"/>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.docId" for="field_docId">Doc Id</label>
+                            <input type="number" class="form-control" name="docId" id="field_docId"
+                                   formControlName="docId"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.numProcHosp" for="field_numProcHosp">Num Proc Hosp</label>
+                            <input type="number" class="form-control" name="numProcHosp" id="field_numProcHosp"
+                                   formControlName="numProcHosp"/>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.morada" for="field_morada">Morada</label>
-                    <input type="text" class="form-control" name="morada" id="field_morada"
-                           formControlName="morada"/>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.codPost" for="field_codPost">Cod Post</label>
-                    <input type="text" class="form-control" name="codPost" id="field_codPost"
-                           formControlName="codPost"/>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.freguesia" for="field_freguesia">Freguesia</label>
-                    <input type="text" class="form-control" name="freguesia" id="field_freguesia"
-                           formControlName="freguesia"/>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.nif" for="field_nif">Nif</label>
-                    <input type="number" class="form-control" name="nif" id="field_nif"
-                           formControlName="nif"/>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.medFam" for="field_medFam">Med Fam</label>
-                    <input type="text" class="form-control" name="medFam" id="field_medFam"
-                           formControlName="medFam"/>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.sexo" for="field_sexo">Sexo</label>
-                    <select class="form-control" name="sexo" formControlName="sexo" id="field_sexo">
-                        <option value="Masculino">{{'dialwinApp.Sexo.Masculino' | translate}}</option>
-                        <option value="Feminino">{{'dialwinApp.Sexo.Feminino' | translate}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.telef" for="field_telef">Telef</label>
-                    <input type="number" class="form-control" name="telef" id="field_telef"
-                           formControlName="telef"/>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.telef2" for="field_telef2">Telef 2</label>
-                    <input type="number" class="form-control" name="telef2" id="field_telef2"
-                           formControlName="telef2"/>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.docId" for="field_docId">Doc Id</label>
-                    <input type="number" class="form-control" name="docId" id="field_docId"
-                           formControlName="docId"/>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.nBenef" for="field_nBenef">N Benef</label>
-                    <input type="number" class="form-control" name="nBenef" id="field_nBenef"
-                           formControlName="nBenef"/>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.nUtente" for="field_nUtente">N Utente</label>
-                    <input type="number" class="form-control" name="nUtente" id="field_nUtente"
-                           formControlName="nUtente"/>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.numProcHosp" for="field_numProcHosp">Num Proc Hosp</label>
-                    <input type="number" class="form-control" name="numProcHosp" id="field_numProcHosp"
-                           formControlName="numProcHosp"/>
-                </div>
+                <jhi-alert-error></jhi-alert-error>
+
+                
+                
+                
+                
+                
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.subsistemas" for="field_subsistemas">Subsistemas</label>
                     <select class="form-control" id="field_subsistemas" name="subsistemas" formControlName="subsistemas">
@@ -114,9 +143,6 @@
                 </div>
             </div>
             <div>
-                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
-                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
-                </button>
                 <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
                     <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
                 </button>

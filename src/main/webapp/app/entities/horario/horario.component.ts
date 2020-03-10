@@ -18,6 +18,7 @@ export class HorarioComponent implements OnInit, OnDestroy {
   doenteId:number;
   horarioDoentes: IHorarioDoente[];
   eventSubscriber: Subscription;
+  horario: boolean;
 
   constructor(
     private data: DataService,
@@ -34,6 +35,9 @@ export class HorarioComponent implements OnInit, OnDestroy {
     }
 
   ngOnInit() {
+    this.data.currentHorario.subscribe((h) => {
+      this.horario=h;
+    })
     this.data.currentDoente.subscribe((doenteId) => {
       this.doenteId=doenteId;
       this.loadAll();

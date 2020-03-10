@@ -3,19 +3,18 @@
 <h2>{{doenteNome}}</h2>
 </div>
 <div id="navbar">
-    <a>Identidade</a>
-    <a>Contactos</a>
-    <a>Perfil Socio-familiar</a>
-    <a>Processo Social</a>
-    <a>Horario do Doente</a>
-    <a>Histórico de Movimentos</a>
+    <a class="navItem" (click)="identidadeRoute()">Identidade</a>
+    <a class="navItem" (click)="contactosRoute()">Contactos</a>
+    <a class="navItem" (click)="socioFamiliarRoute()">Perfil Socio-familiar</a>
+    <a class="navItem" (click)="socialRoute()">Processo Social</a>
+    <a class="navItem" (click)="horarioRoute()">Horario do Doente</a>
+    <a class="navItem" (click)="historicoRoute()">Histórico de Movimentos</a>
+    <button class="btn btn-primary" id="bt" (click)="changeSelect(true)">Selecionar Doente</button>
 </div>
 <br>
-<button (click)="changeSelect(true)">Selecionar Doente</button>
 <jhi-seletordoente></jhi-seletordoente>
 <jhi-demoid></jhi-demoid>
 <jhi-contactos></jhi-contactos>
-<jhi-contactosoutros></jhi-contactosoutros>
 <jhi-sociofamiliar></jhi-sociofamiliar>
 <jhi-processosocial></jhi-processosocial>
 <jhi-horario></jhi-horario>

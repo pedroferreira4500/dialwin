@@ -24,6 +24,7 @@ export class ProcessosocialComponent implements OnInit {
   doenteRegistosIntervencoes: IDoenteRegistosIntervencoes[];
   eventSubscriber: Subscription;
   doenteId:number;
+  perfilSocial:boolean;
 
   isSaving: boolean;
   doentes: IDoente[];
@@ -52,6 +53,9 @@ export class ProcessosocialComponent implements OnInit {
 
   ngOnInit() {
     this.isSaving=false;
+    this.data.currentPerfilSocial.subscribe((ps) =>{
+      this.perfilSocial = ps;
+    })
     this.data.currentDoente.subscribe((doenteId) => {
       this.doenteId=doenteId;
       this.loadAll();
