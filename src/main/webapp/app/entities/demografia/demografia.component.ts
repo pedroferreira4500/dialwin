@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../../data.service'
 import { DoenteIdentidadeService } from '../doente-identidade/doente-identidade.service' 
 
@@ -7,7 +7,7 @@ import { DoenteIdentidadeService } from '../doente-identidade/doente-identidade.
   templateUrl: './demografia.component.html',
   styleUrls: ['./demografia.component.scss']
 })
-export class DemografiaComponent implements OnInit {
+export class DemografiaComponent implements OnInit, OnDestroy {
 
   doenteId: number;
   doenteNome: string;
@@ -18,7 +18,18 @@ export class DemografiaComponent implements OnInit {
     protected doIdSer: DoenteIdentidadeService) { 
   }
 
+  ngOnDestroy(){
+    this.doenteId=0;
+    this.data.changeIdentidade(false);
+    this.data.changeContactos(false);
+    this.data.changeSocioFamiliar(false);
+    this.data.changePerfilSocial(false);
+    this.data.changeHorario(false);
+    this.data.changeHistorico(false);
+  }
+
   changeSelect(select:boolean){
+    this.doenteId=0;
     this.data.changeSelect(select);
     this.data.changeIdentidade(false);
     this.data.changeContactos(false);

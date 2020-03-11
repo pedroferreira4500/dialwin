@@ -26,7 +26,6 @@ export class SeletordoenteComponent implements OnInit {
   doenteId:number;
   selectDoente:boolean;
   doenteNome: string;
-
 // PASSAR SUBSISTEMA e turno DE NOME PARA ID
 
   constructor(
@@ -86,13 +85,17 @@ export class SeletordoenteComponent implements OnInit {
     this.data.currenteDoenteNome.subscribe(doenteNome => this.doenteNome = doenteNome)
     this.data.currentSelect.subscribe(selectDoente => this.selectDoente = selectDoente)
     this.data.currentDoente.subscribe(doenteId => this.doenteId = doenteId)
+    if(this.doenteId !==0){
+      this.selectDoente=false;
+    }
     this.loadAllSub();
     this.loadAllTu();
     this.loadAllDo();
   }
 
   changeSelect(select:boolean){
-    this.data.changeSelect
+    this.data.changeSelect;
+    
   }
 
   newDoente(){
@@ -100,6 +103,7 @@ export class SeletordoenteComponent implements OnInit {
   }
 
   logar(did: IDoenteIdentidade){
+    this.data.changeIdentidade(true);
     this.data.changeDoente(did.doente.id)
     this.data.changeDoenteNome(did.nome);
     this.selectDoente=false

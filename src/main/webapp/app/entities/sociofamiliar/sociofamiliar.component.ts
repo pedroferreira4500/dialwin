@@ -76,6 +76,9 @@ export class SociofamiliarComponent implements OnInit {
     this.data.currentSocioFamiliar.subscribe((sf) => {
       this.socioFamiliar = sf;
     })
+    if(this.doenteId ===0){
+      this.socioFamiliar=false;
+    }
     this.isSaving=false;
     this.data.currentDoente.subscribe((doenteId) => {
       this.doenteId=doenteId;
@@ -180,7 +183,6 @@ export class SociofamiliarComponent implements OnInit {
 
   protected onSaveSuccess() {
     this.isSaving = false;
-    this.previousState();
   }
 
   protected onSaveError() {

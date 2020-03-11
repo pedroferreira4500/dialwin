@@ -106,45 +106,45 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.subsistemas" for="field_subsistemas">Subsistemas</label>
+                            <select class="form-control" id="field_subsistemas" name="subsistemas" formControlName="subsistemas">
+                                <option [ngValue]="null"></option>
+                                <option [ngValue]="subSistemasOption.id === editForm.get('subsistemas').value?.id ? editForm.get('subsistemas').value : subSistemasOption" *ngFor="let subSistemasOption of subsistemas; trackBy: trackSubSistemasById">{{subSistemasOption.gidNome}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.aCES" for="field_aCES">A CES</label>
+                            <select class="form-control" id="field_aCES" name="aCES" formControlName="aCES">
+                                <option [ngValue]="null"></option>
+                                <option [ngValue]="aCESOption.id === editForm.get('aCES').value?.id ? editForm.get('aCES').value : aCESOption" *ngFor="let aCESOption of aces; trackBy: trackACESById">{{aCESOption.nome}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.centroSaude" for="field_centroSaude">Centro Saude</label>
+                            <select class="form-control" id="field_centroSaude" name="centroSaude" formControlName="centroSaude">
+                                <option [ngValue]="null"></option>
+                                <option [ngValue]="centroSaudeOption.id === editForm.get('centroSaude').value?.id ? editForm.get('centroSaude').value : centroSaudeOption" *ngFor="let centroSaudeOption of centrosaudes; trackBy: trackCentroSaudeById">{{centroSaudeOption.nome}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.hospRef" for="field_hospRef">Hosp Ref</label>
+                            <select class="form-control" id="field_hospRef" name="hospRef" formControlName="hospRef">
+                                <option [ngValue]="null"></option>
+                                <option [ngValue]="hospRefOption.id === editForm.get('hospRef').value?.id ? editForm.get('hospRef').value : hospRefOption" *ngFor="let hospRefOption of hosprefs; trackBy: trackHospRefById">{{hospRefOption.nome}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
                 <jhi-alert-error></jhi-alert-error>
-
-                
-                
-                
-                
-                
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.subsistemas" for="field_subsistemas">Subsistemas</label>
-                    <select class="form-control" id="field_subsistemas" name="subsistemas" formControlName="subsistemas">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="subSistemasOption.id === editForm.get('subsistemas').value?.id ? editForm.get('subsistemas').value : subSistemasOption" *ngFor="let subSistemasOption of subsistemas; trackBy: trackSubSistemasById">{{subSistemasOption.gidNome}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.centroSaude" for="field_centroSaude">Centro Saude</label>
-                    <select class="form-control" id="field_centroSaude" name="centroSaude" formControlName="centroSaude">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="centroSaudeOption.id === editForm.get('centroSaude').value?.id ? editForm.get('centroSaude').value : centroSaudeOption" *ngFor="let centroSaudeOption of centrosaudes; trackBy: trackCentroSaudeById">{{centroSaudeOption.nome}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.aCES" for="field_aCES">A CES</label>
-                    <select class="form-control" id="field_aCES" name="aCES" formControlName="aCES">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="aCESOption.id === editForm.get('aCES').value?.id ? editForm.get('aCES').value : aCESOption" *ngFor="let aCESOption of aces; trackBy: trackACESById">{{aCESOption.nome}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteIdentidade.hospRef" for="field_hospRef">Hosp Ref</label>
-                    <select class="form-control" id="field_hospRef" name="hospRef" formControlName="hospRef">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="hospRefOption.id === editForm.get('hospRef').value?.id ? editForm.get('hospRef').value : hospRefOption" *ngFor="let hospRefOption of hosprefs; trackBy: trackHospRefById">{{hospRefOption.nome}}</option>
-                    </select>
-                </div>
             </div>
             <div>
                 <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
-                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Guardar</span>
                 </button>
             </div>
         </form>

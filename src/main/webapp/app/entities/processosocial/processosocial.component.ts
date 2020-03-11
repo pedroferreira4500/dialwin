@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { IDoente } from 'app/shared/model/doente.model';
 import { FormBuilder, Validators } from '@angular/forms';
 import { DoenteService } from 'app/entities/doente/doente.service';
@@ -20,7 +20,7 @@ import { DoenteRegistosIntervencoesDeleteDialogComponent } from '../doente-regis
   templateUrl: './processosocial.component.html',
   styleUrls: ['./processosocial.component.scss']
 })
-export class ProcessosocialComponent implements OnInit {
+export class ProcessosocialComponent implements OnInit, OnDestroy {
   doenteRegistosIntervencoes: IDoenteRegistosIntervencoes[];
   eventSubscriber: Subscription;
   doenteId:number;
@@ -123,7 +123,6 @@ export class ProcessosocialComponent implements OnInit {
 
   protected onSaveSuccess() {
     this.isSaving = false;
-    this.previousState();
   }
 
   protected onSaveError() {

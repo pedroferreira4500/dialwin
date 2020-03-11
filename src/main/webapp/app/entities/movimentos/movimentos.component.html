@@ -18,25 +18,17 @@
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>
-            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
             <th scope="col" ><span jhiTranslate="dialwinApp.doenteHistMovimentos.data">Data</span></th>
             <th scope="col" ><span jhiTranslate="dialwinApp.doenteHistMovimentos.situacao">Situacao</span></th>
             <th scope="col" ><span jhiTranslate="dialwinApp.doenteHistMovimentos.obs">Obs</span></th>
-            <th scope="col" ><span jhiTranslate="dialwinApp.doenteHistMovimentos.doente">Doente</span></th>
             <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let doenteHistMovimentos of doenteHistMovimentos ;trackBy: trackId">
-                <td><a [routerLink]="['/doente-hist-movimentos', doenteHistMovimentos.id, 'view' ]">{{doenteHistMovimentos.id}}</a></td>
                 <td>{{doenteHistMovimentos.data | date:'mediumDate'}}</td>
                 <td>{{doenteHistMovimentos.situacao}}</td>
                 <td>{{doenteHistMovimentos.obs}}</td>
-                <td>
-                    <div *ngIf="doenteHistMovimentos.doente">
-                        <a [routerLink]="['/doente', doenteHistMovimentos.doente?.id, 'view' ]" >{{doenteHistMovimentos.doente?.id}}</a>
-                    </div>
-                </td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

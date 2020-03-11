@@ -96,9 +96,6 @@ export class DemoidComponent implements OnInit {
     this.data.currentIdentidade.subscribe(identidade => this.identidade = identidade);
     this.data.currentDoente.subscribe((doenteId) =>  {
       this.doenteId = doenteId;
-      if(this.doenteId !==0){
-        this.identidade = true;
-      }
       this.doenteIdentidadeService.find(doenteId).subscribe((resp) => {
         this.updateForm(resp.body);
       });
@@ -215,7 +212,6 @@ export class DemoidComponent implements OnInit {
 
   protected onSaveSuccess() {
     this.isSaving = false;
-    this.previousState();
   }
 
   protected onSaveError() {

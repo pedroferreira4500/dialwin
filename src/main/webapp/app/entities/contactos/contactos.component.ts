@@ -123,7 +123,6 @@ delete(doenteContactosOutros: IDoenteContactosOutros) {
 
   protected onSaveSuccess() {
     this.isSaving = false;
-    this.previousState();
   }
 
   protected onSaveError() {
