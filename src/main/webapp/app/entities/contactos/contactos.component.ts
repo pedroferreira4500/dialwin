@@ -94,8 +94,13 @@ registerChangeInDoenteContactosOutros() {
 }
 
 delete(doenteContactosOutros: IDoenteContactosOutros) {
-  const modalRef = this.modalService.open(DoenteContactosOutrosDeleteDialogComponent, { size: 'lg', backdrop: 'static' });
-  modalRef.componentInstance.doenteContactosOutros = doenteContactosOutros;
+  this.doenteContactosOutrosService.delete(doenteContactosOutros.id).subscribe(() => {
+    this.eventManager.broadcast({
+      name: 'doenteContactosOutrosListModification',
+      content: 'Deleted an doenteContactosOutros'
+    });
+  this.loadAll();
+  });
 }
 
   updateForm(doenteContactos: IDoenteContactos) {

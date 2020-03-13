@@ -56,8 +56,12 @@ export class MovimentosComponent implements OnInit, OnDestroy {
   }
 
   delete(doenteHistMovimentos: IDoenteHistMovimentos) {
-    const modalRef = this.modalService.open(DoenteHistMovimentosDeleteDialogComponent, { size: 'lg', backdrop: 'static' });
-    modalRef.componentInstance.doenteHistMovimentos = doenteHistMovimentos;
+    this.doenteHistMovimentosService.delete(doenteHistMovimentos.id).subscribe(() => {
+      this.eventManager.broadcast({
+        name: 'doenteHistMovimentosListModification',
+        content: 'Deleted an doenteHistMovimentos'
+      });
+    });
   }
 
 }

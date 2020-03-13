@@ -3,34 +3,30 @@
     <div class="row justify-content-center">
     <div class="col-6">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-doente-diagnostico-social-heading" jhiTranslate="dialwinApp.doenteDiagnosticoSocial.home.createOrEditLabel">Create or edit a Doente Diagnostico Social</h2>
             <div>
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteDiagnosticoSocial.descr" for="field_descr">Descr</label>
-                    <input type="text" class="form-control" name="descr" id="field_descr"
-                           formControlName="descr"/>
+                    <label class="form-control-label" for="field_descr">Diagnóstico Social</label>
+                    <textarea rows=10 formControlName="descr" class="form-control"></textarea>
                 </div>
             <div>
                 <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
-                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Guardar</span>
                 </button>
             </div>
         </form>
     </div>
     <div class="col-6">
         <h2 id="page-heading">
-            <span jhiTranslate="dialwinApp.doenteRegistosIntervencoes.home.title">Doente Registos Intervencoes</span>
+            <label style="font-size: 18px;" class="form-control-label" for="field_descr">Registo de Intervenções</label>
             <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-doente-registos-intervencoes" [routerLink]="['/doente-registos-intervencoes/new']">
                 <fa-icon [icon]="'plus'"></fa-icon>
-                <span  jhiTranslate="dialwinApp.doenteRegistosIntervencoes.home.createLabel">
-                Create a new Doente Registos Intervencoes
+                <span>
+                Adicionar
                 </span>
             </button>
         </h2>
-        <jhi-alert-error></jhi-alert-error>
-        <jhi-alert></jhi-alert>
-        <br/>
+    
         <div class="alert alert-warning" *ngIf="doenteRegistosIntervencoes?.length === 0">
             <span jhiTranslate="dialwinApp.doenteRegistosIntervencoes.home.notFound">No doenteRegistosIntervencoes found</span>
         </div>

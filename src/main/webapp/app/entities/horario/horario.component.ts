@@ -58,8 +58,12 @@ export class HorarioComponent implements OnInit, OnDestroy {
   }
 
   delete(horarioDoente: IHorarioDoente) {
-    const modalRef = this.modalService.open(HorarioDoenteDeleteDialogComponent, { size: 'lg', backdrop: 'static' });
-    modalRef.componentInstance.horarioDoente = horarioDoente;
-  }
+    this.horarioDoenteService.delete(horarioDoente.id).subscribe(() => {
+      this.eventManager.broadcast({
+        name: 'horarioDoenteListModification',
+        content: 'Deleted an horarioDoente'
+      });
+  });
+}
 
 }
