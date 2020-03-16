@@ -31,8 +31,6 @@
         <h2 id="page-heading">
             
         </h2>
-        <jhi-alert-error></jhi-alert-error>
-        <jhi-alert></jhi-alert>
         <br/>
         <div class="alert alert-warning" *ngIf="doenteContactosOutros?.length === 0">
             <span jhiTranslate="dialwinApp.doenteContactosOutros.home.notFound">No doenteContactosOutros found</span>
@@ -73,12 +71,15 @@
                 </tbody>
             </table>
         </div>
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-doente-contactos-outros" [routerLink]="['/doente-contactos-outros/new']">
+        <button *ngIf="!newContacto" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-doente-contactos-outros" (click)="addContacto()">
             <fa-icon [icon]="'plus'"></fa-icon>
             <span>
             Adicionar
             </span>
         </button>
+        <div id="newContacto">
+            
+        </div>
     </div>
     
 </div>

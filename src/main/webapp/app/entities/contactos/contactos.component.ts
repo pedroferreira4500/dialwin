@@ -28,6 +28,8 @@ export class ContactosComponent implements OnInit, OnDestroy {
   contactos:boolean;
   doenteContactosOutros: IDoenteContactosOutros[];
   eventSubscriber: Subscription;
+  updatecontactos:boolean;
+  newContacto:boolean;
 
   editForm = this.fb.group({
     id: [],
@@ -46,6 +48,11 @@ export class ContactosComponent implements OnInit, OnDestroy {
     private data: DataService) { }
 
   ngOnInit() {
+    this.data.currentnewcontacto.subscribe(nc =>{
+      this.newContacto=nc;
+      this.loadAll();
+        this.registerChangeInDoenteContactosOutros();
+    })
     this.isSaving = false;
     this.data.currentContactos.subscribe((ct) => {
       this.contactos= ct;
@@ -80,6 +87,8 @@ export class ContactosComponent implements OnInit, OnDestroy {
         this.doenteContactosOutros = res.body;
     })
 }
+
+
 
 ngOnDestroy() {
   this.eventManager.destroy(this.eventSubscriber);
@@ -132,6 +141,11 @@ delete(doenteContactosOutros: IDoenteContactosOutros) {
 
   protected onSaveError() {
     this.isSaving = false;
+  }
+
+  addContacto(){
+    this.newContacto=true;
+    this.data.changenewcontacto(true);
   }
 
   previousState() {

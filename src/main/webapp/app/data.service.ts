@@ -32,8 +32,17 @@ export class DataService {
   private historicoSource = new BehaviorSubject(false);
   currentHistorico = this.historicoSource.asObservable();
 
+
+  private newcontactoSource = new BehaviorSubject(false);
+  currentnewcontacto = this.newcontactoSource.asObservable();
+
  
   constructor() { }
+
+  changenewcontacto(nc:boolean){
+    this.newcontactoSource.next(nc);
+  }
+
 
   changeHistorico(hi:boolean){
     this.historicoSource.next(hi);
