@@ -1,7 +1,7 @@
-<div *ngIf="historico">
+<div id="demo" *ngIf="historico">
     <div *ngIf="!newMovimento">    
     <h2 id="page-heading">
-        <button id="print" class="btn btn-primary float-right">
+        <button (click)="print()" id="print" class="btn btn-primary float-right">
             <span>
             Imprimir
             </span>
@@ -16,7 +16,7 @@
 <!--<jhi-alert-error></jhi-alert-error>
     <jhi-alert></jhi-alert>-->    
     <br/>
-    <div class="table-responsive" *ngIf="doenteHistMovimentos?.length > 0">
+    <div id="print-section" class="table-responsive" *ngIf="doenteHistMovimentos?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr>

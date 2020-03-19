@@ -24,7 +24,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
-  imports: [NgbModule,
+  imports: [
+    NgbModule,
     BrowserModule,
     DialwinSharedModule,
     DialwinCoreModule,

@@ -53,6 +53,10 @@ export class MovimentosComponent implements OnInit, OnDestroy {
     ) { }
 
 
+    print(){
+      window.print();
+    }
+
     save() {
       this.isSaving = true;
       const doenteHistMovimentos = this.createFromForm();
