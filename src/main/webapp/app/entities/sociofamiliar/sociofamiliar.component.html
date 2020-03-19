@@ -22,31 +22,31 @@
                                    formControlName="conjugeNome"/>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.activTempLiv" for="field_activTempLiv">Activ Temp Liv</label>
+                            <label class="form-control-label" for="field_activTempLiv">Actividade Tempos Livres</label>
                             <input type="text" class="form-control" name="activTempLiv" id="field_activTempLiv"
                                    formControlName="activTempLiv"/>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.grauConfortoObs" for="field_grauConfortoObs">Grau Conforto Obs</label>
+                            <label class="form-control-label" for="field_grauConfortoObs">Grau Conforto Observações</label>
                             <input type="text" class="form-control" name="grauConfortoObs" id="field_grauConfortoObs"
                                    formControlName="grauConfortoObs"/>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.vitalidade" for="field_vitalidade">Vitalidade</label>
+                            <label class="form-control-label" for="field_vitalidade">Vitalidade</label>
                             <select class="form-control" id="field_vitalidade" name="vitalidade" formControlName="vitalidade">
                                 <option [ngValue]="null"></option>
                                 <option [ngValue]="vitalidadeOption.id === editForm.get('vitalidade').value?.id ? editForm.get('vitalidade').value : vitalidadeOption" *ngFor="let vitalidadeOption of vitalidades; trackBy: trackVitalidadeById">{{vitalidadeOption.percentagem}}</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.habit" for="field_habit">Habit</label>
+                            <label class="form-control-label" for="field_habit">Habitação</label>
                             <select class="form-control" id="field_habit" name="habit" formControlName="habit">
                                 <option [ngValue]="null"></option>
                                 <option [ngValue]="habitOption.id === editForm.get('habit').value?.id ? editForm.get('habit').value : habitOption" *ngFor="let habitOption of habits; trackBy: trackHabitById">{{habitOption.nome}}</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.profissao" for="field_profissao">Profissao</label>
+                            <label class="form-control-label" for="field_profissao">Profissão</label>
                             <select class="form-control" id="field_profissao" name="profissao" formControlName="profissao">
                                 <option [ngValue]="null"></option>
                                 <option [ngValue]="profissaoOption.id === editForm.get('profissao').value?.id ? editForm.get('profissao').value : profissaoOption" *ngFor="let profissaoOption of profissaos; trackBy: trackProfissaoById">{{profissaoOption.nome}}</option>
@@ -55,19 +55,19 @@
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.estCivil" for="field_estCivil">Est Civil</label>
+                            <label class="form-control-label" for="field_estCivil">Estado Civil</label>
                             <select class="form-control" name="estCivil" formControlName="estCivil" id="field_estCivil">
                                 <option value="Solteiro">{{'dialwinApp.EstCivil.Solteiro' | translate}}</option>
                                 <option value="Casado">{{'dialwinApp.EstCivil.Casado' | translate}}</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.conjugeProf" for="field_conjugeProf">Conjuge Prof</label>
+                            <label class="form-control-label" for="field_conjugeProf">Conjuge Profissão</label>
                             <input type="text" class="form-control" name="conjugeProf" id="field_conjugeProf"
                                    formControlName="conjugeProf"/>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.habitacaoObs" for="field_habitacaoObs">Habitacao Obs</label>
+                            <label class="form-control-label" for="field_habitacaoObs">Habitacao Observações</label>
                             <input type="text" class="form-control" name="habitacaoObs" id="field_habitacaoObs"
                                    formControlName="habitacaoObs"/>
                         </div>
@@ -78,14 +78,14 @@
                         </div>
                         
                         <div class="form-group">
-                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.grauConf" for="field_grauConf">Grau Conf</label>
+                            <label class="form-control-label" for="field_grauConf">Grau Conforto</label>
                             <select class="form-control" id="field_grauConf" name="grauConf" formControlName="grauConf">
                                 <option [ngValue]="null"></option>
                                 <option [ngValue]="grauConfOption.id === editForm.get('grauConf').value?.id ? editForm.get('grauConf').value : grauConfOption" *ngFor="let grauConfOption of grauconfs; trackBy: trackGrauConfById">{{grauConfOption.nome}}</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.sitProf" for="field_sitProf">Sit Prof</label>
+                            <label class="form-control-label" for="field_sitProf">Situação Profissional</label>
                             <select class="form-control" id="field_sitProf" name="sitProf" formControlName="sitProf">
                                 <option [ngValue]="null"></option>
                                 <option [ngValue]="sitProfOption.id === editForm.get('sitProf').value?.id ? editForm.get('sitProf').value : sitProfOption" *ngFor="let sitProfOption of sitprofs; trackBy: trackSitProfById">{{sitProfOption.nome}}</option>

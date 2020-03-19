@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { IDoente } from 'app/shared/model/doente.model';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder} from '@angular/forms';
 import { DoenteService } from 'app/entities/doente/doente.service';
 import { IDoenteDiagnosticoSocial, DoenteDiagnosticoSocial } from 'app/shared/model/doente-diagnostico-social.model';
 import { JhiAlertService } from 'ng-jhipster';
@@ -8,12 +8,12 @@ import { DoenteDiagnosticoSocialService } from '../doente-diagnostico-social/doe
 import { DataService } from '../../data.service';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IDoenteRegistosIntervencoes } from '../../shared/model/doente-registos-intervencoes.model';
 import { Subscription } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 import { DoenteRegistosIntervencoesService } from '../doente-registos-intervencoes/doente-registos-intervencoes.service';
 import { DoenteRegistosIntervencoesDeleteDialogComponent } from '../doente-registos-intervencoes/doente-registos-intervencoes-delete-dialog.component';
+import { IDoenteRegistosIntervencoes, DoenteRegistosIntervencoes } from 'app/shared/model/doente-registos-intervencoes.model';
 
 @Component({
   selector: 'jhi-processosocial',
@@ -29,7 +29,17 @@ export class ProcessosocialComponent implements OnInit, OnDestroy {
   isSaving: boolean;
   doentes: IDoente[];
 
+  newRegisto=false;
+  isSaving2:boolean;
+  doente:IDoente;
+
   editForm = this.fb.group({
+    id: [],
+    descr: [],
+    doente: []
+  });
+
+  editForm2 = this.fb.group({
     id: [],
     descr: [],
     doente: []
@@ -45,19 +55,54 @@ export class ProcessosocialComponent implements OnInit, OnDestroy {
     private data: DataService
     ) { }
 
+    save2() {
+      this.isSaving = true;
+      const doenteRegistosIntervencoes = this.createFromForm2();
+        this.subscribeToSaveResponse2(this.doenteRegistosIntervencoesService.create(doenteRegistosIntervencoes));
+        this.newRegisto=false;
+        this.loadAll();
+        this.delay(2000);
+        this.loadAll();
+    }
+
+    async delay(ms: number) {
+      await new Promise(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
+  }
+
+    private createFromForm2(): IDoenteRegistosIntervencoes {
+      return {
+        ...new DoenteRegistosIntervencoes(),
+        descr: this.editForm2.get(['descr']).value,
+        doente: this.doente
+      };
+    }
+
     loadAll() {
       this.doenteRegistosIntervencoesService.search(this.doenteId).subscribe((res: HttpResponse<IDoenteRegistosIntervencoes[]>) => {
         this.doenteRegistosIntervencoes = res.body;
       });
     }
 
+    cancel(){
+      this.newRegisto=false;
+      this.editForm2.reset();
+    }
+
+    addRegisto(){
+      this.newRegisto=true;
+    }
+
   ngOnInit() {
+    this.isSaving2 = false;
     this.isSaving=false;
     this.data.currentPerfilSocial.subscribe((ps) =>{
       this.perfilSocial = ps;
     })
     this.data.currentDoente.subscribe((doenteId) => {
       this.doenteId=doenteId;
+      this.doenteService.find(this.doenteId).subscribe((dt) =>{
+        this.doente=dt.body;
+      })
       this.loadAll();
     this.registerChangeInDoenteRegistosIntervencoes();
       this.doenteDiagnosticoSocialService.search(this.doenteId).subscribe((res) => {
@@ -71,6 +116,10 @@ export class ProcessosocialComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.eventManager.destroy(this.eventSubscriber);
+  }
+
+  protected subscribeToSaveResponse2(result: Observable<HttpResponse<IDoenteRegistosIntervencoes>>) {
+    result.subscribe(() => this.onSaveSuccess(), () => this.onSaveError());
   }
 
   trackId(index: number, item: IDoenteRegistosIntervencoes) {
@@ -90,7 +139,7 @@ export class ProcessosocialComponent implements OnInit, OnDestroy {
     this.editForm.patchValue({
       id: doenteDiagnosticoSocial.id,
       descr: doenteDiagnosticoSocial.descr,
-      doente: doenteDiagnosticoSocial.doente
+      doente: this.doente
     });
   }
 
@@ -101,11 +150,7 @@ export class ProcessosocialComponent implements OnInit, OnDestroy {
   save() {
     this.isSaving = true;
     const doenteDiagnosticoSocial = this.createFromForm();
-    if (doenteDiagnosticoSocial.id !== undefined) {
-      this.subscribeToSaveResponse(this.doenteDiagnosticoSocialService.update(doenteDiagnosticoSocial));
-    } else {
       this.subscribeToSaveResponse(this.doenteDiagnosticoSocialService.create(doenteDiagnosticoSocial));
-    }
   }
 
   private createFromForm(): IDoenteDiagnosticoSocial {
@@ -122,6 +167,14 @@ export class ProcessosocialComponent implements OnInit, OnDestroy {
   }
 
   protected onSaveSuccess() {
+    this.isSaving = false;
+  }
+
+  protected onSaveSuccess2() {
+    this.isSaving = false;
+  }
+
+  protected onSaveError2() {
     this.isSaving = false;
   }
 

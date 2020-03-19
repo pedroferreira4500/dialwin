@@ -12,11 +12,11 @@ import { SociofamiliarComponent } from '../sociofamiliar/sociofamiliar.component
 import { ProcessosocialComponent } from '../processosocial/processosocial.component';
 import { HorarioComponent } from '../horario/horario.component';
 import { MovimentosComponent } from '../movimentos/movimentos.component';
-import { NewcontactoComponent } from '../newcontacto/newcontacto.component'
-import { ModalComponent } from '../modal/modal.component';
+import { NewmovimentoComponent } from '../newmovimento/newmovimento.component';
+
 
 @NgModule({
   imports: [DialwinSharedModule, RouterModule.forChild([DEMOGRAFIA_ROUTE])],
-  declarations: [DemografiaComponent, SeletordoenteComponent, DemoidComponent, ContactosComponent,ContactosoutrosComponent, SociofamiliarComponent, ProcessosocialComponent, HorarioComponent, MovimentosComponent, NewcontactoComponent, ModalComponent]
+  declarations: [DemografiaComponent, SeletordoenteComponent, DemoidComponent, ContactosComponent,ContactosoutrosComponent, SociofamiliarComponent, ProcessosocialComponent, HorarioComponent, MovimentosComponent, NewmovimentoComponent]
 })
 export class DialwinDemografiaModule {}

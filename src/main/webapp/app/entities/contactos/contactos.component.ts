@@ -9,13 +9,12 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { JhiAlertService } from 'ng-jhipster';
 import { Observable } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
-import { IDoenteContactosOutros } from 'app/shared/model/doente-contactos-outros.model';
 import { Subscription } from 'rxjs';
+import { IDoenteContactosOutros, DoenteContactosOutros } from 'app/shared/model/doente-contactos-outros.model';
+
 import { DoenteContactosOutrosService } from '../doente-contactos-outros/doente-contactos-outros.service'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { DoenteContactosOutrosDeleteDialogComponent } from '../doente-contactos-outros/doente-contactos-outros-delete-dialog.component';
-
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'jhi-contactos',
   templateUrl: './contactos.component.html',
@@ -31,10 +30,28 @@ export class ContactosComponent implements OnInit, OnDestroy {
   updatecontactos:boolean;
   newContacto:boolean;
 
+  contactos2:boolean;
+  newContacto2:boolean;
+  isSaving2: boolean;
+  doente:IDoente;
+  changedoenteupdate:boolean;
+
   editForm = this.fb.group({
     id: [],
     transportador: [],
     telefTransp: [],
+    doente: []
+  });
+
+  editForm2 = this.fb.group({
+    id: [],
+    nome: [],
+    parentesco: [],
+    coabita: [],
+    telef: [],
+    ocupacao: [],
+    obs: [],
+    preferencial: [],
     doente: []
   });
 
@@ -45,9 +62,26 @@ export class ContactosComponent implements OnInit, OnDestroy {
     protected jhiAlertService: JhiAlertService,
     protected doenteService: DoenteService,
     protected modalService: NgbModal,
+    protected activatedRoute: ActivatedRoute,
     private data: DataService) { }
 
   ngOnInit() {
+    this.data.currentnewcontacto.subscribe((cnc) => {
+      this.newContacto2 = cnc;
+    })
+    
+    this.data.currentDoente.subscribe((doent) => {
+      this.doenteId = doent;
+      this.doenteService.find(this.doenteId).subscribe((doe) => {
+        this.doente = doe.body;
+      })
+    })
+    this.data.currentContactos.subscribe((ct) => {
+      this.contactos2= ct;
+    });
+    this.isSaving2 = false;
+
+
     this.data.currentnewcontacto.subscribe(nc =>{
       this.newContacto=nc;
       this.loadAll();
@@ -88,6 +122,54 @@ export class ContactosComponent implements OnInit, OnDestroy {
     })
 }
 
+
+save2() {
+  this.isSaving2 = true;
+  const doenteContactosOutros = this.createFromForm2();
+    this.subscribeToSaveResponse2(this.doenteContactosOutrosService.create(doenteContactosOutros));
+    this.data.changenewcontacto(false);
+    this.loadAll();
+    this.loadAll();
+    this.loadAll();
+    this.delay(2000);
+    this.loadAll();
+}
+
+cancel(){
+  this.newContacto=false;
+  this.editForm2.reset();
+}
+
+async delay(ms: number) {
+  await new Promise(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
+}
+
+private createFromForm2(): IDoenteContactosOutros {
+  return {
+    ...new DoenteContactosOutros(),
+    id: this.editForm2.get(['id']).value,
+    nome: this.editForm2.get(['nome']).value,
+    parentesco: this.editForm2.get(['parentesco']).value,
+    coabita: this.editForm2.get(['coabita']).value,
+    telef: this.editForm2.get(['telef']).value,
+    ocupacao: this.editForm2.get(['ocupacao']).value,
+    obs: this.editForm2.get(['obs']).value,
+    preferencial: this.editForm2.get(['preferencial']).value,
+    doente: this.doente
+  };
+}
+
+protected subscribeToSaveResponse2(result: Observable<HttpResponse<IDoenteContactosOutros>>) {
+  result.subscribe(() => this.onSaveSuccess2(), () => this.onSaveError2());
+}
+
+protected onSaveSuccess2() {
+  this.isSaving2 = false;
+}
+
+protected onSaveError2() {
+  this.isSaving2 = false;
+}
 
 
 ngOnDestroy() {

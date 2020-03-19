@@ -1,12 +1,18 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../../data.service'
 import { DoenteHistMovimentosService } from '../doente-hist-movimentos/doente-hist-movimentos.service';
-import { HttpResponse } from '@angular/common/http';
-import { IDoenteHistMovimentos } from 'app/shared/model/doente-hist-movimentos.model';
 import { Subscription } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 import { DoenteHistMovimentosDeleteDialogComponent } from '../doente-hist-movimentos/doente-hist-movimentos-delete-dialog.component';
+import { IDoente } from 'app/shared/model/doente.model';
+import { FormBuilder, Validators } from '@angular/forms';
+import { DoenteService } from 'app/entities/doente/doente.service';
+import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { IDoenteHistMovimentos, DoenteHistMovimentos } from 'app/shared/model/doente-hist-movimentos.model';
+import { JhiAlertService } from 'ng-jhipster';
+import { Observable } from 'rxjs';
+
 
 
 @Component({
@@ -19,22 +25,103 @@ export class MovimentosComponent implements OnInit, OnDestroy {
   doenteHistMovimentos: IDoenteHistMovimentos[];
   eventSubscriber: Subscription;
   historico:boolean;
+  newMovimento=false;
+
+  isSaving:boolean;
+  doente:IDoente;
+  dataDp:any;
+  doentes:IDoente[];
+
+
+  editForm = this.fb.group({
+    id: [],
+    data: [],
+    situacao: [],
+    obs: [],
+    doente: []
+  });
+
+
   constructor(
-    private data: DataService,
+    protected jhiAlertService: JhiAlertService,
     protected eventManager: JhiEventManager,
     protected modalService: NgbModal,
-    protected doenteHistMovimentosService: DoenteHistMovimentosService
+    protected doenteService: DoenteService,
+    protected doenteHistMovimentosService: DoenteHistMovimentosService,
+    private fb: FormBuilder,
+    private data: DataService
     ) { }
 
+
+    save() {
+      this.isSaving = true;
+      const doenteHistMovimentos = this.createFromForm();
+        this.subscribeToSaveResponse(this.doenteHistMovimentosService.create(doenteHistMovimentos));
+        this.newMovimento=false;
+        this.loadAll();
+        this.delay(2000);
+        this.loadAll();
+
+    }
+
+    cancel(){
+      this.newMovimento=false;
+      this.editForm.reset();
+    }
+
+    async delay(ms: number) {
+      await new Promise(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
+  }
+
+    addMovimento(){
+      this.newMovimento=true;
+    }
+
+    private createFromForm(): IDoenteHistMovimentos {
+      return {
+        ...new DoenteHistMovimentos(),
+        data: this.editForm.get(['data']).value,
+        situacao: this.editForm.get(['situacao']).value,
+        obs: this.editForm.get(['obs']).value,
+        doente: this.doente
+      };
+    }
+
+    protected subscribeToSaveResponse(result: Observable<HttpResponse<IDoenteHistMovimentos>>) {
+      result.subscribe(() => this.onSaveSuccess(), () => this.onSaveError());
+    }
+  
+    protected onSaveSuccess() {
+      this.isSaving = false;
+    }
+  
+    protected onSaveError() {
+      this.isSaving = false;
+    }
+    protected onError(errorMessage: string) {
+      this.jhiAlertService.error(errorMessage, null, null);
+    }
+  
+    trackDoenteById(index: number, item: IDoente) {
+      return item.id;
+    }
+
   ngOnInit() {
+    this.isSaving = false;
     this.data.currentHistorico.subscribe((hi) => {
       this.historico=hi;
     })
     this.data.currentDoente.subscribe((doenteId) =>  {
       this.doenteId = doenteId;
+      this.doenteService.find(this.doenteId).subscribe((dt) =>[
+        this.doente=dt.body
+      ])
       this.loadAll();
       this.registerChangeInDoenteHistMovimentos();
     });
+    this.doenteService
+      .query()
+      .subscribe((res: HttpResponse<IDoente[]>) => (this.doentes = res.body), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   loadAll() {
