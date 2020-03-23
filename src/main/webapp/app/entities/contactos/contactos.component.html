@@ -38,13 +38,14 @@
             <table class="table table-striped" aria-describedby="page-heading">
                 <thead>
                 <tr>
-                <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.nome">Nome</span></th>
-                <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.parentesco">Parentesco</span></th>
-                <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.coabita">Coabita</span></th>
-                <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.telef">Telefone</span></th>
-                <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.ocupacao">Ocupacao</span></th>
-                <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.obs">Observação</span></th>
-                <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.preferencial">Preferencial</span></th>
+                <th scope="col" ><span>Nome</span></th>
+                <th scope="col" ><span>Parentesco</span></th>
+                <th scope="col" ><span>Coabita</span></th>
+                <th scope="col" ><span>Telefone</span></th>
+                <th scope="col" ><span>Ocupação</span></th>
+                <th scope="col" ><span>Preferencial</span></th>
+                <th scope="col" ><span>Observações</span></th>
+                
                 <th scope="col"></th>
                 </tr>
                 </thead>
@@ -55,8 +56,9 @@
                     <td>{{doenteContactosOutros.coabita}}</td>
                     <td>{{doenteContactosOutros.telef}}</td>
                     <td>{{doenteContactosOutros.ocupacao}}</td>
-                    <td>{{doenteContactosOutros.obs}}</td>
                     <td>{{doenteContactosOutros.preferencial}}</td>
+                    <td>{{doenteContactosOutros.obs}}</td>
+                    
                     <td class="text-right">
                         <div class="btn-group">
                             <button (click)="delete(doenteContactosOutros)"
@@ -100,24 +102,25 @@
                                    formControlName="coabita"/>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteContactosOutros.telef" for="field_telef">Telef</label>
+                            <label class="form-control-label"  for="field_telef">Telefone</label>
                             <input type="number" class="form-control" name="telef" id="field_telef"
                                    formControlName="telef"/>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteContactosOutros.ocupacao" for="field_ocupacao">Ocupacao</label>
+                            <label class="form-control-label" for="field_ocupacao">Ocupação</label>
                             <input type="text" class="form-control" name="ocupacao" id="field_ocupacao"
                                    formControlName="ocupacao"/>
                         </div>
-                        <div class="form-group">
-                            <label class="form-control-label" jhiTranslate="dialwinApp.doenteContactosOutros.obs" for="field_obs">Obs</label>
-                            <input type="text" class="form-control" name="obs" id="field_obs"
-                                   formControlName="obs"/>
-                        </div>
+                        
                         <div class="form-group" style="width: 3%;">
                             <label class="form-control-label" jhiTranslate="dialwinApp.doenteContactosOutros.preferencial" for="field_preferencial">Preferencial</label>
                             <input type="checkbox" class="form-control" name="preferencial" id="field_preferencial"
                                    formControlName="preferencial"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="field_obs">Observações</label>
+                            <input type="text" class="form-control" name="obs" id="field_obs"
+                                   formControlName="obs"/>
                         </div>
                     </div>
                     <div>

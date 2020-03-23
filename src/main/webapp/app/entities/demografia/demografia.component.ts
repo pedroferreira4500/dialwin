@@ -14,6 +14,12 @@ export class DemografiaComponent implements OnInit, OnDestroy {
   selectDoente: boolean;
   identidade: boolean;
   contactos:boolean;
+  pfs:boolean;
+  horario:boolean;
+  movimentos:boolean;
+  sociofamiliar:boolean;
+  colorA = "blue";
+  colorB= "#007bff";
   constructor(private data: DataService,
     protected doIdSer: DoenteIdentidadeService) { 
   }
@@ -112,6 +118,10 @@ export class DemografiaComponent implements OnInit, OnDestroy {
     this.data.currenteDoenteNome.subscribe(doenteNome => this.doenteNome = doenteNome)
     this.data.currentSelect.subscribe(selectDoente => this.selectDoente = selectDoente)
     this.data.currentIdentidade.subscribe(identidade => this.identidade = identidade);
+    this.data.currentPerfilSocial.subscribe(pfs => this.pfs = pfs);
+    this.data.currentHorario.subscribe(hr => this.horario = hr)
+    this.data.currentHistorico.subscribe(mv => this.movimentos= mv)
+    this.data.currentSocioFamiliar.subscribe(sf => this.sociofamiliar=sf);
   }
 
 }
