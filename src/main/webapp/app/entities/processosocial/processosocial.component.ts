@@ -79,7 +79,7 @@ export class ProcessosocialComponent implements OnInit, OnDestroy {
 
     loadAll() {
       this.doenteRegistosIntervencoesService.search(this.doenteId).subscribe((res: HttpResponse<IDoenteRegistosIntervencoes[]>) => {
-        this.doenteRegistosIntervencoes = res.body;
+        this.doenteRegistosIntervencoes = res.body.reverse();
       });
     }
 
