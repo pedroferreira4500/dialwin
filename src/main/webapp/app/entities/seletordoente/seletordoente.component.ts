@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ISubSistemas } from '../../shared/model/sub-sistemas.model';
 import { SubSistemasService } from '../sub-sistemas/sub-sistemas.service';
 import { HttpResponse } from '@angular/common/http';
@@ -26,6 +26,10 @@ export class SeletordoenteComponent implements OnInit {
   doenteId:number;
   selectDoente:boolean;
   doenteNome: string;
+  d= new Date();
+  diaSemana: string;
+  hora:string;
+  turnoId:number;
 // PASSAR SUBSISTEMA e turno DE NOME PARA ID
 
   constructor(
@@ -56,6 +60,10 @@ export class SeletordoenteComponent implements OnInit {
   }
 
   loadDo(sit: any, sub: any, turno: any) {
+    this.getTurnoAtual();
+  if(turno==="Turno atual"){
+    turno= this.turnoId
+  }
    this.turnos.forEach(t => {
      if(turno === t.nome){
        turno = t.id;
@@ -91,6 +99,33 @@ export class SeletordoenteComponent implements OnInit {
     this.loadAllSub();
     this.loadAllTu();
     this.loadAllDo();
+  }
+
+  getTurnoAtual(){
+    const v= this.d.getDay();
+    const h = this.d.getHours();
+    if(v===1 || v===3 || v===5){
+      if(h<12){
+        this.turnoId=1;
+      }
+      if(h>12 && h<18){
+        this.turnoId=2;
+      }
+      if(h>18){
+        this.turnoId=3;
+      }
+    }
+    if(v===2 || v===4 || v===6){
+      if(h<12){
+        this.turnoId=4;
+      }
+      if(h>=12 && h<18){
+        this.turnoId=5;
+      }
+      if(h>=18){
+        this.turnoId=6;
+      }
+    }
   }
 
   changeSelect(select:boolean){
